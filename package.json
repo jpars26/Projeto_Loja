@@ -1,0 +1,24 @@
+{
+  "name": "projeto_loja",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jpars26/Projeto_Loja#readme",
+  "bugs": {
+    "url": "https://github.com/jpars26/Projeto_Loja/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpars26/Projeto_Loja.git"
+  },
+  "license": "ISC",
+  "author": "João_Paulo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,17 @@
+button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3700b3;
+}
+
+#App {
+  text-align: center;
+  padding: 50px;
+}

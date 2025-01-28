@@ -1,0 +1,33 @@
+.HomePage-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+
+#about-us {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 50px;
+}
+
+#services {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 50px;
+}
+
+#home {
+    margin-bottom: 50px;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 50px;
+    background-color: crimson;
+}
