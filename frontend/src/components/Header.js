@@ -1,25 +1,33 @@
 import React from "react";  
 import { Link } from "react-router-dom";
 import "../css/Header.css";
+import { useState } from "react";
 
-const Header = () => {  
+
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header id="home" className="header">
+    <header className="header">
       <div className="logo">
-        <img src="/assets/images/logo.png" alt="Iara Noivas Logo" />
-        <h1>Iara Noivas</h1>
+       <img src="/assets/images/logo.png" alt="Iara Noivas Logo" />
       </div>
-      <nav className="navbar">
+
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+
+      <nav className={`navbar ${menuOpen ? "open" : ""}`}>
         <ul>
-          <li><a href="#home">Início</a></li>
-          <li><a href="#about">Sobre Nós</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#contact">Contato</a></li>
-          <li><Link to="/">Loja</Link></li>
+          <li><Link to="/" onClick={() => setMenuOpen(false)}>Início</Link></li>
+          <li><Link to="/about" onClick={() => setMenuOpen(false)}>Sobre Nós</Link></li>
+          <li><Link to="/services" onClick={() => setMenuOpen(false)}>Serviços</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contato</Link></li>
+          <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Loja</Link></li>
         </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
