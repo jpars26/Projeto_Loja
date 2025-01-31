@@ -8,7 +8,7 @@ const Services = () => {
             initial={{ opacity: 0, x: -200 }}    // Começa invisível e deslocado à esquerda
             transition={{ duration: 1 }}          // Duração de 1 segundo
         >
-            <h2>Serviços</h2>
+            <h2></h2>
            <br/>
            <br/>
            <br/>
@@ -16,6 +16,11 @@ const Services = () => {
            <br/>
            <br/>
            <br/>
+           <br/>
+           <br/>
+           <br/>
+           <br/>
+          
            
             
         </motion.section>

@@ -6,6 +6,8 @@ import Services from '../components/sections/Services';
 import ContactForm from '../components/ContactForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import '../css/HomePage.css';
 
@@ -17,11 +19,11 @@ const HomePage = () => {
       <AboutUs />
       <Services />
       <ContactForm />
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31" data-elfsight-app-lazy></div>
       <WhatsAppButton />
       
-      <footer>
-        <p>&copy; 2025 Loja de Roupas para Eventos</p>
-      </footer>
+      <Footer />  {/* ✅ Adicione o Footer aqui */}
     </div>
   );
 };

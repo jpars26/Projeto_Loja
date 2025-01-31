@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';  // Importando o Framer Motion
+import Footer from '../Footer';
 
 const AboutUs = () => {
   return (
@@ -14,7 +15,8 @@ const AboutUs = () => {
             Oferecemos qualidade, elegância e conforto para você brilhar no seu evento!
         </p>
     </motion.section>
-
+    
+     
   );
 }
 
