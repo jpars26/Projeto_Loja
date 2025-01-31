@@ -2,8 +2,7 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
+    justify-content: space-around;
     background-color: #fff;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -11,6 +10,7 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    padding: 10px 20px;
   }
   
   /* Logo */
@@ -58,8 +58,9 @@
   @media (max-width: 768px) {
     .menu-toggle {
       display: block; /* Agora visível */
-      background-color: rgb(102, 100, 223);
+      background-color:rgb(122, 43, 45);
       right: 150px;
+      padding: 2%;
     }
   
     .navbar {
@@ -87,8 +88,46 @@
   
     .navbar li {
       padding: 10px 0;
-    }
+    } 
 
-   
   }
+
+  /* Container do ícone do Moodboard */
+.moodboard-icon {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+}
+
+/* Ícone de coração */
+.heart-icon {
+  color: #6a0dad; /* Cor roxa para combinar com a imagem */
+  font-size: 28px;
+  transition: color 0.3s;
+}
+
+.heart-icon:hover {
+  color: red;
+}
+
+/* Contador de notificações (círculo vermelho) */
+.notification-badge {
+  position: absolute;
+  top: -8px; /* Ajusta para o topo */
+  right: -8px; /* Move para o canto direito */
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white; /* Efeito de separação */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
   

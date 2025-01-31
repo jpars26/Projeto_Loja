@@ -1,7 +1,8 @@
 // src/pages/HomePage.js
 import React from 'react';
-import AboutUs from '../components/AboutUs';
-import Services from '../components/Services';
+import Hero from "../components/sections/Hero";
+import AboutUs from '../components/sections/AboutUs';
+import Services from '../components/sections/Services';
 import ContactForm from '../components/ContactForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Header from '../components/Header';
@@ -12,13 +13,8 @@ const HomePage = () => {
   return (
        <div>
       <Header />
-      <button>
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            Voltar para a Loja
-        </Link>
-        </button>
+      <Hero />
       <AboutUs />
-      
       <Services />
       <ContactForm />
       <WhatsAppButton />

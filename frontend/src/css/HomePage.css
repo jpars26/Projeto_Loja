@@ -17,11 +17,13 @@
 }
 
 #services {
+    background-image: url("https://kleinfeldagain.com/cdn/shop/files/buyer_side_p.jpg?v=1732552932&width=2000");
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 1.5em;
     text-align: center;
     padding: 50px;
+    color: rgb(2, 2, 2);
 }
 
 #home {

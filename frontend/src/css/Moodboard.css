@@ -1,0 +1,22 @@
+/* src/css/Moodboard.css */
+.moodboard-container {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .moodboard-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .remove-btn {
+    background: red;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
