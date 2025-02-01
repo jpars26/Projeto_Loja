@@ -7,6 +7,9 @@ import Header from "./components/Header";
 import CollectionsPage from "./pages/CollectionsPage";
 import MoodboardPage from "./pages/MoodboardPage";  // ✅ Importando a página do Moodboard
 import { MoodboardProvider } from "./context/MoodboardContext"; // ✅ Envolvendo com Context API
+import Collection_ID from "./pages/Collection_ID";
+
+
 
 function App() {
     return (
@@ -21,7 +24,7 @@ function App() {
                                 <div id='App'>
                                     <h1>Bem-vindo à Iara Noivas!</h1>
                                     <p>Aluguel de vestidos de festas, formatura e casamento.</p>
-                                    <button>
+                                    <button id="go-to-store">
                                         <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
                                             Ir para a Loja
                                         </Link>
@@ -40,6 +43,8 @@ function App() {
                         } />
                         <Route path="/collections" element={<CollectionsPage />} />  
                         <Route path="/moodboard" element={<MoodboardPage />} />  {/* ✅ Adicionando a rota do Moodboard */}
+                        <Route path="/collections/:id" element={<Collection_ID />} /> {/* ✅ Rota dinâmica */}
+                        
                     </Routes>
                 </div>
             </Router>

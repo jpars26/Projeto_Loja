@@ -11,13 +11,11 @@ const Hero = () => {
         <source src={heroVideo} type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
-
       {/* Conteúdo sobreposto */}
-      {/* <div className="hero-content">
-        <h1>Aluguel de Vestidos de Noiva</h1>
-        <p>Encontre o vestido dos seus sonhos para o grande dia</p>
-        <button className="cta-button">Ver Coleção</button>
-      </div> */}
+        <div className="hero-content">
+          <button className="cta-button">Ver Coleção</button>
+        </div>
+
     </section>
   );
 };
