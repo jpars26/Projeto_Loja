@@ -7,8 +7,10 @@ import ContactForm from '../components/ContactForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import CustomerGallery from '../components/sections/CustomerGallery';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+
 import '../css/HomePage.css';
 
 const HomePage = () => {
@@ -18,6 +20,7 @@ const HomePage = () => {
       <Hero />
       <AboutUs />
       <Services />
+      
       <ContactForm />
       <script src="https://static.elfsight.com/platform/platform.js" async></script>
       <div class="elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31" data-elfsight-app-lazy></div>

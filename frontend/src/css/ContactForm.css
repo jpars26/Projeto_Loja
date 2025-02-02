@@ -56,10 +56,7 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
-    background-color: #128c7e;  /* Cor mais escura ao passar o mouse */
-  }
-  
+ 
   button:active {
     transform: scale(0.98);  /* Efeito de clique */
   }

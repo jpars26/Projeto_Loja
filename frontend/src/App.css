@@ -1,14 +1,8 @@
-button {
-  background-color: #6200ea;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-
 #App {
   text-align: center;
   padding: 50px;
+}
+
+a {
+  text-decoration: none;
 }

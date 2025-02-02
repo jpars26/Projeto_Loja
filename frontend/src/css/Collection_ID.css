@@ -27,7 +27,8 @@
   padding: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
-  max-width: 300px;
+  max-width: 400px;
+  width: 400px;
 }
 
 .product-card img {
@@ -50,4 +51,29 @@
 .product-card:hover {
   transform: scale(1.05);
 }
+
+/* src/css/Collections.css */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Centraliza os itens na tela */
+  max-width: 900px; /* Defina um tamanho máximo para alinhar os itens no centro */
+  margin: 0 auto; /* Centraliza a grid no meio da tela */
+}
+
+/* Estado inicial: os cards começam translados e com opacidade 0 */
+.product-card.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado animado: os cards aparecem com opacidade 1 e posição original */
+.product-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 

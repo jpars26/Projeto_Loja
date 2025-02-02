@@ -1,0 +1,43 @@
+.customer-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .customer-image {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Opcional: efeito de zoom na imagem ao passar o mouse */
+  .customer-card:hover .customer-image {
+    transform: scale(1.05);
+  }
+  
+  /* Estilo da sobreposição */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  .customer-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .customer-name {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+  

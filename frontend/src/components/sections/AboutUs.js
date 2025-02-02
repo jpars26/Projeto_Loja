@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';  // Importando o Framer Motion
 import Footer from '../Footer';
-
+import CustomerGallery from './CustomerGallery'; // Importe o CustomerGallery aqui
 const AboutUs = () => {
   return (
     <motion.section id="about-us" 
@@ -14,7 +14,11 @@ const AboutUs = () => {
             Somos uma loja especializada em aluguel de roupas de festa para formaturas e casamentos. 
             Oferecemos qualidade, elegância e conforto para você brilhar no seu evento!
         </p>
+        <CustomerGallery /> {/* ✅ Adicione o CustomerGallery aqui */}  
+        <Footer /> {/* ✅ Adicione o Footer aqui */}  
+        
     </motion.section>
+    
     
      
   );

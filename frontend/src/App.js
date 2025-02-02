@@ -5,15 +5,15 @@ import "./App.css";
 import AboutUs from "./components/sections/AboutUs";
 import Header from "./components/Header";
 import CollectionsPage from "./pages/CollectionsPage";
-import MoodboardPage from "./pages/MoodboardPage";  // ✅ Importando a página do Moodboard
-import { MoodboardProvider } from "./context/MoodboardContext"; // ✅ Envolvendo com Context API
+import MoodboardPage from "./pages/MoodboardPage";  
+import { MoodboardProvider } from "./context/MoodboardContext"; 
 import Collection_ID from "./pages/Collection_ID";
 
 
 
 function App() {
     return (
-        <MoodboardProvider>  {/* ✅ Envolvendo toda a aplicação */}
+        <MoodboardProvider>  
             <Router>
                 <div>
                     <Routes>

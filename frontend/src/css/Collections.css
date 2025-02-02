@@ -17,10 +17,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
         gap: 20px;
-        padding: 20px;
         justify-content: center; /* Centraliza os itens na tela */
         max-width: 900px; /* Defina um tamanho máximo para alinhar os itens no centro */
         margin: 0 auto; /* Centraliza a grid no meio da tela */
+        padding: 40px;
     }
   
   
