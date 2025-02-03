@@ -3,8 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/Header.css";
 import { useMoodboard } from "../context/MoodboardContext";
-import logo from "../assets/images/logo.png";
 import { FaRegHeart, FaBars, FaTimes } from "react-icons/fa"; // Ícones
+import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedin, FaPinterest, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 
 
@@ -32,8 +32,9 @@ const Header = () => {
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>Sobre</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contato</Link></li>
         </ul>
+        
       </nav>
-
+    
       {/* Ícone do Moodboard */}
       <div className="moodboard-icon">
         <Link to="/moodboard">

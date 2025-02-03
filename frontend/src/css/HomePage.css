@@ -7,29 +7,9 @@
     background-color: #f8f9fa;
 }
 
-
-#about-us {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 50px;
-}
-
-#services {
-    background-image: url("https://kleinfeldagain.com/cdn/shop/files/buyer_side_p.jpg?v=1732552932&width=2000");
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 50px;
-    color: rgb(2, 2, 2);
-}
-
-#home {
-    margin-bottom: 50px;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 50px;
-    background-color: crimson;
+.elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31 {
+    max-width: 80%;  /* Reduz a largura para evitar que fique muito grande */
+    margin: 0 auto;  /* Centraliza horizontalmente */
+    padding: 20px;   /* Adiciona espaçamento interno */
+    text-align: center;  /* Garante que o conteúdo dentro do widget fique centralizado */
 }

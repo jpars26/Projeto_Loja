@@ -3,6 +3,7 @@ import React from "react";
 import "../../css/Collections.css"; // Importando o CSS
 import collections from "../../data/collections";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CollectionGrid = () => {
   return (
@@ -12,7 +13,7 @@ const CollectionGrid = () => {
         {collections.map((dress) => (
           <div key={dress.id} className="grid-item">
             <Link to={`/collections/${dress.id}`} className="collection-card"> 
-              <img src={dress.image} alt={dress.name} />
+              <LazyLoadImage  effect="blur" src={dress.image} alt={dress.name} />
               <p>{dress.name}</p>
             </Link>
           </div>

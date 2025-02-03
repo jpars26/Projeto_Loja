@@ -4,6 +4,7 @@
     text-align: center;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
+    width: 100%;
   }
   
   .footer-top h2 {
@@ -48,12 +49,14 @@
   }
   
   .footer-column h4 {
+    text-align: center;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
   }
   
   .footer-column p {
+    text-align: center;
     font-size: 12px;
     margin: 5px 0;
     cursor: pointer;

@@ -1,6 +1,7 @@
 /* src/components/sections/CustomerGallery.css */
 .customer-gallery {
     padding: 20px;
+    text-align: center;
   }
   
   .gallery-grid {

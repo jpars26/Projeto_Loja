@@ -97,6 +97,7 @@
   position: relative;
   display: inline-block;
   font-size: 24px;
+  
 }
 
 /* Ícone de coração */
@@ -104,6 +105,7 @@
   color: #6a0dad; /* Cor roxa para combinar com a imagem */
   font-size: 28px;
   transition: color 0.3s;
+  
 }
 
 .heart-icon:hover {
@@ -129,5 +131,3 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-
-  

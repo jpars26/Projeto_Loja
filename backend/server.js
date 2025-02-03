@@ -1,41 +1,52 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const app = express();
 const bodyParser = require('body-parser');
+const admin = require('firebase-admin');
+const compression = require('compression');
 
-// Ativar Middleware para permitir requisições de outros domínios (CORS)
+const app = express();
+
+// Middleware de compressão deve vir primeiro
+app.use(compression());
+
+// Middlewares
 app.use(cors());
-
-// Middleware para servir os arquivos estáticos do frontend
-app.use(express.static(path.join(__dirname, 'frontend/build')));
-
-// Rota para servir o index.html do React
-app.get('./frontend', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
-});
-
-// Middleware para permitir que o Express leia os dados do corpo da requisição
 app.use(bodyParser.json());
 
-// Rota para receber os dados do formulário de contato
-app.post('/contact', (req, res) => {
+// Inicializa Firebase
+const serviceAccount = require('./firebase-config.json');
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+const db = admin.firestore();
+
+// Rota para armazenar contato no Firebase
+app.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, message: 'Todos os campos são obrigatórios.' });
   }
 
-  // Aqui você pode salvar os dados ou enviar um e-mail, por exemplo.
-  console.log(`Recebido contato de ${name} (${email}): ${message}`);
+  try {
+    await db.collection('contacts').add({
+      name,
+      email,
+      message,
+      createdAt: new Date(),
+    });
 
-  return res.status(200).json({ success: true, message: 'Mensagem recebida com sucesso!' });
+    return res.status(200).json({ success: true, message: 'Mensagem armazenada com sucesso!' });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: 'Erro ao salvar no banco de dados.' });
+  }
 });
 
 // Inicia o servidor na porta 5000
-app.listen(5000, () => {
-  console.log('Servidor rodando em http://localhost:5000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
-
-
-

@@ -1,0 +1,216 @@
+/* 🔹 Estilização geral */
+.sections {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 🔹 Títulos */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* 🔹 Imagens menores e organizadas */
+.about-image, .product-image, .testimonial-image {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    display: block;
+    margin: 0 auto;
+}
+
+/* 🔹 Bloco Diferenciais */
+.differentials {
+    background: #fafafa;
+    padding: 60px 20px;
+}
+
+.differential-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.differential-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.differential-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 30px;
+    color: #d9534f;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Bloco de Produtos e Depoimentos lado a lado */
+.dual-section {
+    background: #fff;
+    padding: 60px 20px;
+}
+
+.dual-content {
+    display: flex;
+    align-items: flex-start; /* 🔹 Alinhar os blocos pelo topo */
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Para posicionar a nova barra */
+}
+
+/* 🔹 Adicionando barras verticais para alinhamento */
+.dual-content::before,
+.dual-content::after {
+    content: "";
+    position: absolute;
+    width: 3px; /* Largura da barra */
+    height: 100%;
+    background: #d9534f; /* Cor vermelha */
+    top: 0;
+}
+
+.dual-content::before {
+    left: -30px; /* Posição da barra esquerda */
+}
+
+.dual-content::after {
+    right: -30px; /* Posição da barra direita */
+}
+
+/* 🔹 Ícones no topo dos blocos */
+.section-icon {
+    font-size: 40px;
+    color: #d9534f;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Ajuste para alinhar os títulos */
+.dual-content h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #222;
+    width: 100%; /* Garante alinhamento correto */
+}
+
+/* 🔹 Subtítulos para harmonização */
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Bloco Vestidos Exclusivos e Depoimentos */
+.exclusive-dresses,
+.testimonials {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🔹 Ajuste para garantir que as imagens tenham o mesmo tamanho e efeito */
+.exclusive-image,
+.testimonial-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 20px auto;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔹 Efeito ao passar o mouse */
+.exclusive-image:hover,
+.testimonial-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Ajuste do Carrossel */
+.testimonial-slider {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* 🔹 Estilo dos Depoimentos */
+.testimonial-box {
+    font-style: italic;
+    border-left: 4px solid #d9534f;
+    padding: 40px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔹 Texto do Depoimento */
+.testimonial-box p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 500px;
+}
+
+/* 🔹 Nome do Cliente */
+.testimonial-box h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 1024px) {
+    .dual-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .exclusive-dresses,
+    .testimonials {
+        width: 100%;
+    }
+
+    .dual-content::before,
+    .dual-content::after {
+        display: none; /* Remover as barras em telas menores */
+    }
+}
+
+

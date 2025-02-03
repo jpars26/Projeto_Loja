@@ -31,6 +31,12 @@ const ContactForm = () => {
     const data = await response.json();
     if (data.success) {
       alert('Mensagem enviada com sucesso!');
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+      
     } else {
       alert('Erro ao enviar a mensagem.');
     }

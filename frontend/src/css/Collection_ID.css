@@ -1,13 +1,21 @@
-.collection-page {
+.collection-banner {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  width: 20%;
+  display: block;   /* Permite que o margin funcione */
+  margin: 0 auto;   /* Centraliza horizontalmente */
+}
+h1 {
+  font-size: 24px;
+  margin: 0;
   text-align: center;
-
 }
 
-.collection-banner {
-  width: 20%;
-  max-width: 800px;
-  margin: 20px 0;
-  
+
+p {
+  font-size: 16px;
+  text-align: center;
 }
 
 /* Estilo do grid de produtos */
@@ -26,11 +34,16 @@
   text-align: center;
   padding: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   max-width: 400px;
   width: 400px;
 }
 
+/* Efeito ao passar o mouse: sobe e cresce suavemente */
+.product-card:hover {
+  transform: scale(1.05) translateY(15px); /* Cresce e sobe ao mesmo tempo */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra para dar profundidade */
+}
 .product-card img {
   width: 100%;
   height: auto;
@@ -48,9 +61,6 @@
   color: #d9534f;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
-}
 
 /* src/css/Collections.css */
 .product-grid {
@@ -63,17 +73,15 @@
   margin: 0 auto; /* Centraliza a grid no meio da tela */
 }
 
-/* Estado inicial: os cards começam translados e com opacidade 0 */
+/* Efeito de entrada (Lazy Load) */
 .product-card.hidden {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Estado animado: os cards aparecem com opacidade 1 e posição original */
+/* Quando o card se torna visível */
 .product-card.animate {
   opacity: 1;
   transform: translateY(0);
 }
-
-

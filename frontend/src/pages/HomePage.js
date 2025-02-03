@@ -1,33 +1,40 @@
 // src/pages/HomePage.js
 import React from 'react';
 import Hero from "../components/sections/Hero";
-import AboutUs from '../components/sections/AboutUs';
 import Services from '../components/sections/Services';
 import ContactForm from '../components/ContactForm';
 import WhatsAppButton from '../components/WhatsAppButton';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import CustomerGallery from '../components/sections/CustomerGallery';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Layout from "../layout/Layout";
+import InstagramWidget from "../components/InstagramWidget";
+import { Helmet } from "react-helmet";
+import Sections from '../components/sections/Sections';
+
 
 
 import '../css/HomePage.css';
 
 const HomePage = () => {
   return (
-       <div>
-      <Header />
-      <Hero />
-      <AboutUs />
-      <Services />
+    
+    <Layout>
+         {/* SEO para a página Home */}
+        <Helmet>
+          <title>Iara Noivas - Vestidos de Noiva Exclusivos</title>
+          <meta name="description" content="Os vestidos de noiva mais sofisticados para seu casamento dos sonhos." />
+          <meta property="og:title" content="Iara Noivas - Vestidos de Noiva" />
+          <meta property="og:description" content="Confira nossa coleção exclusiva de vestidos de noiva." />
+          <meta property="og:url" content="https://www.iaranoivas.com" />
+          <meta property="og:type" content="website" />
+        </Helmet>
+        <Hero />
+        <Sections />
+        <Services />
+        <ContactForm />
+        <InstagramWidget />
+        <WhatsAppButton />
       
-      <ContactForm />
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-      <div class="elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31" data-elfsight-app-lazy></div>
-      <WhatsAppButton />
-      
-      <Footer />  {/* ✅ Adicione o Footer aqui */}
-    </div>
+    </Layout>
   );
 };
 

@@ -1,17 +1,13 @@
 // src/pages/MoodboardPage.js
 import React from "react";
 import Moodboard from "../components/sections/Moodboard";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Layout from "../layout/Layout";
 
 const MoodboardPage = () => {
   return (
-    <div>
-        <Header/>
-        <Moodboard />
-        <Footer/>
-        
-    </div>
+    <Layout>
+      <Moodboard />
+    </Layout>
   );
 };
 
