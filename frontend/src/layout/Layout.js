@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
+import "../css/Layout.css"; // Importando o CSS
 
 const Layout = ({ children }) => {
   return (

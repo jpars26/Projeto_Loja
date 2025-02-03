@@ -30,7 +30,6 @@ const HomePage = () => {
         <Hero />
         <Sections />
         <Services />
-        <ContactForm />
         <InstagramWidget />
         <WhatsAppButton />
       

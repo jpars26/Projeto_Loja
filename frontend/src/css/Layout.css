@@ -1,0 +1,26 @@
+/* 🔹 Estilização do Layout */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 🔹 Define um espaço adequado abaixo do Header */
+.layout-main {
+    flex: 1;
+    padding-top: 80px; /* Evita sobreposição do conteúdo com o Header */
+    padding-bottom: 20px; /* Garante um respiro entre o conteúdo e o Footer */
+}
+
+/* 🔹 Ajuste para o Footer sempre no final */
+.layout-footer {
+    margin-top: auto;
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 768px) {
+    .layout-main {
+        padding-top: 60px; /* Reduz o padding em telas menores */
+        padding-bottom: 15px;
+    }
+}

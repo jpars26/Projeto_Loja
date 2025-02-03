@@ -65,7 +65,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* 🔹 Bloco de Produtos e Depoimentos lado a lado */
+/* 🔹 Bloco Produtos e Depoimentos lado a lado */
 .dual-section {
     background: #fff;
     padding: 60px 20px;
@@ -73,13 +73,13 @@ h2 {
 
 .dual-content {
     display: flex;
-    align-items: flex-start; /* 🔹 Alinhar os blocos pelo topo */
+    align-items: flex-start;
     justify-content: space-between;
     gap: 50px;
     max-width: 1100px;
     margin: 0 auto;
     text-align: center;
-    position: relative; /* Para posicionar a nova barra */
+    position: relative;
 }
 
 /* 🔹 Adicionando barras verticais para alinhamento */
@@ -87,18 +87,18 @@ h2 {
 .dual-content::after {
     content: "";
     position: absolute;
-    width: 3px; /* Largura da barra */
+    width: 3px;
     height: 100%;
-    background: #d9534f; /* Cor vermelha */
+    background: #d9534f;
     top: 0;
 }
 
 .dual-content::before {
-    left: -30px; /* Posição da barra esquerda */
+    left: -30px;
 }
 
 .dual-content::after {
-    right: -30px; /* Posição da barra direita */
+    right: -30px;
 }
 
 /* 🔹 Ícones no topo dos blocos */
@@ -116,7 +116,7 @@ h2 {
     letter-spacing: 1px;
     margin-bottom: 10px;
     color: #222;
-    width: 100%; /* Garante alinhamento correto */
+    width: 100%;
 }
 
 /* 🔹 Subtítulos para harmonização */
@@ -125,7 +125,11 @@ h2 {
     color: #666;
     margin-bottom: 20px;
 }
-
+/* Seção Bloco CTA Final */
+.cta {
+    background: #fafafa;
+    padding: 60px 20px;
+}
 /* 🔹 Bloco Vestidos Exclusivos e Depoimentos */
 .exclusive-dresses,
 .testimonials {
@@ -135,38 +139,66 @@ h2 {
     align-items: center;
 }
 
-/* 🔹 Ajuste para garantir que as imagens tenham o mesmo tamanho e efeito */
-.exclusive-image,
-.testimonial-image {
+/* 🔹 Ajuste do Carrossel de Vestidos */
+.exclusive-slider {
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative; /* Permite alinhar os dots corretamente */
+}
+
+/* 🔹 Estilização dos Slides do Carrossel */
+.exclusive-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.exclusive-slide img {
     width: 100%;
     max-width: 450px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 20px auto;
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🔹 Efeito ao passar o mouse */
-.exclusive-image:hover,
-.testimonial-image:hover {
+.exclusive-slide img:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* 🔹 Ajuste do Carrossel */
+/* 🔹 Botão "Ver Coleção" */
+.cta-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: #d9534f;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #c9302c;
+}
+
+/* 🔹 Ajuste do Carrossel de Depoimentos */
 .testimonial-slider {
     max-width: 450px;
     margin: 0 auto;
+    position: relative;
+    padding-bottom: 50px;
 }
 
 /* 🔹 Estilo dos Depoimentos */
 .testimonial-box {
     font-style: italic;
     border-left: 4px solid #d9534f;
-    padding: 40px;
+    
     background: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
@@ -175,6 +207,7 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
 
 .testimonial-box:hover {
     transform: translateY(-5px);
@@ -195,22 +228,31 @@ h2 {
     color: #333;
 }
 
-/* 🔹 Responsividade */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .dual-content {
         flex-direction: column;
         text-align: center;
     }
 
-    .exclusive-dresses,
-    .testimonials {
+    .exclusive-dresses, .testimonials {
         width: 100%;
     }
 
-    .dual-content::before,
-    .dual-content::after {
-        display: none; /* Remover as barras em telas menores */
+    .exclusive-slider img, .testimonial-slider img {
+        max-width: 300px; /* Ajuste menor para telas pequenas */
+    }
+
+    .slick-dots {
+        bottom: -5px; /* Ajusta para telas menores */
+    }
+    .slick-slide img {
+        /* display: block; */
+        display: none;
     }
 }
 
-
+.slick-slide img {
+    display: inline-block !important;
+    height: auto !important;
+    object-fit: cover;
+}

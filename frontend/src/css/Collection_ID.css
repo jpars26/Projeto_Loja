@@ -6,6 +6,7 @@
   display: block;   /* Permite que o margin funcione */
   margin: 0 auto;   /* Centraliza horizontalmente */
 }
+
 h1 {
   font-size: 24px;
   margin: 0;
@@ -18,15 +19,19 @@ p {
   text-align: center;
 }
 
-/* Estilo do grid de produtos */
+
+/* 🔹 Estilo do Grid de Produtos */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Garante ajuste responsivo */
   gap: 20px;
   padding: 40px 0;
   justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* 🔹 Estilização de Cada Card */
 .product-card {
   background: #fff;
   border-radius: 10px;
@@ -35,53 +40,53 @@ p {
   padding: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%; /* Mantém responsivo */
   max-width: 400px;
-  width: 400px;
 }
 
-/* Efeito ao passar o mouse: sobe e cresce suavemente */
+/* 🔹 Efeito ao passar o mouse */
 .product-card:hover {
-  transform: scale(1.05) translateY(15px); /* Cresce e sobe ao mesmo tempo */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra para dar profundidade */
+  transform: scale(1.05) translateY(10px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+/* 🔹 Ajuste das Imagens */
 .product-card img {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  object-fit: cover;
 }
 
-.product-card h3 {
-  font-size: 18px;
-  margin: 10px 0;
+/* 🔹 Ajuste do Botão de Favoritos */
+.heart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
 }
 
-.product-card p {
-  font-size: 16px;
-  font-weight: bold;
+.heart-btn.active {
   color: #d9534f;
 }
 
-
-/* src/css/Collections.css */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
-  gap: 20px;
-  padding: 20px;
-  justify-content: center; /* Centraliza os itens na tela */
-  max-width: 900px; /* Defina um tamanho máximo para alinhar os itens no centro */
-  margin: 0 auto; /* Centraliza a grid no meio da tela */
+/* 🔹 Ajuste para Responsividade */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 🔹 Duas colunas em telas médias */
+    gap: 15px;
+  }
 }
 
-/* Efeito de entrada (Lazy Load) */
-.product-card.hidden {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 🔹 Apenas 1 card por linha em telas menores */
+    width: 80% ;
+  }
 
-/* Quando o card se torna visível */
-.product-card.animate {
-  opacity: 1;
-  transform: translateY(0);
+  .collection-banner {
+    width: 80%; /* Ajuste para centralizar melhor */
+  }
 }

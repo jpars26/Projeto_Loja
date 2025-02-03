@@ -1,7 +1,11 @@
 import React from 'react';
-import CustomerGallery from '../components/sections/CustomerGallery'; // Importe o CustomerGallery aqui
+import CustomerGallery from '../components/sections/CustomerGallery';
 import Layout from '../layout/Layout';
 import { Helmet } from "react-helmet";
+import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
+import "../css/AboutUs.css"; // Certifique-se de criar esse CSS para estilizar
+
+
 
 const AboutUs = () => {
   return (
@@ -22,18 +26,78 @@ const AboutUs = () => {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <section className="about-us">
-        <h1>Sobre a Iara Noivas</h1>
-        <p>
-          A Iara Noivas nasceu da paixão por vestidos de casamento elegantes e sofisticados.
-          Desde nossa fundação, ajudamos noivas a realizarem seus sonhos com modelos exclusivos e atemporais.
-        </p>
+      {/* Seção Hero */}
+      <section className="about-hero">
+        <div className="hero-content">
+          <h1>Realizamos sonhos, um vestido por vez</h1>
+          <p>Transformamos momentos especiais em memórias inesquecíveis.</p>
+        </div>
+      </section>
+
+      {/* Nossa História - Timeline */}
+      <section className="about-history">
+        <h2>Nossa História</h2>
+        <div className="history-timeline">
+          <div className="timeline-item">
+            <span className="year">2005</span>
+            <p>Fundação da Iara Noivas, inspirada pelo amor à moda nupcial.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2010</span>
+            <p>Começamos a criar vestidos sob medida, exclusivos para cada noiva.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2020</span>
+            <p>Nossas peças se tornaram referência em casamentos de luxo.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2024</span>
+            <p>Expandimos para novas coleções exclusivas.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Diferenciais */}
+      <section className="about-differentials">
+        <h2>Por que escolher a Iara Noivas?</h2>
+        <div className="differentials-grid">
+          <div className="differential-card">
+            <FaCheckCircle className="icon" />
+            <h3>Feitos Sob Medida</h3>
+            <p>Cada vestido é desenhado para refletir sua personalidade e estilo.</p>
+          </div>
+          <div className="differential-card">
+            <FaClock className="icon" />
+            <h3>19 Anos de Tradição</h3>
+            <p>Mais de 5.000 noivas já confiaram em nossa experiência.</p>
+          </div>
+          <div className="differential-card">
+            <FaStar className="icon" />
+            <h3>Qualidade e Exclusividade</h3>
+            <p>Utilizamos os melhores materiais para criar peças atemporais.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria de Clientes */}
+      <section className="about-gallery">
+        <h2>Noivas Felizes</h2>
         <CustomerGallery />
       </section>
+
+
+      {/* Call to Action */}
+      <section className="cta">
+        <div className="container">
+          <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
+          <p>Entre em contato e agende uma consultoria exclusiva.</p>
+          <a href="https://wa.me/seu-numero" target="_blank" rel="noopener noreferrer">
+            <button className="cta-button">Agendar Atendimento</button>
+          </a>
+        </div>
+      </section>
     </Layout>
-    
-     
   );
-}
+};
 
 export default AboutUs;

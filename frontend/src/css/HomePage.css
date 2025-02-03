@@ -8,6 +8,7 @@
 }
 
 .elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31 {
+    top: -200px;  /* Ajusta a distância do topo */
     max-width: 80%;  /* Reduz a largura para evitar que fique muito grande */
     margin: 0 auto;  /* Centraliza horizontalmente */
     padding: 20px;   /* Adiciona espaçamento interno */

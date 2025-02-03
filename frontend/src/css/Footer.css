@@ -1,84 +1,184 @@
 .footer {
-    background-color: #0d1b2a;
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    width: 100%;
-  }
-  
-  .footer-top h2 {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 20px;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .social-icons a {
-    color: #ffffff;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #aaa;
-  }
-  
-  .languages {
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-  
-  .languages .active {
-    text-decoration: underline;
-    font-weight: bold;
-  }
-  
+  background-color: #0d1b2a;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+/* 🔹 Título do footer */
+.footer-top h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Ícones Sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #aaa;
+}
+
+/* 🔹 Seleção de Idiomas */
+.languages {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.languages .active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* 🔹 Ajuste para Links do Footer */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/* 🔹 Colunas do Footer */
+.footer-column {
+  text-align: center;
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-column p {
+  font-size: 12px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-column p:hover {
+  color: #aaa;
+}
+
+/* 🔹 Rodapé Inferior */
+.footer-bottom {
+  font-size: 12px;
+  opacity: 0.8;
+  padding-top: 20px;
+}
+
+.footer-bottom a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 1024px) {
   .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    text-align: left;
-    margin-bottom: 30px;
+      flex-wrap: wrap; /* Permite que os links se ajustem automaticamente */
+      justify-content: center;
+      gap: 30px;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+  }
+
   .footer-column h4 {
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 10px;
+      font-size: 16px;
   }
-  
+
   .footer-column p {
-    text-align: center;
-    font-size: 12px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: color 0.3s;
+      font-size: 14px;
   }
-  
-  .footer-column p:hover {
-    color: #aaa;
+
+  .social-icons {
+      flex-wrap: wrap;
+      justify-content: center;
   }
-  
-  .footer-bottom {
-    font-size: 12px;
-    opacity: 0.8;
+}
+.footer_h2 {
+  color: #ffffff;
+}
+
+/* 🔹 Seção de Parceiros */
+.footer-partners {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil para separar */
+}
+
+.footer-partners h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* 🔹 Ajustando as logos */
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Permite que as logos quebrem linha em telas menores */
+}
+
+.partner-logo {
+  width: 120px; /* Tamanho padrão das logos */
+  height: auto;
+  filter: grayscale(100%) brightness(0) invert(1); /* Deixa preto e branco */
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%); /* Retorna à cor original ao passar o mouse */
+  transform: scale(1.1); /* Leve zoom para destacar */
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 768px) {
+  .footer-partners {
+      text-align: center;
+      margin-top: 20px;
   }
-  
-  .footer-bottom a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
+
+  .partners-logos {
+      justify-content: center;
+      gap: 20px;
   }
-  
-  .footer-bottom a:hover {
-    text-decoration: underline;
+
+  .partner-logo {
+      width: 90px; /* Ajusta tamanho para telas menores */
   }
-  
+}
+
+.partner-logo.petrova {
+  filter: invert(100%); /* Inverte as cores (branco vira preto e vice-versa) */
+  mix-blend-mode: difference; /* Faz o branco se misturar com o fundo escuro */
+}
