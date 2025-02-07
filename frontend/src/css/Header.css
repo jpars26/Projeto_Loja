@@ -1,111 +1,121 @@
 /* Estilizando o header */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 10px 20px;
-  }
-  
-  /* Logo */
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  /* Menu de navegação */
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #e91e63;
-  }
-  
-  /* Botão menu hambúrguer */
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribui os elementos igualmente */
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+}
+
+/* Agrupa o botão de menu e o ícone do coração */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre os ícones */
+  margin-right: 30px; /* Empurra os ícones mais para a esquerda */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Menu de navegação */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #e91e63;
+}
+
+/* Botão menu hambúrguer */
+.menu-toggle {
+  display: none; /* Inicialmente escondido */
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Responsivo: Mostrar botão hambúrguer no mobile */
+@media (max-width: 768px) {
   .menu-toggle {
-    display: none; /* Inicialmente escondido */
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    top: 15px;
-    right: 40px;
-    z-index: 1100;
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      color: #a38396; /* Tom mais delicado */
+      transition: transform 0.3s ease-in-out;
   }
   
-  /* Responsivo: Mostrar botão hambúrguer no mobile */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block; /* Agora visível */
-      background-color:rgb(122, 43, 45);
-      right: 150px;
-      padding: 2%;
-    }
-  
-    .navbar {
+  .menu-toggle:hover {
+      color: #d4b5c9; /* Cor suave ao passar o mouse */
+      transform: scale(1.1);
+  }
+
+  .navbar {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 80px;
       right: 0;
-      background-color: #ffffffc5;
+      background-color: #ffffff;
       width: 100%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 10px 0;
-      
-    }
-  
-    .navbar.open {
+  }
+
+  .navbar.open {
       display: flex;
-    }
-  
-    .navbar ul {
+  }
+
+  .navbar ul {
       flex-direction: column;
       align-items: center;
       padding: 0;
-    }
-  
-    .navbar li {
-      padding: 10px 0;
-    } 
-
   }
 
-  /* Container do ícone do Moodboard */
-.moodboard-icon {
-  position: relative;
-  display: inline-block;
-  font-size: 24px;
-  
+  .navbar li {
+      padding: 10px 0;
+  }
 }
 
-/* Ícone de coração */
+/* Ícone do coração */
+.moodboard-icon {
+  position: relative;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
 .heart-icon {
-  color: #6a0dad; /* Cor roxa para combinar com a imagem */
+  color: #a38396; /* Cor para combinar */
   font-size: 28px;
   transition: color 0.3s;
-  
 }
 
 .heart-icon:hover {
@@ -115,8 +125,8 @@
 /* Contador de notificações (círculo vermelho) */
 .notification-badge {
   position: absolute;
-  top: -8px; /* Ajusta para o topo */
-  right: -8px; /* Move para o canto direito */
+  top: -8px;
+  right: -8px;
   background: red;
   color: white;
   font-size: 12px;
@@ -127,7 +137,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid white; /* Efeito de separação */
+  border: 2px solid white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-

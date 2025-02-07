@@ -4,7 +4,8 @@ import Layout from '../layout/Layout';
 import { Helmet } from "react-helmet";
 import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
 import "../css/AboutUs.css"; // Certifique-se de criar esse CSS para estilizar
-
+import logo from "../assets/images/logo.PNG";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 const AboutUs = () => {
@@ -39,7 +40,7 @@ const AboutUs = () => {
         <h2>Nossa História</h2>
         <div className="history-timeline">
           <div className="timeline-item">
-            <span className="year">2005</span>
+            <span className="year">2003</span>
             <p>Fundação da Iara Noivas, inspirada pelo amor à moda nupcial.</p>
           </div>
           <div className="timeline-item">
@@ -68,7 +69,7 @@ const AboutUs = () => {
           </div>
           <div className="differential-card">
             <FaClock className="icon" />
-            <h3>19 Anos de Tradição</h3>
+            <h3>22 Anos de Tradição</h3>
             <p>Mais de 5.000 noivas já confiaram em nossa experiência.</p>
           </div>
           <div className="differential-card">
@@ -82,6 +83,7 @@ const AboutUs = () => {
       {/* Galeria de Clientes */}
       <section className="about-gallery">
         <h2>Noivas Felizes</h2>
+        <LazyLoadImage src={logo} alt="Coleção Exclusiva" className="collection-banner" />
         <CustomerGallery />
       </section>
 
@@ -91,7 +93,7 @@ const AboutUs = () => {
         <div className="container">
           <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
           <p>Entre em contato e agende uma consultoria exclusiva.</p>
-          <a href="https://wa.me/seu-numero" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/+5535998289198" target="_blank" rel="noopener noreferrer">
             <button className="cta-button">Agendar Atendimento</button>
           </a>
         </div>

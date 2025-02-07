@@ -76,7 +76,7 @@
 /* Ajuste extra para telas muito pequenas */
 @media (max-width: 480px) {
   .hero {
-    height: 50vh;
+    height: 25vh;
   }
 
   .hero-content {

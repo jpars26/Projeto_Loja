@@ -6,6 +6,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    telefone: '',
     message: ''
   });
 
@@ -34,6 +35,7 @@ const ContactForm = () => {
       setFormData({
         name: '',
         email: '',
+        telefone: '',
         message: ''
       });
       
@@ -69,7 +71,19 @@ const ContactForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="message">Mensagem</label>
+          <label htmlFor="telefone">Telefone</label>
+          <textarea 
+            id="telefone" 
+            mask="(99) 99999-9999"
+            type="tel"
+            name="telefone" 
+            value={formData.telefone} 
+            onChange={handleChange} 
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message">Tem alguma duvida, pode nos mandar!</label>
           <textarea 
             id="message" 
             name="message" 

@@ -35,7 +35,7 @@ const Sections = () => {
           <h2>Por que Escolher a Iara Noivas?</h2>
           <div className="differential-grid">
             {[
-              { title: "Feitos Sob Medida", desc: "Cada vestido é exclusivo e desenhado para sua personalidade." },
+              { title: "Feitos Sob Medida", desc: "Temos o serviço de confecção para você que procura algo exclusivo" },
               { title: "Materiais de Alta Qualidade", desc: "Usamos os tecidos mais sofisticados para garantir luxo e conforto." },
               { title: "Atendimento Personalizado", desc: "Nossa equipe ajuda você em cada etapa para escolher o vestido perfeito." },
             ].map((item, index) => (

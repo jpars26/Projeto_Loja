@@ -27,6 +27,7 @@ const HomePage = () => {
           <meta property="og:url" content="https://www.iaranoivas.com" />
           <meta property="og:type" content="website" />
         </Helmet>
+              
         <Hero />
         <Sections />
         <Services />

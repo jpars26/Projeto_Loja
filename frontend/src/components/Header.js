@@ -1,13 +1,12 @@
-// src/components/Header.js
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/Header.css";
 import { useMoodboard } from "../context/MoodboardContext";
-import { FaRegHeart, FaBars, FaTimes } from "react-icons/fa"; // Ícones
-import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedin, FaPinterest, FaWhatsapp } from "react-icons/fa";
-import { useState } from "react";
+import { FaRegHeart } from "react-icons/fa"; // Ícone do coração
+import { List, X } from "phosphor-react"; // Ícones de menu refinados
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-
+const logo = require('../assets/images/logoGrande.png');
 
 const Header = () => {
   const { moodboardItems } = useMoodboard();
@@ -16,13 +15,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <h1>Iara Noivas</h1>
+        <Link to="/home">
+          <LazyLoadImage src={logo} alt="Logo Iara Noiva" />
+        </Link>
       </div>
-
-      {/* Botão do menu hamburguer */}
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FaTimes /> : <FaBars />} {/* Ícone muda */}
-      </button>
 
       {/* Navbar Responsiva */}
       <nav className={`navbar ${menuOpen ? "open" : ""}`}>
@@ -32,18 +28,24 @@ const Header = () => {
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>Sobre</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contato</Link></li>
         </ul>
-        
       </nav>
+
     
-      {/* Ícone do Moodboard */}
-      <div className="moodboard-icon">
-        <Link to="/moodboard">
-          <FaRegHeart className="heart-icon" />
-          {moodboardItems.length > 0 && (
-            <span className="notification-badge">{moodboardItems.length}</span>
-          )}
-        </Link>
+
+      <div className="header-icons">
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={28} weight="light" /> : <List size={28} weight="light" />}
+          </button>
+          <div className="moodboard-icon">
+            <Link to="/moodboard">
+              <FaRegHeart className="heart-icon" />
+              {moodboardItems.length > 0 && (
+                <span className="notification-badge">{moodboardItems.length}</span>
+              )}
+            </Link>
       </div>
+    </div>
+
     </header>
   );
 };

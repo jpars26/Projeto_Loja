@@ -14,3 +14,13 @@
     padding: 20px;   /* Adiciona espaçamento interno */
     text-align: center;  /* Garante que o conteúdo dentro do widget fique centralizado */
 }
+
+
+@media (max-width: 768px) {
+    .elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31 {
+        top: -150px;  /* Menor deslocamento no mobile */
+        max-width: 90%;  /* Usa quase toda a largura disponível */
+        width: 100%;  /* Ocupa toda a tela, mas mantendo a margem */
+        padding: 10px;  /* Reduz o espaçamento interno */
+    }
+}

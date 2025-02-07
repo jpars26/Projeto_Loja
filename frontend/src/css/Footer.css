@@ -2,9 +2,10 @@
   background-color: #0d1b2a;
   color: #ffffff;
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 5px;
   font-family: Arial, sans-serif;
   width: 100%;
+  font-family: 'Playfair Display', serif;
 }
 
 /* 🔹 Título do footer */
@@ -163,6 +164,7 @@
 
 /* 🔹 Responsividade */
 @media (max-width: 768px) {
+  
   .footer-partners {
       text-align: center;
       margin-top: 20px;
@@ -181,4 +183,8 @@
 .partner-logo.petrova {
   filter: invert(100%); /* Inverte as cores (branco vira preto e vice-versa) */
   mix-blend-mode: difference; /* Faz o branco se misturar com o fundo escuro */
+}
+
+.collection-footer{
+  color: #ffffff;
 }
