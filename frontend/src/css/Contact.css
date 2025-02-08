@@ -65,8 +65,31 @@
     margin-bottom: 5px;
 }
 
-/* 🔹 Mapa */
+/* Estilização da seção do mapa */
 .contact-map {
     text-align: center;
-    padding: 50px 20px;
-}
+    padding: 20px;
+  }
+  
+  /* Tornando o iframe do mapa responsivo */
+  .contact-map iframe {
+    width: 100%;
+    max-width: 900px; /* Define um limite para telas grandes */
+    height: 350px; /* Altura ajustada */
+    border-radius: 8px; /* Cantos arredondados para um visual mais sofisticado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efeito de sombra suave */
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .contact-map iframe {
+      height: 280px; /* Reduz a altura para celulares */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-map iframe {
+      height: 250px; /* Ajusta ainda mais para telas muito pequenas */
+    }
+  }
+  

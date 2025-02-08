@@ -1,16 +1,38 @@
 /* src/components/sections/CustomerGallery.css */
 .customer-gallery {
-    padding: 20px;
-    text-align: center;
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Centraliza os itens na tela */
+  max-width: 900px;
+  margin: 0 auto; /* Centraliza a grid no meio da tela */
+}
+
+/* 🔹 Tornando as imagens responsivas */
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Cantos arredondados para um design mais elegante */
+}
+
+/* 🔹 Responsividade para tablets */
+@media (max-width: 768px) {
   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
-    gap: 20px;
-    padding: 20px;
-    justify-content: center; /* Centraliza os itens na tela */
-    max-width: 900px; /* Defina um tamanho máximo para alinhar os itens no centro */
-    margin: 0 auto; /* Centraliza a grid no meio da tela */
+    grid-template-columns: repeat(2, 1fr); /* Altera para 2 colunas no tablet */
+    max-width: 600px; /* Ajusta a largura máxima */
   }
-  
+}
+
+/* 🔹 Responsividade para celulares */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* 1 coluna no mobile (imagens uma abaixo da outra) */
+    max-width: 90%; /* Reduz a largura para evitar bordas cortadas */
+  }
+}

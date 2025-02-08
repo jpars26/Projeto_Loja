@@ -23,5 +23,8 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase-admin": "^13.0.2"
+  },
+  "devDependencies": {
+    "cypress": "^14.0.2"
   }
 }

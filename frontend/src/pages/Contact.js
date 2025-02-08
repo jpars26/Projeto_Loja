@@ -23,7 +23,7 @@ const Contact = () => {
                 <h1>Vamos Conversar? 💍</h1>
                 <p>Estamos prontos para ajudar você a encontrar o vestido perfeito!</p>
                 <a href="https://wa.me/SEUNUMERO" target="_blank" rel="noopener noreferrer" className="whatsapp-button">
-                    <FaWhatsapp /> Fale Conosco no WhatsApp
+                    <FaWhatsapp /> 
                 </a>
             </section>
 
@@ -55,7 +55,7 @@ const Contact = () => {
 
             {/* 🔹 Seção de Perguntas Frequentes */}
             <section className="faq-section">
-                <h2>❔ Dúvidas Frequentes</h2>
+                <h2>❔ Dúvidas Frequentes </h2>
                 <div className="faq-item">
                     <h3>📅 Como agendar uma prova de vestido?</h3>
                     <p>Entre em contato pelo WhatsApp ou pelo formulário para marcar um horário com nossa equipe.</p>
@@ -75,12 +75,14 @@ const Contact = () => {
                 <h2>📍 Nossa Localização</h2>
                 <iframe
                     title="Mapa Iara Noivas"
-                    src="https://maps.app.goo.gl/4eBKca5fFoD7B7hXA" // Substitua com o link do Google Maps da sua loja
-                    width="80%"
-                    height="300"
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3693.2023503143873!2d-45.93750692380367!3d-22.232400014119477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cbc7b120bbe1f7%3A0x63ca96a50f887b5b!2sAv.%20Dr.%20Lisboa%2C%20231%20-%20Pouso%20Alegre%2C%20MG%2C%2037550-000!5e0!3m2!1spt-BR!2sbr!4v1738947504078!5m2!1spt-BR!2sbr"
+                     width="600"
+                     height="450" 
+                     style={{ border: "0" }}
+                     allowfullscreen=""
+                     loading="lazy" 
+                     referrerpolicy="no-referrer-when-downgrade"
+                   
                 ></iframe>
             </section>
         </Layout>

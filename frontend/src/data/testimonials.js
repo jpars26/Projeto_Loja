@@ -15,17 +15,17 @@ const testimonials = [
       image: "https://scontent-gru1-2.cdninstagram.com/v/t39.30808-6/469911762_1119151293549399_6835730610215481676_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=103&_nc_ohc=uhw3QnPSHG4Q7kNvgEacl5C&_nc_gid=98c46c04932c4d86a833f7687317f038&edm=APoiHPcAAAAA&ccb=7-5&ig_cache_key=MzUyOTQ3MDYyODg2NjgxNTA3OA%3D%3D.3-ccb7-5&oh=00_AYBr_74p_LgEphBUhDwEiwLDu5yV6ZMA3UwzAqNokXn2Vg&oe=67A5562B&_nc_sid=22de04",
     },
     {
-      name: "Beatriz",
+      name: "Letícia Ferreira",
       text: "O atendimento foi excepcional e o vestido superou minhas expectativas!",
       image: "https://scontent-gru2-2.cdninstagram.com/v/t39.30808-6/474517511_1147926434005218_2647169217216831486_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=106&_nc_ohc=kUqrh8eNgDUQ7kNvgGpfBbF&_nc_gid=d574a46a75c74e2b913293fd9a05853c&edm=AP4sbd4AAAAA&ccb=7-5&ig_cache_key=MzU1MTIxMzkzNjgwNDc5MzQyMw%3D%3D.3-ccb7-5&oh=00_AYCs-vt_FQjbQHGNIxsHSGZZKzTDV-stD0f7rY7nYXoZGQ&oe=67A54D20&_nc_sid=7a9f4b",
     },
     {
-      name: "Beatriz",
+      name: "Jacqueline Machado",
       text: "Sem palavras para descrever minha felicidade com o vestido perfeito para o meu grande dia!",
       image: "https://scontent-gru1-2.cdninstagram.com/v/t39.30808-6/467782340_1107315151399680_3764487204601622065_n.jpg?stp=c0.2.1440.1777a_dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE3ODEuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=100&_nc_ohc=w3QotYYVZE0Q7kNvgFFTlbg&_nc_gid=98c46c04932c4d86a833f7687317f038&edm=APoiHPcAAAAA&ccb=7-5&ig_cache_key=MzUxOTMyMzgwNDk5MzQyMzg5NQ%3D%3D.3-ccb7-5&oh=00_AYCnGsZLNeO6IzSijcD92joGHGiURq50KmsfuXw1tOajsQ&oe=67A5390F&_nc_sid=22de04",
     },
     {
-      name: "Debora Vieira",
+      name: "Helizabelle",
       text: "O carinho e atenção da equipe fizeram toda a diferença. Recomendo de olhos fechados!",
       image: "https://scontent-gru1-2.cdninstagram.com/v/t39.30808-6/475434664_1154466103351251_5748893655671926248_n.jpg?stp=c72.0.1296.1440a_dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=103&_nc_ohc=j8jy5VyEBksQ7kNvgHBy2j5&_nc_gid=4f56785945ff4eedab80d91deafeca4d&edm=AP4sbd4AAAAA&ccb=7-5&ig_cache_key=MzU1NDgzNzgwODcyNjE0MTA5OQ%3D%3D.3-ccb7-5&oh=00_AYBJeTyr5pQdbYesCTDSkxU4N1TFRxc-4-xlqpgDFc2VKQ&oe=67A69DE9&_nc_sid=7a9f4b",
     },
