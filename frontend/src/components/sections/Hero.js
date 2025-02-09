@@ -9,7 +9,7 @@ import { useState } from "react";
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <section className="hero">
+    <section className="hero" data-testid="hero-section">
        {/* Vídeo de fundo otimizado */}
        <video
         autoPlay

@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       aria-label="Contato pelo WhatsApp"
     >
-      <FaWhatsapp className="whatsapp-icon" />
+      <FaWhatsapp className="whatsapp-icon"  data-testid="whatsapp-button-main"/>
     </a>
   );
 };

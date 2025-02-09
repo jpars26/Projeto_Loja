@@ -2,7 +2,6 @@
 import React from 'react';
 import Hero from "../components/sections/Hero";
 import Services from '../components/sections/Services';
-import ContactForm from '../components/ContactForm';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Layout from "../layout/Layout";

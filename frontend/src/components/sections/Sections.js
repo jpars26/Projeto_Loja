@@ -28,7 +28,7 @@ const Sections = () => {
   };
 
   return (
-    <div className="sections">
+    <div className="sections" data-testid="diferencial-section">
       {/* 📌 Bloco Diferenciais */}
       <section className="differentials">
         <div className="container">
@@ -50,7 +50,7 @@ const Sections = () => {
       </section>
 
       {/* 📌 Bloco Produtos e Depoimentos lado a lado */}
-      <section className="dual-section">
+      <section className="dual-section" data-testid="dual-section">
         <div className="container">
           <div className="dual-content">
             {/* 📌 Carrossel de Vestidos */}
@@ -76,7 +76,7 @@ const Sections = () => {
             </div>
 
             {/* 📌 Carrossel de Depoimentos */}
-            <div className="testimonials">
+            <div className="testimonials" data-testid="testimonials-section">
               <h2>Sonhos que Viraram Realidade</h2>
               <FaQuoteLeft className="section-icon" />
               <p className="section-subtitle">Nossas noivas contam suas histórias inesquecíveis.</p>
@@ -98,7 +98,7 @@ const Sections = () => {
       </section>
 
       {/* 📌 Bloco CTA Final */}
-      <section className="cta">
+      <section className="cta" data-testid="cta-section">
         <div className="container">
           <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
           <p>Entre em contato e agende uma consultoria exclusiva.</p>

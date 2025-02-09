@@ -8,7 +8,7 @@ const InstagramWidget = () => {
     document.body.appendChild(script);
   }, []);
 
-  return <div className="elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31" data-elfsight-app-lazy></div>;
+  return <div className="elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31" data-elfsight-app-lazy data-testid="instagram-widget"></div>;
 };
 
 export default InstagramWidget;
