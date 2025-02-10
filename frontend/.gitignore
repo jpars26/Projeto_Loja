@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# production
-/build
-
 # misc
 .DS_Store
 .env.local
@@ -21,3 +18,51 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# 🚀 Ignorar dependências do Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# 🛑 Ignorar credenciais do Firebase e configurações sensíveis
+firebase-config.json
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+firestore.rules
+firestore.indexes.json
+
+# 🔥 Firebase Functions (se você usar)
+functions/node_modules/
+functions/lib/
+functions/firebase-debug.log
+functions/firebase-error.log
+
+# 🚀 Build do React (evita subir arquivos gerados pelo build)
+build/
+
+# 🖼️ Ignorar arquivos desnecessários de cache do sistema operacional
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🔧 Ignorar IDEs e editores específicos
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 🔥 Ignorar cache do Firebase Hosting
+.firebase/
+
+# 🔄 Git hooks e arquivos temporários
+*.swp
+*.bak
+*.tmp
+

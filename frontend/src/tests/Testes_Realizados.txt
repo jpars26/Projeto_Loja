@@ -1,0 +1,7 @@
+🔹 Teste	                                                    📌 O que verifica?
+✅ Renderiza corretamente os elementos	                Título, banner e itens são exibidos corretamente
+✅ Links dos vestidos direcionam corretamente	        Cada vestido possui um link correto
+✅ As imagens são carregadas corretamente	            Todas as imagens aparecem com src correto
+✅ A quantidade de itens exibidos está correta	        O número de itens na tela corresponde ao total da coleção
+✅ O componente lida com coleção vazia	                Não quebra se o array collections estiver vazio
+✅ SEO está configurado corretamente                     Verifica se a pagina tem o SEO bem configurado

@@ -15,7 +15,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "react-scripts test --testPathPattern=src/tests"
+    "test": "react-scripts test --testPathPattern=src/tests",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "compression": "^1.7.5",

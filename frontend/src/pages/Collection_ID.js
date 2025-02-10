@@ -67,6 +67,7 @@ const Collection_ID = () => {
 
               {/* Botão de Favoritar */}
               <button
+                data-testid="favorite-button"
                 className={`heart-btn ${isFavorite ? "active" : ""}`}
                 onClick={() => isFavorite ? removeFromMoodboard(product.id) : addToMoodboard(product)}
               >

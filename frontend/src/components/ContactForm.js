@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../css/ContactForm.css";
+import { db, collection, addDoc, serverTimestamp } from "../config/firebase"; 
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,118 +11,82 @@ const ContactForm = () => {
     message: "",
   });
 
-  const [errors, setErrors] = useState({
-    email: "",
-    telefone: "",
-  });
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
-  // Validação do Email
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  // Validações
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateTelefone = (telefone) => /^[0-9]{10,11}$/.test(telefone);
 
-  // Validação do Telefone (Deve ter 10 ou 11 dígitos)
-  const validateTelefone = (telefone) => {
-    const phoneRegex = /^[0-9]{10,11}$/; // Apenas números, entre 10 e 11 dígitos
-    return phoneRegex.test(telefone);
-  };
-
-  // Manipulação da mudança nos inputs
+  // Manipulação dos inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
+    let newValue = value;
 
-    // Impede caracteres no campo telefone (aceita apenas números)
     if (name === "telefone") {
-      const numericValue = value.replace(/\D/g, ""); // Remove tudo que não for número
-      setFormData({ ...formData, [name]: numericValue });
-
-      // Valida o telefone
-      setErrors({
-        ...errors,
-        telefone: validateTelefone(numericValue)
-          ? ""
-          : "Digite um número válido (com DDD)",
-      });
-
-      return;
+      newValue = value.replace(/\D/g, ""); // Remove tudo que não for número
     }
 
-    // Validação de Email em tempo real
-    if (name === "email") {
-      setErrors({
-        ...errors,
-        email: validateEmail(value) ? "" : "Digite um e-mail válido",
-      });
-    }
-
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: newValue }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
+  // Envio do formulário para o Firestore
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verifica se os campos são válidos antes de enviar
-    if (!validateEmail(formData.email)) {
-      setErrors({ ...errors, email: "Digite um e-mail válido" });
+    let newErrors = {};
+    if (!validateEmail(formData.email)) newErrors.email = "Digite um e-mail válido";
+    if (!validateTelefone(formData.telefone)) newErrors.telefone = "Digite um número válido (com DDD)";
+    if (!formData.name) newErrors.name = "O nome é obrigatório";
+    if (!formData.message) newErrors.message = "A mensagem não pode estar vazia";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
-    if (!validateTelefone(formData.telefone)) {
-      setErrors({ ...errors, telefone: "Digite um número válido (com DDD)" });
-      return;
-    }
+    setLoading(true);
+    setSuccessMessage("");
 
-    // Enviar os dados do formulário para o backend
-    const response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await response.json();
-    if (data.success) {
-      alert("Mensagem enviada com sucesso!");
-      setFormData({
-        name: "",
-        email: "",
-        telefone: "",
-        message: "",
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name: formData.name,
+        email: formData.email,
+        telefone: formData.telefone,
+        message: formData.message,
+        createdAt: serverTimestamp(),
       });
-    } else {
-      alert("Erro ao enviar a mensagem.");
+
+      setSuccessMessage("Mensagem enviada com sucesso!");
+      setFormData({ name: "", email: "", telefone: "", message: "" });
+    } catch (error) {
+      setErrors({ form: "Erro ao salvar no banco de dados. Tente novamente." });
+      console.error("Erro ao salvar no Firestore:", error);
     }
+
+    setLoading(false);
   };
 
   return (
     <section id="contact">
       <h2>Entre em Contato</h2>
       <p>Nos envie uma mensagem e ajudaremos com carinho! 💕</p>
+
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {errors.form && <p className="error-text">{errors.form}</p>}
+
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="name">Nome</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+          {errors.name && <span className="error-text">{errors.name}</span>}
         </div>
 
         <div className="form-group">
           <label htmlFor="email">E-mail</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
           {errors.email && <span className="error-text">{errors.email}</span>}
         </div>
 
@@ -141,16 +107,13 @@ const ContactForm = () => {
 
         <div className="form-group">
           <label htmlFor="message">Tem alguma dúvida? Nos mande uma mensagem! 💌</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
+          {errors.message && <span className="error-text">{errors.message}</span>}
         </div>
 
-        <button type="submit" className="buttonForms">Enviar Mensagem</button>
+        <button type="submit" className="buttonForms" disabled={loading}>
+          {loading ? "Enviando..." : "Enviar Mensagem"}
+        </button>
       </form>
     </section>
   );
