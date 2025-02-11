@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
 
 
 // 🔹 Substitua estas informações com os detalhes do Firebase Console
@@ -17,7 +16,7 @@ const firebaseConfig = {
 // Inicializa Firebase
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
 // Inicializa o Firestore
 const db = getFirestore(app);
 // Exporta Firestore e funções necessárias

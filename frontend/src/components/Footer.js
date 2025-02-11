@@ -39,13 +39,13 @@ const Footer = () => {
       <div className="footer-partners">
     <h4>Parceiros</h4>
     <div className="partners-logos">
-        <a  target="_blank" rel="noopener noreferrer">
+        <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
             <img src="https://grifepetrova.com/images/IMG_2348.JPG" alt="Petrova" className="partner-logo petrova"/>
         </a>
-        <a  target="_blank" rel="noopener noreferrer">
+        <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
             <img src="https://novanoiva.com.br/wp-content/uploads/2022/09/logo_nova_noiva_home.svg" alt="Nova Noiva" className="partner-logo"/>
         </a>
-        <a  target="_blank" rel="noopener noreferrer">
+        <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
             <img src="https://tuttisposa.com.br/wp-content/uploads/2020/11/logo-tutti-sposa-redimensionado.png" alt="Tutti Sposa" className="partner-logo"/>
         </a>
       </div>
