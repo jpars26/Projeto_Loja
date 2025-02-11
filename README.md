@@ -10,7 +10,11 @@
 
 ## 📌 Sobre o Projeto
 
+<<<<<<< HEAD
 🚀 **Iara Noivas** é uma loja especializada na criação e aluguel de vestidos de noiva exclusivos. A plataforma permite que clientes explorem coleções sofisticadas, agendem consultas e interajam com depoimentos reais de noivas felizes.  
+=======
+🚀 **Iara Noivas** é uma plataforma dedicada à criação e aluguel de vestidos de noiva exclusivos. A loja online permite que clientes explorem coleções sofisticadas, agendem consultas e interajam com depoimentos reais de noivas felizes.
+>>>>>>> bd2008cf824f20b3e11d0e92c0c104671127fdff
 
 O projeto foi desenvolvido com **React, Firebase e CI/CD automatizado via GitHub Actions**, garantindo **alta performance**, **responsividade**, **testes automatizados** e **SEO otimizado**.
 
@@ -28,6 +32,7 @@ O projeto foi desenvolvido com **React, Firebase e CI/CD automatizado via GitHub
 - 🎭 [React Icons](https://react-icons.github.io/react-icons/) - Ícones personalizados
 - 🌧️ [Styled Components](https://styled-components.com/) - Estilização dinâmica
 
+<<<<<<< HEAD
 ### ⚙️ **Backend e Banco de Dados**
 - 🔥 [Firebase Firestore](https://firebase.google.com/products/firestore) - Banco de dados NoSQL
 - 🌎 [Firebase Hosting](https://firebase.google.com/products/hosting) - Hospedagem do site
@@ -37,6 +42,13 @@ O projeto foi desenvolvido com **React, Firebase e CI/CD automatizado via GitHub
 ### ✅ **Testes e Automação**
 - 🥞 [Jest](https://jestjs.io/) - Testes unitários e de integração
 - 🚀 [GitHub Actions](https://github.com/features/actions) - CI/CD automatizado
+=======
+### ⚙️ **Backend**
+- ⚡ [Express.js](https://expressjs.com/) - Framework minimalista
+- 🔥 [Firebase Firestore](https://firebase.google.com/products/firestore) - Banco de dados
+- 🔐 [Dotenv](https://www.npmjs.com/package/dotenv) - Gerenciamento de variáveis de ambiente
+- 🛑 [CORS](https://www.npmjs.com/package/cors) - Permissões CORS
+>>>>>>> bd2008cf824f20b3e11d0e92c0c104671127fdff
 
 ---
 
@@ -67,6 +79,30 @@ REACT_APP_FIREBASE_APP_ID=your_app_id
 cd frontend
 npm install
 ```
+<<<<<<< HEAD
+=======
+---
+
+## 🚀 Principais Comandos Utilizados
+
+### 📦 Pacotes do Frontend
+```bash
+npm install react-router-dom         # Navegação entre páginas
+npm install react-lazy-load-image-component  # Carregamento otimizado de imagens
+npm install framer-motion            # Animações
+npm install react-helmet             # SEO e metadados
+npm install react-icons              # Ícones para UI
+npm install styled-components        # Estilização de componentes
+```
+
+### ⚙️ Pacotes do Backend
+```bash
+npm install express                  # Framework backend
+npm install firebase-admin            # Integração com Firestore
+npm install dotenv                    # Gerenciamento de variáveis de ambiente
+npm install cors                      # Permissões CORS
+```
+>>>>>>> bd2008cf824f20b3e11d0e92c0c104671127fdff
 
 ---
 
