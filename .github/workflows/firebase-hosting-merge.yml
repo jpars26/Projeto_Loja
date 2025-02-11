@@ -37,6 +37,12 @@ jobs:
           cd frontend
           npm run build
 
+      - name: 📥 Instalar Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: 📂 Mover firebase.json para a raiz do projeto (se necessário)
+        run: mv frontend/firebase.json ./ || echo "firebase.json já está na raiz"
+
       - name: 🚀 Deploy para Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -44,3 +50,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRODUCAO_LOJA }}
           channelId: live
           projectId: producao-loja
+          entryPoint: frontend  # 🔹 Adicione isso se firebase.json estiver dentro de frontend/
