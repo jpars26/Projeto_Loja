@@ -50,4 +50,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRODUCAO_LOJA }}
           channelId: live
           projectId: producao-loja
-          entryPoint: frontend  # 🔹 Adicione isso se firebase.json estiver dentro de frontend/
