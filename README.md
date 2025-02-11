@@ -28,14 +28,10 @@ O projeto foi desenvolvido utilizando as mais modernas tecnologias de frontend e
 - 🖌️ [Styled Components](https://styled-components.com/) - Estilização dinâmica
 
 ### ⚙️ **Backend**
-- 🟢 [Node.js](https://nodejs.org/) - Plataforma backend
 - ⚡ [Express.js](https://expressjs.com/) - Framework minimalista
 - 🔥 [Firebase Firestore](https://firebase.google.com/products/firestore) - Banco de dados
-- 📩 [Nodemailer](https://nodemailer.com/) - Envio de emails
 - 🔐 [Dotenv](https://www.npmjs.com/package/dotenv) - Gerenciamento de variáveis de ambiente
-- ⚡ [Compression](https://www.npmjs.com/package/compression) - Melhor performance do servidor
 - 🛑 [CORS](https://www.npmjs.com/package/cors) - Permissões CORS
-- 📄 [Body-Parser](https://www.npmjs.com/package/body-parser) - Manipulação de requisições
 
 ---
 
@@ -54,13 +50,6 @@ cd seu-repositorio
 cd frontend
 npm install
 ```
-
-**2️⃣ Instalar pacotes do backend**
-```bash
-cd ../backend
-npm install
-```
-
 ---
 
 ## 🚀 Principais Comandos Utilizados
@@ -79,22 +68,13 @@ npm install styled-components        # Estilização de componentes
 ```bash
 npm install express                  # Framework backend
 npm install firebase-admin            # Integração com Firestore
-npm install nodemailer                # Envio de emails
 npm install dotenv                    # Gerenciamento de variáveis de ambiente
 npm install cors                      # Permissões CORS
-npm install compression               # Compressão de dados para performance
-npm install body-parser               # Manipulação do corpo da requisição
 ```
 
 ---
 
 ## 🔥 Executando o Projeto
-
-### 🚀 Rodando o Backend
-```bash
-cd backend
-npm start
-```
 
 ### 🚀 Rodando o Frontend
 ```bash
