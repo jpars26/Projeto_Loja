@@ -31,14 +31,14 @@ jobs:
         run: |
           cd frontend
           npm test -- --ci --testPathPattern=src/tests || exit 1
-
-      - name: 📂 Verificar se a pasta `build/` foi gerada
-        run: ls -l frontend/build || echo "⚠️ A pasta build/ não foi encontrada!"
           
       - name: 📦 Construir o projeto
         run: |
           cd frontend
           npm run build || echo "❌ Erro ao gerar build"
+          
+      - name: 📂 Verificar se a pasta `build/` foi gerada
+        run: ls -l frontend/build || echo "⚠️ A pasta build/ não foi encontrada!"
           
       - name: 📥 Instalar Firebase CLI
         run: npm install -g firebase-tools
