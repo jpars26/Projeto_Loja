@@ -20,7 +20,7 @@ const customers = [
     {
       id: "4",
       name: "Andreia Bomtempo",
-      image: require("../assets/images/adreiaBomtempo.JPG"),
+      image: require("../assets/images/adreiaBomtempo.jpg"),
     },
     {
       id: "5",

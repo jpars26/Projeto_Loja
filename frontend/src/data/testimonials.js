@@ -2,7 +2,7 @@ const testimonials = [
     {
       name: "Amanda Brandao",
       text: "O vestido dos meus sonhos! A Iara Noivas fez com que meu casamento fosse ainda mais especial.",
-      image: require("../assets/images/amandaBrandao.PNG") 
+      image: require("../assets/images/amandaBrandao.png") 
     },
     {
       name: "Elisa Melo",
