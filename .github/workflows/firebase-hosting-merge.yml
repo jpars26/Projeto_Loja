@@ -1,4 +1,3 @@
-
 name: Deploy to Firebase Hosting on merge
 
 on:
@@ -22,17 +21,21 @@ jobs:
       - name: 📦 Instalar dependências
         run: |
           cd frontend
-          npm install --legacy-peer-deps  # 🔹 Garante que todas as dependências sejam instaladas corretamente
+          npm install --legacy-peer-deps
 
-      - name: 🧪 Rodar testes
+      - name: 🛠️ Ajustar ambiente para testes (corrigir setImmediate)
+        run: |
+          echo "global.setImmediate = global.setTimeout;" >> frontend/jest.setup.js
+
+      - name: 🧪 Rodar testes com Jest no modo CI
         run: |
           cd frontend
-          npm test -- --testPathPattern=src/tests || exit 1  # 🔹 Se os testes falharem, o workflow para aqui
+          npm test -- --ci --testPathPattern=src/tests || exit 1
 
       - name: 📦 Construir o projeto
         run: |
           cd frontend
-          npm run build  # 🔹 Gera os arquivos de produção na pasta `build`
+          npm run build
 
       - name: 🚀 Deploy para Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0

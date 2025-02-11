@@ -5,6 +5,7 @@ import "@testing-library/jest-dom";
 import { getFirestore } from "firebase/firestore";
 import { getApps, initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -19,6 +20,14 @@ const firebaseConfig = {
 jest.mock("firebase/analytics", () => ({
   getAnalytics: jest.fn(() => null),
   isSupported: jest.fn(() => Promise.resolve(false)),
+}));
+
+// 🔹 Mocka `addDoc` do Firebase Firestore para evitar falha no CI/CD
+jest.mock("firebase/firestore", () => ({
+  getFirestore: jest.fn(),
+  collection: jest.fn(),
+  addDoc: jest.fn(() => Promise.resolve()), // 🔹 Simula um envio bem-sucedido
+  serverTimestamp: jest.fn(() => new Date()), // 🔹 Mocka o serverTimestamp para não gerar erro
 }));
 
 // ✅ Verifica se o Firebase já foi inicializado
