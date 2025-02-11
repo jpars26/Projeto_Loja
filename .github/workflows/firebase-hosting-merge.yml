@@ -21,7 +21,7 @@ jobs:
       - name: 📦 Instalar dependências
         run: |
           cd frontend
-          npm ci  # 🔹 Instala todas as dependências de forma confiável
+          npm ci --legacy-peer-deps  # Ignora conflitos de versões
 
       - name: 🧪 Rodar testes
         run: |
