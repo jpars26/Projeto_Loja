@@ -9,7 +9,7 @@
 
 ## 📌 Sobre o Projeto
 
-🚀 **Iara Noivas** é uma plataforma dedicada à criação e venda de vestidos de noiva exclusivos. A loja online permite que clientes explorem coleções sofisticadas, agendem consultas e interajam com depoimentos reais de noivas felizes.
+🚀 **Iara Noivas** é uma plataforma dedicada à criação e aluguel de vestidos de noiva exclusivos. A loja online permite que clientes explorem coleções sofisticadas, agendem consultas e interajam com depoimentos reais de noivas felizes.
 
 O projeto foi desenvolvido utilizando as mais modernas tecnologias de frontend e backend, garantindo **performance**, **responsividade** e **SEO otimizado**.
 
