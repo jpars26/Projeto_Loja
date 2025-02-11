@@ -3,8 +3,41 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import ContactForm from "../components/ContactForm"; // Caminho para seu componente
 import {  waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import { getFirestore } from "firebase/firestore";
+import { getApps, initializeApp } from "firebase/app";
+import { getAnalytics, isSupported } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
+};
+
+jest.mock("firebase/analytics", () => ({
+  getAnalytics: jest.fn(() => null),
+  isSupported: jest.fn(() => Promise.resolve(false)),
+}));
 
 
+// ✅ Verifica se o Firebase já foi inicializado
+const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// 🔹 Somente inicia o Analytics se for suportado
+let analytics;
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(app);
+    }
+  });
+}
+
+
+export { app, db ,analytics};
 describe("ContactForm Component", () => {
   test("Renderiza corretamente os campos do formulário", () => {
     render(<ContactForm />);
@@ -23,11 +56,23 @@ describe("ContactForm Component", () => {
 
   test("Valida que o e-mail precisa ser válido", async () => {
     render(<ContactForm />);
-    const emailInput = screen.getByLabelText(/E-mail/i);
+  
+    const emailInput = screen.getByLabelText("E-mail");
+  
+    // Simula a digitação de um e-mail inválido
     fireEvent.change(emailInput, { target: { value: "email-invalido" } });
-    fireEvent.blur(emailInput); // Simula perda de foco para ativar validação
-    expect(screen.getByText(/Digite um e-mail válido/i)).toBeInTheDocument();
+  
+    // Simula o clique no botão de enviar para acionar a validação
+    fireEvent.click(screen.getByRole("button", { name: /enviar mensagem/i }));
+  
+    // 🔹 Aguarde a mensagem de erro ser renderizada no DOM
+    await waitFor(() => {
+      expect(screen.getByText(/Digite um e-mail válido/i)).toBeInTheDocument();
+    });
   });
+
+  
+  
 
   test("Submete o formulário com valores válidos", async () => {
     render(<ContactForm />);
