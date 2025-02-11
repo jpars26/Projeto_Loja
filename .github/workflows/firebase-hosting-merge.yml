@@ -30,7 +30,7 @@ jobs:
       - name: 🧪 Rodar testes com Jest no modo CI
         run: |
           cd frontend
-          npm test -- --ci --testPathPattern=src/tests || exit 1
+          npm test -- --ci --testPathPattern=src/tests --config=jest.config.js || exit 1
 
       - name: 📦 Construir o projeto
         run: |

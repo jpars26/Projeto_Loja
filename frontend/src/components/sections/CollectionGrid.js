@@ -4,7 +4,7 @@ import "../../css/Collections.css"; // Importando o CSS
 import collections from "../../data/collections";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logoo.png";
 
 const CollectionGrid = () => {
   return (
