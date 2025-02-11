@@ -3,7 +3,6 @@ import React from "react";
 import "../../css/Hero.css";
 import heroVideo from "../../assets/videos/videoCerto.MOV"; // Importando o vídeo
 import heroVideoWebm from "../../assets/videos/videoCerto.webm"; // Importando o vídeo
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Hero = () => {

@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 import AboutUs from "./pages/AboutUs";
 import CollectionsPage from "./pages/CollectionsPage";
 import MoodboardPage from "./pages/MoodboardPage";  
 import { MoodboardProvider } from "./context/MoodboardContext"; 
-import Collection_ID from "./pages/Collection_ID";
+import Collection_ID from "./pages/CollectionId";
 import Contact from "./pages/Contact";
 import { Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";

@@ -1,9 +1,7 @@
 // src/pages/HomePage.js
 import React from 'react';
 import Hero from "../components/sections/Hero";
-import Services from '../components/sections/Services';
 import WhatsAppButton from '../components/WhatsAppButton';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Layout from "../layout/Layout";
 import InstagramWidget from "../components/InstagramWidget";
 import { Helmet } from "react-helmet";
@@ -29,7 +27,6 @@ const HomePage = () => {
               
         <Hero />
         <Sections />
-        <Services />
         <InstagramWidget />
         <WhatsAppButton />
       
