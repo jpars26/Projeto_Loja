@@ -1,6 +1,6 @@
-# Arquivo: .github/workflows/deploy.yml
 
 name: Deploy to Firebase Hosting on merge
+
 on:
   push:
     branches:
@@ -17,16 +17,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: 📦 Instalar dependências
         run: |
           cd frontend
-          npm ci --legacy-peer-deps  # Ignora conflitos de versões
+          npm install --legacy-peer-deps  # 🔹 Garante que todas as dependências sejam instaladas corretamente
 
       - name: 🧪 Rodar testes
         run: |
           cd frontend
-          npm test -- --testPathPattern=src/tests  # 🔹 Garante que só os testes dentro de `src/tests` rodem
+          npm test -- --testPathPattern=src/tests || exit 1  # 🔹 Se os testes falharem, o workflow para aqui
 
       - name: 📦 Construir o projeto
         run: |
