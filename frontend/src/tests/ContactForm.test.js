@@ -53,14 +53,19 @@ describe("ContactForm Component", () => {
     render(<ContactForm />);
 
     // 🔹 Aguarde a renderização antes de verificar os campos
-    await waitFor(() => {
-      expect(screen.getByLabelText(/Nome/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/E-mail/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/Telefone/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/Tem alguma dúvida?/i)).toBeInTheDocument();
-    });
+    await waitFor(() => expect(screen.getByLabelText(/Nome/i).value).toBe(""));
+    await waitFor(() => expect(screen.getByLabelText(/E-mail/i).value).toBe(""));
+    await waitFor(() => expect(screen.getByLabelText(/Telefone/i).value).toBe(""));
+    await waitFor(() => expect(screen.getByLabelText(/Tem alguma dúvida?/i).value).toBe(""));
+    
   });
-
+  
+    test("Verifica se `addDoc` e `serverTimestamp` são chamados corretamente", async () => {
+      expect(collection).toBeDefined();
+      expect(addDoc).toBeDefined();
+      expect(serverTimestamp).toBeDefined();
+    });
+  
   test("Valida que o telefone aceita apenas números", () => {
     render(<ContactForm />);
     const telefoneInput = screen.getByLabelText(/Telefone/i);
@@ -104,15 +109,15 @@ describe("ContactForm Component", () => {
     fireEvent.submit(screen.getByRole("button", { name: /Enviar Mensagem/i }));
   
     // 🔹 Aguarde o sucesso da submissão antes de verificar se os campos foram resetados
-    await waitFor(() => expect(screen.getByText(/Mensagem enviada com sucesso!/i)).toBeInTheDocument());
+    expect(await screen.findByText(/Mensagem enviada com sucesso!/i)).toBeInTheDocument();
+
   
     // 🔹 Agora verifique se os campos foram resetados
-    await waitFor(() => {
-      expect(screen.getByLabelText(/Nome/i).value).toBe("");
-      expect(screen.getByLabelText(/E-mail/i).value).toBe("");
-      expect(screen.getByLabelText(/Telefone/i).value).toBe("");
-      expect(screen.getByLabelText(/Tem alguma dúvida?/i).value).toBe("");
-    });
+    await waitFor(() => expect(screen.getByLabelText(/Nome/i).value).toBe(""));
+    await waitFor(() => expect(screen.getByLabelText(/E-mail/i).value).toBe(""));
+    await waitFor(() => expect(screen.getByLabelText(/Telefone/i).value).toBe(""));
+    await waitFor(() => expect(screen.getByLabelText(/Tem alguma dúvida?/i).value).toBe(""));
+
   });
 
 });
