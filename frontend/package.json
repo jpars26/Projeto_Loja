@@ -58,6 +58,9 @@
   "jest": {
     "moduleNameMapper": {
       "^react-router-dom$": "<rootDir>/src/tests/__mocks__/react-router-dom.js",
+      "setupFilesAfterEnv": ["<rootDir>/src/tests/jest.setup.js"],
+      "setupFiles": ["./src/tests/jest.setup.js"],
+       "testEnvironment": "jsdom",
       "moduleDirectories": [
         "node_modules",
         "src"

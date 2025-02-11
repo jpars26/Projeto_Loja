@@ -1,7 +1,6 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import ContactForm from "../components/ContactForm"; // Caminho para seu componente
-import {  waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import ContactForm from "../components/ContactForm";
 import "@testing-library/jest-dom";
 import { getFirestore } from "firebase/firestore";
 import { getApps, initializeApp } from "firebase/app";
@@ -16,11 +15,11 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
+// 🔹 Mocka o Firebase Analytics para evitar erros durante os testes
 jest.mock("firebase/analytics", () => ({
   getAnalytics: jest.fn(() => null),
   isSupported: jest.fn(() => Promise.resolve(false)),
 }));
-
 
 // ✅ Verifica se o Firebase já foi inicializado
 const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
@@ -36,15 +35,21 @@ if (typeof window !== "undefined") {
   });
 }
 
+// ✅ Exporta Firebase para evitar inicializações duplicadas em outros arquivos
+export { app, db, analytics };
 
-export { app, db ,analytics};
 describe("ContactForm Component", () => {
-  test("Renderiza corretamente os campos do formulário", () => {
+  
+  test("Renderiza corretamente os campos do formulário", async () => {
     render(<ContactForm />);
-    expect(screen.getByLabelText(/Nome/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/E-mail/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Telefone/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Tem alguma dúvida?/i)).toBeInTheDocument();
+
+    // 🔹 Aguarde a renderização antes de verificar os campos
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Nome/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/E-mail/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Telefone/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Tem alguma dúvida?/i)).toBeInTheDocument();
+    });
   });
 
   test("Valida que o telefone aceita apenas números", () => {
@@ -71,12 +76,9 @@ describe("ContactForm Component", () => {
     });
   });
 
-  
-  
-
   test("Submete o formulário com valores válidos", async () => {
     render(<ContactForm />);
-
+  
     fireEvent.change(screen.getByLabelText(/Nome/i), {
       target: { value: "Maria" },
     });
@@ -89,10 +91,13 @@ describe("ContactForm Component", () => {
     fireEvent.change(screen.getByLabelText(/Tem alguma dúvida?/i), {
       target: { value: "Olá, quero saber mais!" },
     });
-
+  
     fireEvent.submit(screen.getByRole("button", { name: /Enviar Mensagem/i }));
-
-    // 🔹 Aguarda o reset dos campos após submissão
+  
+    // 🔹 Aguarde o sucesso da submissão antes de verificar se os campos foram resetados
+    await waitFor(() => expect(screen.getByText(/Mensagem enviada com sucesso!/i)).toBeInTheDocument());
+  
+    // 🔹 Agora verifique se os campos foram resetados
     await waitFor(() => {
       expect(screen.getByLabelText(/Nome/i).value).toBe("");
       expect(screen.getByLabelText(/E-mail/i).value).toBe("");
@@ -100,4 +105,5 @@ describe("ContactForm Component", () => {
       expect(screen.getByLabelText(/Tem alguma dúvida?/i).value).toBe("");
     });
   });
+
 });
