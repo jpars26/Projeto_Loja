@@ -19,7 +19,7 @@ const Moodboard = () => {
               <LazyLoadImage effect="blur"src={item.image} alt={item.name} />
               <p>{item.name}</p>
               <button className="remove-btn" onClick={() => removeFromMoodboard(item.id)}>
-                ✖ Remover
+                ✖ 
               </button>
             </div>
           ))}

@@ -13,10 +13,12 @@
   .remove-btn {
     background: red;
     color: white;
-    padding: 8px 12px;
+  
     border: none;
     cursor: pointer;
     font-size: 14px;
-    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: auto; /* Joga o botão mais para cima dentro do container */
   }
   

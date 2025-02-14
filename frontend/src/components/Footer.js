@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <h2 className="footer_h2">VALE A PENA SENTIR-SE ESPECIAL!</h2>
+        <h2 className="footer_h2">VENHA SE SENTIR-SE ESPECIAL!</h2>
         <div className="social-icons">
           <a href="https://www.instagram.com/iaranoivas/" aria-label="Instagram"><FaInstagram /></a>
           <a href="https://www.facebook.com/iaranoivapa?locale=pt_BR" aria-label="Facebook"><FaFacebookF /></a>
@@ -52,9 +52,6 @@ const Footer = () => {
     </div>
 
       <div className="footer-bottom">
-      <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-      <div className="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="joaopaulo26" data-version="v1">
-      </div>
         <p>© 2025 Iara Noivas - Vestidos de Casamento</p>
         <p>Made by <a href="https://github.com/jpars26">Jpars26</a></p>
       </div>

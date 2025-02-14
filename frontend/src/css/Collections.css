@@ -1,26 +1,23 @@
 /* src/css/Collections.css */
 .collection-container {
     text-align: center;
-    padding: 40px 20px;
-    
   }
   
   .collection-title {
-    padding: 30px;
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
   }
   
  /* src/css/Collections.css */
-    .grid-container {
+  .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
         gap: 20px;
         justify-content: center; /* Centraliza os itens na tela */
         max-width: 900px; /* Defina um tamanho máximo para alinhar os itens no centro */
         margin: 0 auto; /* Centraliza a grid no meio da tela */
-        padding: 40px;
+        padding: 30px;
     }
   
   
@@ -30,6 +27,7 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    padding: 20px;
   }
   
   .grid-item:hover {
@@ -45,10 +43,21 @@
   }
   
   .grid-item p {
-    padding: 15px;
+    padding: 5px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #444;
+  }
+
+  .grid-item button {
+    padding: 10px;
+    font-size: 0.8rem;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto; /* Joga o botão mais para cima dentro do container */
   }
 
   /* Botão de coração nos vestidos */
@@ -68,12 +77,30 @@
     .heart-btn:hover {
         color: crimson;
     }
-  
+    
+    .collection-banner1{
+      max-width: 100%;  /* Reduz a largura máxima para 80% */
+      width: auto;     /* Garante que a imagem se ajuste sem esticar */
+      height: auto;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+      max-height: 200px; /* Define uma altura máxima */
+      
+    }
    
   @media (max-width: 1024px) {
     .grid-container {
       grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
     }
+    .collection-title {
+      padding: 17px;
+      margin-top: 0%;
+    }
+    .collection-title2 {
+      padding: 5px;
+    }
+    
   }
   
   @media (max-width: 600px) {

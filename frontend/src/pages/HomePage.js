@@ -10,6 +10,7 @@ import Sections from '../components/sections/Sections';
 
 
 import '../css/HomePage.css';
+import ContactForm from '../components/ContactForm';
 
 const HomePage = () => {
   return (
@@ -27,6 +28,7 @@ const HomePage = () => {
               
         <Hero />
         <Sections />
+        <ContactForm />
         <InstagramWidget />
         <WhatsAppButton />
       

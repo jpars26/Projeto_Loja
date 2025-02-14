@@ -249,6 +249,14 @@ h2 {
         /* display: block; */
         display: none;
     }
+
+    
+    /* 🔹 Texto do Depoimento */
+    .testimonial-box p {
+        content: "\A"; /* Adiciona uma quebra de linha */
+        font-size: 0.9rem; /* Reduz um pouco mais o tamanho do texto */
+        padding: 45px;
+    }
 }
 
 .slick-slide img {

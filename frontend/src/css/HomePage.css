@@ -8,7 +8,7 @@
 }
 
 .elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31 {
-    top: -200px;  /* Ajusta a distância do topo */
+    top: 10px;  /* Ajusta a distância do topo */
     max-width: 80%;  /* Reduz a largura para evitar que fique muito grande */
     margin: 0 auto;  /* Centraliza horizontalmente */
     padding: 20px;   /* Adiciona espaçamento interno */
@@ -18,9 +18,11 @@
 
 @media (max-width: 768px) {
     .elfsight-app-2c2957ef-1f19-4bfd-94d3-3efdfb5c1b31 {
-        top: -150px;  /* Menor deslocamento no mobile */
+        top: 10px;  /* Menor deslocamento no mobile */
         max-width: 90%;  /* Usa quase toda a largura disponível */
         width: 100%;  /* Ocupa toda a tela, mas mantendo a margem */
         padding: 10px;  /* Reduz o espaçamento interno */
     }
+
+    
 }

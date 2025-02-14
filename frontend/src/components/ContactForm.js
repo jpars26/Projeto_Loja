@@ -74,7 +74,7 @@ const ContactForm = () => {
       <h2>Entre em Contato</h2>
       <p>Nos envie uma mensagem e ajudaremos com carinho! 💕</p>
 
-      {successMessage && <p className="success-message">{successMessage}</p>}
+      {successMessage && <p className="success-message animate-success">{successMessage}</p>}
       {errors.form && <p className="error-text">{errors.form}</p>}
 
       <form onSubmit={handleSubmit} className="contact-form">

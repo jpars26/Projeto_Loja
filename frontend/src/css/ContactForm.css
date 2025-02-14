@@ -1,16 +1,14 @@
 /* Estilizando o formulário */
 #contact {
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 5%;
   background: #fdf7f9; /* Fundo delicado */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
+  width: 90%; /* 🔹 Permite que o formulário se ajuste em telas menores */
   margin: 40px auto;
 }
-
-
-
 
 /* Campos do formulário */
 .contact-form {
@@ -23,6 +21,7 @@
   text-align: left;
 }
 
+/* Ajuste de labels */
 .form-group label {
   font-weight: bold;
   color: #a38396;
@@ -30,10 +29,11 @@
   margin-bottom: 5px;
 }
 
+/* Inputs e textarea responsivos */
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #e8c6d8;
   border-radius: 8px;
   font-size: 16px;
@@ -65,8 +65,55 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  width: 100%; /* 🔹 Faz o botão ocupar toda a largura disponível */
+  max-width: 300px; /* 🔹 Mantém um tamanho agradável em telas grandes */
+  margin: 10px auto; /* 🔹 Centraliza o botão */
 }
 
 .buttonForms:hover {
   background-color: #8c6b7d;
+}
+
+/* Mensagem de sucesso animada */
+.success-message {
+  color: green;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.success-message.animate-success {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.buttonForms:disabled {
+  background-color: #c5a4b5;
+  cursor: not-allowed;
+}
+
+/* 🔹 Melhorias para telas menores */
+@media (max-width: 480px) {
+  #contact {
+    padding: 20px 5%;
+  }
+
+  .contact-form {
+    gap: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px; /* 🔹 Reduz um pouco o tamanho da fonte */
+    padding: 6px;
+  }
+
+  .buttonForms {
+    font-size: 16px;
+    padding: 10px;
+  }
 }

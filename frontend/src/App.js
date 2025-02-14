@@ -24,7 +24,8 @@ function App() {
                         <Route path="/collections" element={<CollectionsPage />} />  
                         <Route path="/moodboard" element={<MoodboardPage />} />  {/* ✅ Adicionando a rota do Moodboard */}
                         <Route path="/collections/:id" element={<CollectionId />} /> {/* ✅ Rota dinâmica */}
-                        <Route path="/contact" element={<Contact />} />  
+                        <Route path="/contact" element={<Contact />} /> 
+                        <Route path="*" element={<Navigate to="/home" replace />}/> 
                     </Routes>
             </Router>
         </MoodboardProvider> 
