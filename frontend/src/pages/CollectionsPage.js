@@ -1,6 +1,6 @@
 // src/pages/CollectionsPage.js
 import React from "react";
-import CollectionGrid from "../components/sections/CollectionGrid";
+import CollectionGrid from "../components/CollectionGrid";
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
 

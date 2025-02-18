@@ -1,13 +1,18 @@
 module.exports = {
-  roots: ["<rootDir>/frontend"],  
-  moduleDirectories: ["node_modules", "<rootDir>/frontend/node_modules", "frontend/src"],
+  roots: ["<rootDir>/src/tests"], // Define a raiz correta dos testes
+  moduleDirectories: ["node_modules", "<rootDir>/src", "<rootDir>/src/tests"],
   moduleNameMapper: {
-    "^react-router-dom$": "<rootDir>/frontend/__mocks__/react-router-dom.js",
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/src/tests/__mocks__/fileMock.js',
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+    "^react-router-dom$": "<rootDir>/src/tests/__mocks__/react-router-dom.js",
+    "^.+\\.(jpg|jpeg|png|gif|webp|svg|mp4|mov|webm)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   transform: {
-    "^.+\\.jsx?$": "babel-jest", // Transpila ES6 para CommonJS
+    "^.+\\.[tj]sx?$": "babel-jest",
   },
+  transformIgnorePatterns: [
+    "node_modules/(?!(react-router-dom)/)", 
+  ],
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"], 
   testEnvironment: "jsdom",
 };
+

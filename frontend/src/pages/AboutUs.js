@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomerGallery from '../components/sections/CustomerGallery';
+import CustomerGallery from '../components/CustomerGallery';
 import Layout from '../layout/Layout';
 import { Helmet } from "react-helmet";
 import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
 import "../css/AboutUs.css"; // Certifique-se de criar esse CSS para estilizar
-import logo from "../assets/images/loguinho.png";
+import logo from "../assets/images/loguinho.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 

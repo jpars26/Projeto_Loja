@@ -1,11 +1,11 @@
 // src/pages/HomePage.js
 import React from 'react';
-import Hero from "../components/sections/Hero";
+import Hero from "../components/Hero";
 import WhatsAppButton from '../components/WhatsAppButton';
 import Layout from "../layout/Layout";
 import InstagramWidget from "../components/InstagramWidget";
 import { Helmet } from "react-helmet";
-import Sections from '../components/sections/Sections';
+import Sections from '../components/Sections';
 
 
 

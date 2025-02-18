@@ -29,8 +29,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --ci --testPathPattern=src/tests",
-    "eject": "react-scripts eject"
+    "test": "jest --config=jest.config.js --verbose",
+    "eject": "react-scripts eject",
+    "clearCache": "npx jest --clearCache"
   },
   "eslintConfig": {
     "extends": [
@@ -52,31 +53,18 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "babel-jest": "^29.7.0",
     "eslint": "^9.20.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "jest": "^27.5.1",
     "react-scripts": "^5.0.1"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "^react-router-dom$": "<rootDir>/src/tests/__mocks__/react-router-dom.js",
-      "setupFilesAfterEnv": [
-        "<rootDir>/src/tests/jest.setup.js"
-      ],
-      "setupFiles": [
-        "./src/tests/jest.setup.js"
-      ],
-      "testEnvironment": "jsdom",
-      "moduleDirectories": [
-        "node_modules",
-        "src"
-      ]
-    }
   }
 }

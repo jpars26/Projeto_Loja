@@ -6,7 +6,7 @@ import { FaRegHeart } from "react-icons/fa"; // Ícone do coração
 import { List, X } from "phosphor-react"; // Ícones de menu refinados
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const logo = require('../assets/images/logoGrande.png');
+const logo = require('../assets/images/logoGrande.webp');
 
 const Header = () => {
   const { moodboardItems } = useMoodboard();

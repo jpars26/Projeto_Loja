@@ -1,6 +1,6 @@
 // src/pages/MoodboardPage.js
 import React from "react";
-import Moodboard from "../components/sections/Moodboard";
+import Moodboard from "../components/Moodboard";
 import Layout from "../layout/Layout";
 
 const MoodboardPage = () => {
