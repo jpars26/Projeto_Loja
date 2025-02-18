@@ -58,35 +58,118 @@ p {
   object-fit: cover;
 }
 
-/* 🔹 Ajuste do Botão de Favoritos */
+/* 🔹 Container da imagem */
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+/* 🔹 Ícone de Favoritar sobre a Imagem */
 .heart-btn {
-  background: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.7); 
   border: none;
+  border-radius: 50%;
+  padding: 8px;
   cursor: pointer;
-  font-size: 20px;
-  margin-top: 10px;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4e4d4d; /* Cinza padrão antes de curtir */
 }
 
+/* 🔹 Coração no estado ativo */
 .heart-btn.active {
-  color: #d9534f;
+  background: rgb(236, 236, 236);
+  
 }
 
-/* 🔹 Ajuste para Responsividade */
+.heart-btn.active svg {
+  color: #b30000;
+  transform: scale(1.2);
+}
+
+.heart-btn:hover {
+  background: rgb(255, 255, 255);
+}
+
+.heart-btn:hover svg {
+  color: #d9534f;
+  transform: scale(1.1);
+}
+
+/* 🔹 Efeito de Coração Subindo */
+.floating-heart {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d9534f;
+  font-size: 20px;
+  animation: floatUp 1s ease-in-out forwards;
+  opacity: 1;
+}
+
+/* 🔹 Animação de subida do coração */
+@keyframes floatUp {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-100px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-150px);
+    opacity: 0;
+  }
+}
+
+/* 🔹 Ajuste da Grid para Responsividade */
 @media (max-width: 1024px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 🔹 Duas colunas em telas médias */
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); /* 🔹 Duas colunas para tablets */
+  }
+
+  .heart-btn {
+    top: 8px;
+    right: 8px;
+    padding: 6px;
+  }
+
+  .floating-heart {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
   .product-grid {
-    grid-template-columns: 1fr; /* 🔹 Apenas 1 card por linha em telas menores */
-    width: 80% ;
+    grid-template-columns: 1fr; /* 🔹 Apenas 1 card por linha */
   }
 
-  .collection-banner {
-    width: 80%; /* Ajuste para centralizar melhor */
+  .heart-btn {
+    top: 6px;
+    right: 6px;
+    padding: 5px;
+  }
+
+  .floating-heart {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heart-btn {
+    top: 5px;
+    right: 5px;
+    padding: 4px;
+  }
+
+  .floating-heart {
+    font-size: 14px;
   }
 }

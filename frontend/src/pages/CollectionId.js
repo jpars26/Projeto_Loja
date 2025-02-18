@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import collections from "../data/collections"; 
 import "../css/Collection_ID.css"; 
@@ -13,28 +13,24 @@ const Collection_ID = () => {
   const { id } = useParams(); 
   const collection = collections.find(col => col.id === id);
   const { moodboardItems, addToMoodboard, removeFromMoodboard } = useMoodboard();
-  const gridRef = useRef(null); // Referência para a grid de produtos
+  const gridRef = useRef(null);
+  const [likedItems, setLikedItems] = useState({});
 
-  // 🚀 Animação com Intersection Observer (MOVIDO PARA O TOPO)
-  useEffect(() => {
-    if (!collection) return; // Evita erros caso a coleção não exista
+  // Função para ativar animação do coração
+  const handleFavoriteClick = (product) => {
+    const isFavorite = moodboardItems.some(item => item.id === product.id);
+    if (isFavorite) {
+      removeFromMoodboard(product.id);
+    } else {
+      addToMoodboard(product);
+      setLikedItems(prev => ({ ...prev, [product.id]: true })); 
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-          }
-        });
-      },
-      { threshold: 0.3 } // Ativa quando 30% do item aparece na tela
-    );
-
-    const items = gridRef.current?.querySelectorAll(".product-card");
-    items?.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, [collection]); // 🚀 Agora depende de "collection" para garantir que não rode se for indefinida
+      // Remove o coração animado após 1 segundo
+      setTimeout(() => {
+        setLikedItems(prev => ({ ...prev, [product.id]: false }));
+      }, 1000);
+    }
+  };
 
   if (!collection) {
     return <h2>Coleção não encontrada!</h2>;
@@ -44,11 +40,6 @@ const Collection_ID = () => {
     <Layout title={collection.name}>
       <Helmet>
         <title>{collection.name} - Vestidos de Noiva | Iara Noivas</title>
-        <meta name="description" content={`Veja detalhes do vestido ${collection.name}, perfeito para o seu casamento.`} />
-        <meta property="og:title" content={`${collection.name} - Vestidos de Noiva`} />
-        <meta property="og:description" content={`Conheça o vestido ${collection.name} e veja como ele pode ser o ideal para você.`} />
-        <meta property="og:url" content={`https://www.iaranoivas.com/collections/${collection.id}`} />
-        <meta property="og:type" content="product" />
       </Helmet>
       
       <img effect="blur" src={collection.banner} loading="lazy" alt={collection.name} className="collection-banner" />
@@ -61,18 +52,28 @@ const Collection_ID = () => {
 
           return (
             <div key={product.id} className="product-card hidden">
-              <LazyLoadImage effect="blur" src={product.image} loading="lazy" alt={product.name} />
+              <div className="image-container">
+                <LazyLoadImage effect="blur" src={product.image} loading="lazy" alt={product.name} />
+
+                {/* Ícone de Favoritar sobre a Imagem */}
+                <button
+                  data-testid="favorite-button"
+                  className={`heart-btn ${isFavorite ? "active" : ""}`}
+                  onClick={() => handleFavoriteClick(product)}
+                >
+                  <FaHeart size={20} />
+                </button>
+
+                {/* Efeito de coração subindo */}
+                {likedItems[product.id] && (
+                  <span className="floating-heart">
+                    <FaHeart />
+                  </span>
+                )}
+              </div>
+
               <h3>{product.name}</h3>
               <p>{product.price}</p>
-
-              {/* Botão de Favoritar */}
-              <button
-                data-testid="favorite-button"
-                className={`heart-btn ${isFavorite ? "active" : ""}`}
-                onClick={() => isFavorite ? removeFromMoodboard(product.id) : addToMoodboard(product)}
-              >
-                <FaHeart />
-              </button>
             </div>
           );
         })}
