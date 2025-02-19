@@ -3,7 +3,7 @@ const collections = [
     id: "vestidos-petrova",
     name: "Petrova - Coleção Alvor",
     image: require("../assets/images/ImagensVestidos/Alvor/imagem_1.webp"),
-    banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+    banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-petrova-p1",
@@ -135,7 +135,7 @@ const collections = [
     name: "Petrova - Jardim Secreto Premium",
     image:
       require("../assets/images/ImagensVestidos/Jardim-Premium/premium.webp"),
-       banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+       banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-jardim-secreto-premium-p1",
@@ -175,7 +175,7 @@ const collections = [
     name: "Petrova - Jardim Secreto",
     image:
       require("../assets/images/ImagensVestidos/Jardim-Secreto/jardimsecreto_1.webp"),
-    banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+    banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-jardim-secreto-p1",
@@ -303,7 +303,7 @@ const collections = [
     id: "vestidos-betola",
     name: "Petrova - Betola",
     image: require("../assets/images/ImagensVestidos/Betola/betola_1.webp"),
-    banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+    banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-betola-p1",
@@ -375,7 +375,7 @@ const collections = [
     id: "vestidos-enlace",
     name: "Petrova - Enlace",
     image: require("../assets/images/ImagensVestidos/Enlace/enlace_1.webp"),
-    banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+    banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-enlace-p1",
@@ -536,7 +536,7 @@ const collections = [
     id: "vestidos-vitoria",
     name: "Petrova - Vitória",
     image: require("../assets/images/ImagensVestidos/Vitoria/vitoria_1.webp"),
-    banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+    banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-vitoria-p1",
@@ -743,7 +743,7 @@ const collections = [
     id: "vestidos-origem",
     name: "Petrova - Origem",
     image: require("../assets/images/ImagensVestidos/Origem/origem_1.webp"),
-    banner: "https://grifepetrova.com/images/IMG_2348.jpg",
+    banner:  require("../assets/images/logosParceiros/logo-petrova.webp"),
     products: [
       {
         id: "vestidos-origem-p1",
@@ -966,7 +966,7 @@ const collections = [
     name: "Coleção Nova Noiva",
     image: require("../assets/images/ImagensVestidos/Nova Noiva/imagem_25.webp"),
     banner:
-      "https://novanoiva.com.br/wp-content/uploads/2022/09/logo_nova_noiva_home.svg",
+    "https://novanoiva.com.br/wp-content/uploads/2022/09/logo_nova_noiva_home.svg",
     products: [
       {
         id: "vestidos-nova-noiva-p3",
@@ -982,7 +982,7 @@ const collections = [
     image:
     require("../assets/images/ImagensVestidos/Tuti Sposa/imagem_26.webp"),
     banner:
-      "https://tuttisposa.com.br/wp-content/uploads/2020/11/logo-tutti-sposa-redimensionado.png",
+      require("../assets/images/logosParceiros/logo-tutisposa.webp"),
     products: [
       {
         id: "vestidos-tuttisposa-p4",
