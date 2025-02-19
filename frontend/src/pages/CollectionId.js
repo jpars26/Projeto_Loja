@@ -15,7 +15,7 @@ const Collection_ID = () => {
   const { moodboardItems, addToMoodboard, removeFromMoodboard } = useMoodboard();
   const gridRef = useRef(null);
   const [likedItems, setLikedItems] = useState({});
-  const [lastTap, setLastTap] = useState(0);
+  const lastTap = useRef(0); // Controle de tempo para evitar cliques duplos indesejados
 
   // Função para ativar/desativar o favorito
   const handleFavoriteClick = (product) => {
@@ -32,15 +32,13 @@ const Collection_ID = () => {
     }
   };
 
-  // Função para o duplo clique no desktop e toque duplo no mobile
+  // Função para detectar duplo clique no desktop e toque duplo no mobile
   const handleDoubleClick = (product) => {
     const now = new Date().getTime();
-
-    if (now - lastTap < 300) { // Se o intervalo for menor que 300ms, considera duplo clique
+    if (now - lastTap.current < 300) { 
       handleFavoriteClick(product);
     }
-
-    setLastTap(now);
+    lastTap.current = now;
   };
 
   if (!collection) {
@@ -55,7 +53,7 @@ const Collection_ID = () => {
       
       <img effect="blur" src={collection.banner} loading="lazy" alt={collection.name} className="collection-banner" />
       <p>Explore nossa coleção exclusiva {collection.name}.</p>
-      <h1>❤️ Curta seus vestidos favoritos! Os vestidos que você curtir ficarão salvos na página de Favoritos (ícone do coração no topo)❤️. </h1>
+      <h1>❤️ Curta seus vestidos favoritos! Os vestidos que você curtir ficarão salvos na página de Favoritos (ícone do coração no topo) ❤️. </h1>
 
       {/* Grid de Produtos */}
       <div className="product-grid" ref={gridRef}>
@@ -66,8 +64,12 @@ const Collection_ID = () => {
             <div 
               key={product.id} 
               className="product-card hidden"
-              onDoubleClick={() => handleFavoriteClick(product)} // Desktop: Duplo clique ativa o like
-              onTouchEnd={() => handleDoubleClick(product)} // Mobile: Detecta toque duplo
+              onDoubleClick={() => handleFavoriteClick(product)} // Desktop
+              onPointerDown={(e) => {
+                if (e.pointerType === "touch") {
+                  handleDoubleClick(product); // Mobile: Ativa o like corretamente
+                }
+              }}
             >
               <div className="image-container">
                 <LazyLoadImage effect="blur" src={product.image} loading="lazy" alt={product.name} />
