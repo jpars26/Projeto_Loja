@@ -14,6 +14,7 @@ h1 {
 }
 
 
+
 p {
   font-size: 16px;
   text-align: center;
@@ -107,8 +108,9 @@ p {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  color: #d9534f;
-  font-size: 20px;
+  font-size: 30px;
+  color: #b30000;
+  
   animation: floatUp 1s ease-in-out forwards;
   opacity: 1;
 }
@@ -124,7 +126,7 @@ p {
     opacity: 0.8;
   }
   100% {
-    transform: translateX(-50%) translateY(-150px);
+    transform: translateX(-50%) translateY(-200px);
     opacity: 0;
   }
 }
@@ -148,7 +150,8 @@ p {
   }
 
   .floating-heart {
-    font-size: 18px;
+    font-size: 30px;
+    color: #b30000;
   }
 }
 
@@ -170,8 +173,11 @@ p {
   }
 
   .floating-heart {
-    font-size: 16px;
+    font-size: 30px;
+    color: #b30000;
   }
+
+ 
 }
 
   
@@ -200,6 +206,7 @@ p {
   }
 
   .floating-heart {
-    font-size: 14px;
+    font-size: 30px;
+    color: #b30000;
   }
 }

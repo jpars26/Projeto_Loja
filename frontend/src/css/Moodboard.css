@@ -11,15 +11,15 @@
   }
   
   .remove-btn {
-    background: red;
+    background: rgb(21, 255, 0);
     color: white;
-    border-radius: 60%;
-    border: none;
+    
+    
     cursor: pointer;
     font-size: 14px;
     padding: 10px;
     cursor: pointer;
     margin-top: auto; /* Joga o botão mais para cima dentro do container */
-    
+    border: 30px;
   }
   

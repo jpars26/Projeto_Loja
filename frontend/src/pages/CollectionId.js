@@ -15,20 +15,34 @@ const Collection_ID = () => {
   const { moodboardItems, addToMoodboard, removeFromMoodboard } = useMoodboard();
   const gridRef = useRef(null);
   const [likedItems, setLikedItems] = useState({});
+  const tapTimeout = useRef(null); // 🔹 Para detectar toque duplo no mobile
 
-  // Função para ativar animação do coração
+  // Função para curtir/descurtir
   const handleFavoriteClick = (product) => {
     const isFavorite = moodboardItems.some(item => item.id === product.id);
     if (isFavorite) {
       removeFromMoodboard(product.id);
     } else {
       addToMoodboard(product);
-      setLikedItems(prev => ({ ...prev, [product.id]: true })); 
+      setLikedItems(prev => ({ ...prev, [product.id]: true }));
 
       // Remove o coração animado após 1 segundo
       setTimeout(() => {
         setLikedItems(prev => ({ ...prev, [product.id]: false }));
       }, 1000);
+    }
+  };
+
+  // 🔹 Detecta duplo toque no mobile
+  const handleTouch = (product) => {
+    if (tapTimeout.current) {
+      clearTimeout(tapTimeout.current);
+      tapTimeout.current = null;
+      handleFavoriteClick(product); // Dispara curtir
+    } else {
+      tapTimeout.current = setTimeout(() => {
+        tapTimeout.current = null;
+      }, 300); // Tempo máximo entre toques para ser considerado um "duplo toque"
     }
   };
 
@@ -44,6 +58,7 @@ const Collection_ID = () => {
       
       <img effect="blur" src={collection.banner} loading="lazy" alt={collection.name} className="collection-banner" />
       <p>Explore nossa coleção exclusiva {collection.name}.</p>
+      <h1>🖤 Curta seus favoritos! Os vestidos que você curtir ficarão salvos na página de Favoritos (ícone do coração no topo).</h1>
 
       {/* Grid de Produtos */}
       <div className="product-grid" ref={gridRef}>
@@ -53,9 +68,18 @@ const Collection_ID = () => {
           return (
             <div key={product.id} className="product-card hidden">
               <div className="image-container">
-                <LazyLoadImage effect="blur" src={product.image} loading="lazy" alt={product.name} />
+                {/* 🔹 Clique duplo no desktop e toque duplo no mobile */}
+                <LazyLoadImage
+                  effect="blur"
+                  src={product.image}
+                  loading="lazy"
+                  alt={product.name}
+                  className="clickable-image"
+                  onDoubleClick={() => handleFavoriteClick(product)} // Desktop
+                  onTouchStart={() => handleTouch(product)} // Mobile
+                />
 
-                {/* Ícone de Favoritar sobre a Imagem */}
+                {/* Botão de Favoritar */}
                 <button
                   data-testid="favorite-button"
                   className={`heart-btn ${isFavorite ? "active" : ""}`}
