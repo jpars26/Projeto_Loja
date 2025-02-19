@@ -8,124 +8,124 @@ const collections = [
       {
         id: "vestidos-petrova-p1",
         name: "Modernice",
-        image: require("../assets/images/ImagensVestidos/Alvor/imagem_1.webp"),
+        image: require("../assets/images/ImagensVestidos/Alvor/imagem_2.webp"),
       },
       {
         id: "vestidos-petrova-p2",
         name: "Ascenção",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_2.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_3.webp"),
         
         },
       {
         id: "vestidos-petrova-p3",
         name: "Agrado",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_3.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_4.webp"),
         
         },
       {
         id: "vestidos-petrova-p4",
         name: "Metamorfose",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_4.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_5.webp"),
         
         },
       {
         id: "vestidos-petrova-p5",
         name: "Evolução",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_5.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_6.webp"),
         
         },
       {
         id: "vestidos-petrova-p6",
         name: "Providencia",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_6.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_7.webp"),
         
         },
       {
         id: "vestidos-petrova-p7",
         name: "Sol",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_7.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_8.webp"),
 
       },
       {
         id: "vestidos-petrova-p8",
         name: "Magnificência",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_8.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_9.webp"),
       },
       {
         id: "vestidos-petrova-p9",
         name: "Intuito",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_9.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_10.webp"),
         
         },
       {
         id: "vestidos-petrova-p10",
         name: "Elevação",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_10.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_11.webp"),
         
         },
       {
         id: "vestidos-petrova-p11",
         name: "Avanço",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_11.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_12.webp"),
         
         },
       {
         id: "vestidos-petrova-p12",
         name: "Aurora",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_12.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_13.webp"),
         
         },
       {
         id: "vestidos-petrova-p13",
         name: "Alvorada",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_13.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_14.webp"),
         
         },
       {
         id: "vestidos-petrova-p14",
         name: "Manhã",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_14.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_15.webp"),
         
         },
       {
         id: "vestidos-petrova-p15",
         name: "Claridade",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_15.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_16.webp"),
         
         },
       {
         id: "vestidos-petrova-p16",
         name: "Benevolência",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_16.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_17.webp"),
         
         },
       {
         id: "vestidos-petrova-p17",
         name: "Renascimento",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_17.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_18.webp"),
         
         },
       {
         id: "vestidos-petrova-p18",
         name: "Horizonte",
         image:
-          require("../assets/images/ImagensVestidos/Alvor/imagem_18.webp"),
+          require("../assets/images/ImagensVestidos/Alvor/imagem_19.webp"),
         
         },
     ],
