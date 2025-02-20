@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import collections from "../data/collections"; 
 import "../css/Collection_ID.css"; 
@@ -15,11 +15,12 @@ const Collection_ID = () => {
   const { moodboardItems, addToMoodboard, removeFromMoodboard } = useMoodboard();
   const gridRef = useRef(null);
   const [likedItems, setLikedItems] = useState({});
-  const lastTap = useRef(0); // Controle de tempo para evitar cliques duplos indesejados
 
   // Função para ativar/desativar o favorito
-  const handleFavoriteClick = (product) => {
+  const handleFavoriteClick = (product, event) => {
+    event.stopPropagation(); // Evita conflito com outros eventos de clique
     const isFavorite = moodboardItems.some(item => item.id === product.id);
+
     if (isFavorite) {
       removeFromMoodboard(product.id);
     } else {
@@ -30,15 +31,6 @@ const Collection_ID = () => {
         setLikedItems(prev => ({ ...prev, [product.id]: false }));
       }, 1000);
     }
-  };
-
-  // Função para detectar duplo clique no desktop e toque duplo no mobile
-  const handleDoubleClick = (product) => {
-    const now = new Date().getTime();
-    if (now - lastTap.current < 400) { 
-      handleFavoriteClick(product);
-    }
-    lastTap.current = now;
   };
 
   if (!collection) {
@@ -62,16 +54,7 @@ const Collection_ID = () => {
           const isFavorite = moodboardItems.some(item => item.id === product.id);
 
           return (
-            <div 
-              key={product.id} 
-              className="product-card hidden"
-              onDoubleClick={() => handleFavoriteClick(product)} // Desktop
-              onPointerDown={(e) => {
-                if (e.pointerType === "touch") {
-                  handleDoubleClick(product); // Mobile: Ativa o like corretamente
-                }
-              }}
-            >
+            <div key={product.id} className="product-card hidden">
               <div className="image-container">
                 <LazyLoadImage effect="blur" src={product.image} loading="lazy" alt={product.name} />
 
@@ -79,10 +62,7 @@ const Collection_ID = () => {
                 <button
                   data-testid="favorite-button"
                   className={`heart-btn ${isFavorite ? "active" : ""}`}
-                  onClick={(e) => {
-                    e.stopPropagation(); // Evita que o clique no botão ative o duplo clique da imagem
-                    handleFavoriteClick(product);
-                  }}
+                  onClick={(e) => handleFavoriteClick(product, e)}
                 >
                   <FaHeart size={20} />
                 </button>
