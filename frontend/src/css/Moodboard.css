@@ -9,17 +9,90 @@
     margin-bottom: 20px;
     color: #333;
   }
-  
-  .remove-btn {
-    background: rgb(21, 255, 0);
+
+  /* 🔹 Container dos botões */
+.share-buttons-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  align-items: center;
+  gap: 15px; /* Espaço entre os botões */
+  margin-top: 15px;
+  flex-wrap: wrap; /* Quebra linha no mobile se necessário */
+}
+
+/* 🔹 Estilização base para todos os botões */
+.remove-btn, .share-button, .whatsapp-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+  border: 2px solid #ddd;   /* Borda leve */
+  border-radius: 50%;       /* Torna os botões circulares */
+  width: 50px;              /* Tamanho do botão */
+  height: 50px;             
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Leve sombra para destacar */
+}
+
+/* 🔹 Efeito de hover */
+.remove-btn:hover, .share-button:hover, .whatsapp-share:hover {
+  background-color: #f0f0f0;
+}
+
+/* 🔹 Ícones */
+.share-button svg, .whatsapp-share svg {
+  font-size: 22px;
+}
+
+/* 🔹 Estilização específica do botão de remover */
+.remove-btn {
+  background-color: #ff4d4d;
+  color: rgb(252, 10, 10);
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.remove-btn:hover {
+  background-color: #cc000000;
+}
+.remove-btn svg {
+  color: rgb(0, 0, 0);
+}
+/* 🔹 Estilo específico do botão do WhatsApp */
+.whatsapp-share svg {
+  color: #25D366;
+}
+
+/* 🔹 Estilo específico do botão de compartilhar */
+.share-button svg {
+  color: #007bff;
+}
+
+.grid-item button{
+  padding: 10px;
+    font-size: 0.8rem;
+    background-color: #d9534f00;
     color: white;
-    
-    
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    padding: 10px;
-    cursor: pointer;
-    margin-top: auto; /* Joga o botão mais para cima dentro do container */
-    border: 30px;
+    margin-top: auto;
+}
+
+/* 🔹 Responsividade */
+@media (max-width: 768px) {
+  .share-buttons-container {
+    gap: 10px;
   }
-  
+
+  .remove-btn, .share-button, .whatsapp-share {
+    width: 45px; /* Ajusta tamanho dos botões para telas menores */
+    height: 45px;
+  }
+
+  .share-button svg, .whatsapp-share svg {
+    font-size: 20px;
+  }
+}

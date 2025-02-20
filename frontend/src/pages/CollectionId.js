@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import collections from "../data/collections"; 
 import "../css/Collection_ID.css"; 
 import { useMoodboard } from "../context/MoodboardContext";
-import { FaHeart } from "react-icons/fa";
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css"; 
+import { FaHeart } from "react-icons/fa"; 
 
 const Collection_ID = () => {
   const { id } = useParams(); 
@@ -76,7 +76,12 @@ const Collection_ID = () => {
               </div>
 
               <h3>{product.name}</h3>
+
+            
+
             </div>
+
+        
           );
         })}
       </div>
