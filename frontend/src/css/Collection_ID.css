@@ -154,9 +154,46 @@ p {
     font-size: 30px;
     color: #b30000;
   }
+
+  h1 {
+
+    font-size: 25px; /* Reduzido para mobile */
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    padding: 20px;
+ 
+}
+
+
+
+ .collection-banner{
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  width: 40%;
+  display: block;   /* Permite que o margin funcione */
+  margin: 0 auto;   /* Centraliza horizontalmente */
+ }
+
+ .textoCollection{
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+ }
 }
 
 @media (max-width: 768px) {
+  .collection-banner{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    width: 40%;
+    display: block;   /* Permite que o margin funcione */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+   }
   .product-grid {
     grid-template-columns: 1fr; /* 🔹 Apenas 1 card por linha */
     gap: 25px; /* 🔹 Reduzindo espaço entre os cards */
@@ -178,6 +215,22 @@ p {
     color: #b30000;
   }
 
+  h1 {
+
+    font-size: 25px; /* Reduzido para mobile */
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+    padding: 20px;
+ 
+}
+.textoCollection{
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+ }
  
 }
 
@@ -210,4 +263,31 @@ p {
     font-size: 30px;
     color: #b30000;
   }
+
+  h1 {
+
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
+   
+  }
+
+  .collection-banner{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    width: 40%;
+    display: block;   /* Permite que o margin funcione */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+   }
+
+   .textoCollection{
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+   }
 }

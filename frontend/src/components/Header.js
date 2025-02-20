@@ -33,12 +33,12 @@ const Header = () => {
     
 
       <div className="header-icons">
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="menu-toggle"  aria-label="Abrir menu" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} weight="light" /> : <List size={28} weight="light" />}
           </button>
           <div className="moodboard-icon">
             <Link to="/moodboard">
-              <FaRegHeart className="heart-icon" />
+              <FaRegHeart className="heart-icon" aria-label="Acessar Favoritos" />
               {moodboardItems.length > 0 && (
                 <span className="notification-badge">{moodboardItems.length}</span>
               )}

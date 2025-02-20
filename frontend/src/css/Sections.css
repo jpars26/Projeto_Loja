@@ -257,8 +257,32 @@ h2 {
         font-size: 0.9rem; /* Reduz um pouco mais o tamanho do texto */
         padding: 45px;
     }
-}
 
+   
+    .dual-content h2{
+        font-size: 25px; /* Reduzido para mobile */
+        margin-bottom: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #222;
+        padding: 20px;
+    }
+      
+}
+@media (max-width: 480px) {
+    
+
+    .dual-content h2{
+        font-size: 25px; /* Reduzido para mobile */
+        margin-bottom: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #222;
+        padding: 20px;
+    }
+  }
 .slick-slide img {
     display: inline-block !important;
     height: auto !important;

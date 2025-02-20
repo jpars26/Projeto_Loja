@@ -31,8 +31,8 @@ const Sections = () => {
     <div className="sections" data-testid="diferencial-section">
       {/* 📌 Bloco Diferenciais */}
       <section className="differentials">
-        <div className="container">
           <h2>Por que Escolher a Iara Noivas?</h2>
+        <div className="container">
           <div className="differential-grid">
             {[
               { title: "Feitos Sob Medida", desc: "Temos o serviço de confecção para você que procura algo exclusivo" },

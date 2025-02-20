@@ -85,11 +85,31 @@
     .contact-map iframe {
       height: 280px; /* Reduz a altura para celulares */
     }
+
+    h2{
+      font-size: 25px; /* Reduzido para mobile */
+        margin-bottom: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #222;
+        padding: 20px;
+    }
   }
   
   @media (max-width: 480px) {
     .contact-map iframe {
       height: 250px; /* Ajusta ainda mais para telas muito pequenas */
+    }
+
+    h2{
+      font-size: 25px; /* Reduzido para mobile */
+        margin-bottom: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #222;
+        padding: 20px;
     }
   }
   

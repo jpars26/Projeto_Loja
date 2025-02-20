@@ -94,18 +94,99 @@
       grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
     }
     .collection-title {
-      padding: 17px;
-      margin-top: 0%;
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
     }
     .collection-title2 {
-      padding: 5px;
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
     }
+    .collection-banner1 {
+      max-width: 80%;  /* Reduz a largura máxima para 80% */
+      width: 200px;     /* Garante que a imagem se ajuste sem esticar */
+      height: auto;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+      max-height: 200px; /* Define uma altura máxima */
+    }
+    
     
   }
   
   @media (max-width: 600px) {
     .grid-container {
       grid-template-columns: repeat(1, 1fr); /* 1 coluna para mobile */
+    }
+    .collection-title {
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
+    }
+    .collection-title2 {
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
+    }
+
+    .collection-banner1 {
+      max-width: 80%;  /* Reduz a largura máxima para 80% */
+      width: 200px;     /* Garante que a imagem se ajuste sem esticar */
+      height: auto;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+      max-height: 200px; /* Define uma altura máxima */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .collection-title {
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
+    }
+
+    .collection-title2 {
+      font-size: 25px; /* Reduzido para mobile */
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #222;
+      padding: 20px;
+    }
+
+    .collection-banner1 {
+      max-width: 80%;  /* Reduz a largura máxima para 80% */
+      width: 200px;     /* Garante que a imagem se ajuste sem esticar */
+      height: auto;
+      border-radius: 5px;
+      display: block;
+      margin: 0 auto;
+      max-height: 200px; /* Define uma altura máxima */
     }
   }
   

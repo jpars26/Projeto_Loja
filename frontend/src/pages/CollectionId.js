@@ -35,7 +35,7 @@ const Collection_ID = () => {
   // Função para detectar duplo clique no desktop e toque duplo no mobile
   const handleDoubleClick = (product) => {
     const now = new Date().getTime();
-    if (now - lastTap.current < 300) { 
+    if (now - lastTap.current < 400) { 
       handleFavoriteClick(product);
     }
     lastTap.current = now;
@@ -52,8 +52,9 @@ const Collection_ID = () => {
       </Helmet>
       
       <img effect="blur" src={collection.banner} loading="lazy" alt={collection.name} className="collection-banner" />
-      <p>Explore nossa coleção exclusiva {collection.name}.</p>
-      <h1>❤️ Curta seus vestidos favoritos! Os vestidos que você curtir ficarão salvos na página de Favoritos (ícone do coração no topo) ❤️. </h1>
+      <p className="textoCollection">Explore nossa coleção exclusiva {collection.name}.</p>
+      <h1>❤️Curta seus vestidos favoritos!</h1>
+      <h1>Os vestidos que você curtir ficarão salvos na página de Favoritos (ícone do coração no topo).</h1>
 
       {/* Grid de Produtos */}
       <div className="product-grid" ref={gridRef}>

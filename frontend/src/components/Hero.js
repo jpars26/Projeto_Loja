@@ -1,9 +1,9 @@
 // src/components/sections/Hero.js
 import React from "react";
 import "../css/Hero.css";
-
-import heroVideoWebm from "../assets/videos/videoCerto.webm"; // Importando o vídeo
 import { useState } from "react";
+
+const heroVideoWebm = require('../assets/videos/videoCerto.webm');
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
