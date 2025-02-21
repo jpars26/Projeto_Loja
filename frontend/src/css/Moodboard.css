@@ -45,21 +45,6 @@
   font-size: 22px;
 }
 
-/* 🔹 Estilização específica do botão de remover */
-.remove-btn {
-  background-color: #ff4d4d;
-  color: rgb(252, 10, 10);
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.remove-btn:hover {
-  background-color: #cc000000;
-}
-.remove-btn svg {
-  color: rgb(0, 0, 0);
-}
 /* 🔹 Estilo específico do botão do WhatsApp */
 .whatsapp-share svg {
   color: #25D366;
@@ -70,15 +55,46 @@
   color: #007bff;
 }
 
-.grid-item button{
-  padding: 10px;
-    font-size: 0.8rem;
-    background-color: #d9534f00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: auto;
+.grid-item .remove-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+  border: 2px solid #ddd;   /* Borda leve */
+  border-radius: 50%;       /* Deixa o botão circular */
+  width: 50px;              /* Tamanho do botão */
+  height: 50px;             
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Leve sombra */
+}
+
+.grid-item .share-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+  border: 2px solid #ddd;   /* Borda leve */
+  border-radius: 50%;       /* Deixa o botão circular */
+  width: 50px;              /* Tamanho do botão */
+  height: 50px;             
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Leve sombra */
+}
+
+.grid-item .whatsapp-share{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+  border: 2px solid #ddd;   /* Borda leve */
+  border-radius: 50%;       /* Deixa o botão circular */
+  width: 50px;              /* Tamanho do botão */
+  height: 50px;             
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Leve sombra */
 }
 
 .share-buttons-container {

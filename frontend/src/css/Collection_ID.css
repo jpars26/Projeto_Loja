@@ -115,37 +115,64 @@ p {
   animation: floatUp 1s ease-in-out forwards;
   opacity: 1;
 }
-/* 🔹 Estilização base do botão */
-.btnCompartilhar {
+/* 🔹 Container dos botões de compartilhamento */
+.share-buttons-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  align-items: center;
+  gap: 12px; /* Espaço entre os botões */
+  margin-top: 10px;
+  flex-wrap: wrap; /* Permite quebra em telas menores */
+}
+
+/* 🔹 Estilização base para os botões */
+ .btnCompartilharWpp, .btnCompartilhar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* Espaço entre o ícone e o texto */
-  background-color: #007bff; /* Azul chamativo */
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 25px;
+  background-color: white; 
+  border: 2px solid #ddd;   /* Borda leve */
+  border-radius: 50%;       /* Deixa o botão circular */
+  width: 50px;              /* Tamanho do botão */
+  height: 50px;             
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-  width: 220px; /* Tamanho padrão */
-  max-width: 90%;
-  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Leve sombra */
 }
 
-/* 🔹 Efeito hover */
-.btnCompartilhar:hover {
-  background-color: #0056b3; /* Azul mais escuro */
-  transform: scale(1.05); /* Pequeno efeito de crescimento */
+
+.btnCompartilhar{
+  padding: 1px 6px;
+}
+/* 🔹 Ícones */
+.btnCompartilhar svg, .btnCompartilharWpp svg {
+  font-size: 22px;
 }
 
-/* 🔹 Ícone */
+/* 🔹 Cores específicas */
+.btnCompartilhar {
+  background-color: white; /* Agora o botão Compartilhar também é branco */
+  border: 2px solid #ddd;
+}
+
 .btnCompartilhar svg {
-  font-size: 20px;
+  color: #007bff; /* Ícone azul */
 }
+
+.btnCompartilharWpp {
+  background-color: white; /* Mantém o WhatsApp igual */
+  border: 2px solid #ddd;
+}
+
+.btnCompartilharWpp svg {
+  color: #25D366; /* Ícone verde do WhatsApp */
+}
+
+/* 🔹 Efeito ao passar o mouse */
+.btnCompartilhar:hover, .btnCompartilharWpp:hover {
+  background-color: #f0f0f0;
+}
+
 
 
 
@@ -177,11 +204,7 @@ p {
     padding: 10px; /* 🔹 Reduzindo espaçamento interno */
   }
 
-  .btnCompartilhar {
-    width: 100%; /* Botão ocupa toda a largura no mobile */
-    font-size: 14px;
-    padding: 10px 16px;
-  }
+
   .heart-btn {
     top: 8px;
     right: 8px;
@@ -221,6 +244,17 @@ p {
   text-align: center;
   padding: 20px;
  }
+
+ .share-buttons-container {
+  gap: 10px;
+}
+.btnCompartilhar, .btnCompartilharWpp {
+  width: 45px;
+  height: 45px;
+}
+.btnCompartilhar svg, .btnCompartilharWpp svg {
+  font-size: 20px;
+}
 }
 
 @media (max-width: 768px) {
@@ -236,11 +270,7 @@ p {
     grid-template-columns: 1fr; /* 🔹 Apenas 1 card por linha */
     gap: 25px; /* 🔹 Reduzindo espaço entre os cards */
   }
-  .btnCompartilhar {
-    width: 100%; /* Botão ocupa toda a largura no mobile */
-    font-size: 14px;
-    padding: 10px 16px;
-  }
+
   .product-card {
     max-width: 300px; /* 🔹 Limitando a largura dos cards no mobile */
     padding: 10px; /* 🔹 Reduzindo espaçamento interno */
@@ -273,6 +303,17 @@ p {
   text-align: center;
   padding: 20px;
  }
+
+ .share-buttons-container {
+  gap: 10px;
+}
+.btnCompartilhar, .btnCompartilharWpp {
+  width: 45px;
+  height: 45px;
+}
+.btnCompartilhar svg, .btnCompartilharWpp svg {
+  font-size: 20px;
+}
  
 }
 
@@ -289,11 +330,16 @@ p {
     padding: 8px; /* 🔹 Reduzindo um pouco mais o padding */
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* 🔹 Suavizando sombra */
   }
-  .btnCompartilhar {
-    width: 100%; /* Botão ocupa toda a largura no mobile */
-    font-size: 12px;
-    padding: 10px 16px;
-  }
+  .share-buttons-container {
+    gap: 10px;
+}
+.btnCompartilhar, .btnCompartilharWpp {
+    width: 45px;
+    height: 45px;
+}
+.btnCompartilhar svg, .btnCompartilharWpp svg {
+    font-size: 20px;
+}
 
   .heart-btn {
     top: 4px;

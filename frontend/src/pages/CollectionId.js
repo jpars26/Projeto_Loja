@@ -7,8 +7,9 @@ import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css"; 
-import { FaHeart, FaShareAlt } from "react-icons/fa"; 
+import { FaHeart, FaShareAlt, FaWhatsapp } from "react-icons/fa"; 
 import { shareCurrentPage } from "../utils/shareCurrentPage";
+import { shareSingleDress } from "../utils/shareSingleDress"; 
 
 const Collection_ID = () => {
   const { id } = useParams(); 
@@ -78,11 +79,23 @@ const Collection_ID = () => {
 
               <h3>{product.name}</h3>
 
+          <div className="share-buttons-container">
+          <button 
+            className="btnCompartilharWpp" 
+            data-name={product.name} // Pegamos o nome do vestido do próprio card
+            onClick={shareSingleDress} // Passamos apenas o evento, sem parâmetros
+          >
+            <FaWhatsapp /> 
+          </button>
           
-              <button className="btnCompartilhar" onClick={() => shareCurrentPage()}>
-                <FaShareAlt /> Compartilhar
-              </button>
+          <button className="btnCompartilhar" onClick={() => shareCurrentPage()}>
+                <FaShareAlt /> 
+          </button>
 
+          
+
+          </div>
+              
             </div>
 
         
