@@ -20,6 +20,7 @@
         padding: 30px;
     }
   
+    
   
   .grid-item {
     background: #fff;
@@ -88,7 +89,8 @@
       max-height: 200px; /* Define uma altura máxima */
       
     }
-   
+
+  
   @media (max-width: 1024px) {
     .grid-container {
       grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */

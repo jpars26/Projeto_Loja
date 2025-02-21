@@ -19,7 +19,7 @@ const CollectionGrid = () => {
             <Link to={`/collections/${dress.id}`} className="collection-card"> 
               <LazyLoadImage  effect="blur" src={dress.image} alt={dress.name} />
               <p>{dress.name}</p>
-              <button>Ver Vestidos</button>
+              <button className="btnCollection" style={{ backgroundColor: "#ff6666", color: "white" }}>Ver Vestidos</button>
             </Link>
           </div>
         ))}

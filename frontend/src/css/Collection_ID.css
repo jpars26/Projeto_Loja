@@ -116,16 +116,8 @@ p {
   opacity: 1;
 }
 
-.grid-item button {
-  padding: 10px;
-  font-size: 0.8rem;
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: auto;
-}
+
+
 /* 🔹 Animação de subida do coração */
 @keyframes floatUp {
   0% {
