@@ -7,7 +7,8 @@ import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css"; 
-import { FaHeart } from "react-icons/fa"; 
+import { FaHeart, FaShareAlt } from "react-icons/fa"; 
+import { shareCurrentPage } from "../utils/shareCurrentPage";
 
 const Collection_ID = () => {
   const { id } = useParams(); 
@@ -77,7 +78,10 @@ const Collection_ID = () => {
 
               <h3>{product.name}</h3>
 
-            
+          
+              <button className="btnCompartilhar" onClick={() => shareCurrentPage()}>
+                <FaShareAlt /> Compartilhar
+              </button>
 
             </div>
 
