@@ -13,13 +13,15 @@ const Moodboard = () => {
   const { moodboardItems, removeFromMoodboard } = useMoodboard();
 
   useEffect(() => {
-    if (!isTourActive()) {
-      startTour("moodboard", tourSteps.moodboard);
-    }
+    setTimeout(() => {
+      if (!isTourActive()) {
+        startTour("moodboard", tourSteps.moodboard);
+      }
 
-    return () => {
-      stopTour();
-    };
+      return () => {
+        stopTour();
+      };
+    }, 1000);
   }, []);
 
   return (

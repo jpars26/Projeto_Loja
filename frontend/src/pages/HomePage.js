@@ -14,13 +14,15 @@ import '../css/HomePage.css';
 
 const HomePage = () => {
   useEffect(() => {
-    if (!isTourActive()) {
-      startTour("home", tourSteps.home);
-    }
+    setTimeout(() => {
+      if (!isTourActive()) {
+        startTour("home", tourSteps.home);
+      }
 
-    return () => {
-      stopTour();
-    };
+      return () => {
+        stopTour();
+      };
+    }, 1000);
   }, []);
 
   return (
@@ -31,7 +33,7 @@ const HomePage = () => {
         <meta name="description" content="Os vestidos de noiva mais sofisticados para seu casamento dos sonhos." />
         <meta property="og:title" content="Iara Noivas - Vestidos de Noiva" />
         <meta property="og:description" content="Confira nossa coleção exclusiva de vestidos de noiva." />
-        <meta property="og:url" content="https://www.iaranoivas.com" />
+        <meta property="og:url" content="https://www.iaranoivas.com.br" />
         <meta property="og:type" content="website" />
       </Helmet>
 

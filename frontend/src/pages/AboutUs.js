@@ -11,13 +11,15 @@ import tourSteps from "../utils/TourSteps"; // Importando os passos do Tour
 
 const AboutUs = () => {
   useEffect(() => {
-    if (!isTourActive()) {
-      startTour("aboutUs", tourSteps.aboutUs);
-    }
+    setTimeout(() => {
+      if (!isTourActive()) {
+        startTour("aboutUs", tourSteps.aboutUs);
+      }
 
-    return () => {
-      stopTour();
-    };
+      return () => {
+        stopTour();
+      };
+    }, 1000);
   }, []);
 
   return (

@@ -23,10 +23,12 @@ const Collection_ID = () => {
 
   // Inicia o tour ao carregar a página (somente na primeira visita)
   useEffect(() => {
-    if (!localStorage.getItem("tourCollectionViewed")) {
-      startTour("collection", tourSteps.collection);
-      localStorage.setItem("tourCollectionViewed", "true");
-    }
+    setTimeout(() => {
+      if (!localStorage.getItem("tourCollectionViewed")) {
+        startTour("collection", tourSteps.collection);
+        localStorage.setItem("tourCollectionViewed", "true");
+      }
+    }, 1000);
   }, []);
 
   // Função para ativar/desativar o favorito
@@ -53,7 +55,7 @@ const Collection_ID = () => {
   return ( 
     <Layout title={collection.name}>
       <Helmet>
-        <title>{collection.name} - Vestidos de Noiva | Iara Noivas</title>
+        <title>Iara Noivas - Vestidos de Noiva </title>
       </Helmet>
       
       <img effect="blur" src={collection.banner} loading="lazy" alt={collection.name} className="collection-banner" />
