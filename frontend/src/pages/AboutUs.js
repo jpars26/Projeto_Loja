@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 import CustomerGallery from '../components/CustomerGallery';
 import Layout from '../layout/Layout';
 import { Helmet } from "react-helmet";
@@ -6,9 +6,20 @@ import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
 import "../css/AboutUs.css"; // Certifique-se de criar esse CSS para estilizar
 import logo from "../assets/images/loguinho.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
+import { startTour, isTourActive ,stopTour} from "../utils/TourGuide"; // Importando a função do Tour
+import tourSteps from "../utils/TourSteps"; // Importando os passos do Tour
 
 const AboutUs = () => {
+  useEffect(() => {
+    if (!isTourActive()) {
+      startTour("aboutUs", tourSteps.aboutUs);
+    }
+
+    return () => {
+      stopTour();
+    };
+  }, []);
+
   return (
     <Layout>
       {/* SEO para a página Sobre Nós */}

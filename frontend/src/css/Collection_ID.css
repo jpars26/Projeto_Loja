@@ -126,7 +126,7 @@ p {
 }
 
 /* 🔹 Estilização base para os botões */
- .btnCompartilharWpp, .btnCompartilhar {
+ .btnCompartilharWpp, .btnCompartilhar, .btnCurtir {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,9 +154,12 @@ p {
   background-color: white; /* Agora o botão Compartilhar também é branco */
   border: 2px solid #ddd;
 }
+.btnCurtir svg {
+  color: #0a73fd; /* Coração vermelho */
+}
 
 .btnCompartilhar svg {
-  color: #007bff; /* Ícone azul */
+  color: #000000; /* Ícone azul */
 }
 
 .btnCompartilharWpp {
@@ -173,7 +176,11 @@ p {
   background-color: #f0f0f0;
 }
 
-
+.tooltip-inner {
+  white-space: pre-line !important;
+  max-width: 200px; /* Limita a largura para evitar tooltips muito longos */
+  text-align: center;
+}
 
 
 

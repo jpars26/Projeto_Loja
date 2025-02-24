@@ -181,6 +181,21 @@ h2 {
     color: white;
     transition: all 0.3s ease;
 }
+.agd-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: #d9534f;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #c9302c;
+}
 
 .cta-button:hover {
     background: #c9302c;

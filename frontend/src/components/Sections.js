@@ -103,7 +103,7 @@ const Sections = () => {
           <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
           <p>Entre em contato e agende uma consultoria exclusiva.</p>
           <a href="https://wa.me/+5535998289198" target="_blank" rel="noopener noreferrer">
-            <button className="cta-button">Agendar Atendimento</button>
+            <button className="agd-button">Agendar Atendimento</button>
           </a>
         </div>
       </section>

@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+// src/pages/Collection_ID.js
+import React, { useRef, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import collections from "../data/collections"; 
 import "../css/Collection_ID.css"; 
@@ -7,9 +8,11 @@ import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css"; 
-import { FaHeart, FaShareAlt, FaWhatsapp } from "react-icons/fa"; 
+import { FaHeart, FaShareAlt, FaWhatsapp, FaThumbsUp } from "react-icons/fa"; 
 import { shareCurrentPage } from "../utils/shareCurrentPage";
 import { shareSingleDress } from "../utils/shareSingleDress"; 
+import tourSteps from "../utils/TourSteps"; // Importando os steps
+import { startTour } from "../utils/TourGuide"; // Importando TourGuide
 
 const Collection_ID = () => {
   const { id } = useParams(); 
@@ -17,6 +20,14 @@ const Collection_ID = () => {
   const { moodboardItems, addToMoodboard, removeFromMoodboard } = useMoodboard();
   const gridRef = useRef(null);
   const [likedItems, setLikedItems] = useState({});
+
+  // Inicia o tour ao carregar a página (somente na primeira visita)
+  useEffect(() => {
+    if (!localStorage.getItem("tourCollectionViewed")) {
+      startTour("collection", tourSteps.collection);
+      localStorage.setItem("tourCollectionViewed", "true");
+    }
+  }, []);
 
   // Função para ativar/desativar o favorito
   const handleFavoriteClick = (product, event) => {
@@ -30,7 +41,7 @@ const Collection_ID = () => {
       setLikedItems(prev => ({ ...prev, [product.id]: true })); 
 
       setTimeout(() => {
-        setLikedItems(prev => ({ ...prev, [product.id]: false }));
+        setLikedItems(prev => ({ ...prev, [product.id]: false }));  
       }, 1000);
     }
   };
@@ -47,13 +58,15 @@ const Collection_ID = () => {
       
       <img effect="blur" src={collection.banner} loading="lazy" alt={collection.name} className="collection-banner" />
       <p className="textoCollection">Explore nossa coleção exclusiva {collection.name}.</p>
-      <h1>❤️Curta seus vestidos favoritos!</h1>
-      <h1>Os vestidos que você curtir ficarão salvos na página de Favoritos (ícone do coração no topo).</h1>
+      
 
       {/* Grid de Produtos */}
       <div className="product-grid" ref={gridRef}>
         {collection.products.map(product => {
           const isFavorite = moodboardItems.some(item => item.id === product.id);
+          const tooltipId = `tooltip-share-${product.id}`;
+          const whatsappTooltipId = `tooltip-whatsapp-${product.id}`;
+          const likeTooltipId = `tooltip-like-${product.id}`;
 
           return (
             <div key={product.id} className="product-card hidden">
@@ -62,7 +75,6 @@ const Collection_ID = () => {
 
                 {/* Ícone de Favoritar sobre a Imagem */}
                 <button
-                  data-testid="favorite-button"
                   className={`heart-btn ${isFavorite ? "active" : ""}`}
                   onClick={(e) => handleFavoriteClick(product, e)}
                 >
@@ -79,31 +91,38 @@ const Collection_ID = () => {
 
               <h3>{product.name}</h3>
 
-          <div className="share-buttons-container">
-          <button 
-            className="btnCompartilharWpp" 
-            data-name={product.name} // Pegamos o nome do vestido do próprio card
-            onClick={shareSingleDress} // Passamos apenas o evento, sem parâmetros
-          >
-            <FaWhatsapp /> 
-          </button>
-          
-          <button className="btnCompartilhar" onClick={() => shareCurrentPage()}>
-                <FaShareAlt /> 
-          </button>
-
-          
-
-          </div>
+              <div className="share-buttons-container">
+                {/* Botão de Curtir */}
+                <button className="btnCurtir" data-tooltip-id={likeTooltipId} onClick={(e) => handleFavoriteClick(product, e)}>
+                  <FaThumbsUp size={20}/>
+                </button>
               
+                
+                {/* Botão de Compartilhar Wpp */}
+                <button 
+                  className="btnCompartilharWpp" 
+                  data-tooltip-id={whatsappTooltipId}
+                  data-name={product.name}
+                  onClick={shareSingleDress}
+                >
+                  <FaWhatsapp /> 
+                </button>
+               
+                
+                {/* Botão de Compartilhar */}     
+                <button className="btnCompartilhar" data-tooltip-id={tooltipId} onClick={() => shareCurrentPage()}>
+                  <FaShareAlt /> 
+                </button>
+                     
+              </div>
             </div>
-
-        
           );
         })}
       </div>
     </Layout>
   );
 };
+
+
 
 export default Collection_ID;

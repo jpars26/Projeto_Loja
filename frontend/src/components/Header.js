@@ -5,8 +5,11 @@ import { useMoodboard } from "../context/MoodboardContext";
 import { FaRegHeart } from "react-icons/fa"; // Ícone do coração
 import { List, X } from "phosphor-react"; // Ícones de menu refinados
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 
 const logo = require('../assets/images/logoGrande.webp');
+
 
 const Header = () => {
   const { moodboardItems } = useMoodboard();
@@ -37,7 +40,7 @@ const Header = () => {
             {menuOpen ? <X size={28} weight="light" /> : <List size={28} weight="light" />}
           </button>
           <div className="moodboard-icon">
-            <Link to="/moodboard">
+            <Link to="/moodboard" >
               <FaRegHeart className="heart-icon" aria-label="Acessar Favoritos" />
               {moodboardItems.length > 0 && (
                 <span className="notification-badge">{moodboardItems.length}</span>
@@ -45,7 +48,7 @@ const Header = () => {
             </Link>
       </div>
     </div>
-
+             
     </header>
   );
 };
