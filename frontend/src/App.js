@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import "./App.css";
@@ -12,10 +12,19 @@ import { Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { clarity } from "clarity-js";
 
-clarity.start({ projectId: "qf37xin0tc" });
+
+
 
 
 function App() {
+
+    useEffect(() => {
+        if (process.env.NODE_ENV === "production") {
+            
+            clarity.start({ projectId: "qf37xin0tc" });
+          }
+      }, []);
+
     return (
         <MoodboardProvider>  
             <Router>
