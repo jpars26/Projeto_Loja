@@ -22,7 +22,7 @@ function App() {
     useEffect(() => {
         if (process.env.NODE_ENV === "production") {
             
-            Clarity.init({ projectId: "qf37xin0tc" });
+            Clarity.start({ projectId: "qf37xin0tc" });
           }
       }, []);
 

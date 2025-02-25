@@ -66,3 +66,5 @@ yarn-error.log*
 *.bak
 *.tmp
 
+# 🚀 Ignorar arquivos de configuração da CloudFlare
+wrangler.toml

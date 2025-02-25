@@ -27,13 +27,27 @@ const Chatbot = () => {
         body: JSON.stringify({ question: input }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Erro na API: ${response.status} - ${response.statusText}`);
+      }
+
       const data = await response.json();
+      console.log("🔍 Resposta da API:", data); // Log no console para debug
+
+      if (!data.answer) {
+        throw new Error("Resposta inválida da API");
+      }
+
       setMessages((prevMessages) => [
         ...prevMessages,
-        { sender: "bot", text: data.answer || "Desculpe, não consegui entender. 😔" },
+        { sender: "bot", text: data.answer },
       ]);
     } catch (error) {
-      setMessages((prevMessages) => [...prevMessages, { sender: "bot", text: "Erro ao buscar resposta." }]);
+      console.error("❌ Erro ao buscar resposta:", error);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { sender: "bot", text: "Erro ao buscar resposta. Tente novamente mais tarde." },
+      ]);
     }
 
     setInput("");
@@ -71,6 +85,7 @@ const Chatbot = () => {
             placeholder="Digite sua pergunta..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyPress={(e) => e.key === "Enter" && sendMessage()} // Enviar ao pressionar Enter
           />
           <button onClick={sendMessage}>Enviar</button>
         </div>
