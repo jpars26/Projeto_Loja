@@ -10,7 +10,7 @@ import CollectionId from "./pages/CollectionId";
 import Contact from "./pages/Contact";
 import { Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import * as Clarity from 'clarity-js';
+import { clarity } from "clarity-js";
 import Chatbot from "./components/Chatbot"; // Importando o Chatbot
 
 
@@ -22,7 +22,7 @@ function App() {
     useEffect(() => {
         if (process.env.NODE_ENV === "production") {
             
-            Clarity.clarity("start", "qf37xin0tc");
+            clarity("start", "qf37xin0tc");
           }
       }, []);
 
