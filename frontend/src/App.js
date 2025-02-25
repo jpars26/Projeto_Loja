@@ -10,6 +10,10 @@ import CollectionId from "./pages/CollectionId";
 import Contact from "./pages/Contact";
 import { Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import { clarity } from "clarity-js";
+
+clarity.start({ projectId: "qf37xin0tc" });
+
 
 function App() {
     return (
