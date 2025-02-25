@@ -22,7 +22,7 @@ function App() {
     useEffect(() => {
         if (process.env.NODE_ENV === "production") {
             
-            clarity("start", "qf37xin0tc");
+            clarity("init", "qf37xin0tc");
           }
       }, []);
 
