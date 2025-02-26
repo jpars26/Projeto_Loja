@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import "./App.css";
@@ -10,7 +10,6 @@ import CollectionId from "./pages/CollectionId";
 import Contact from "./pages/Contact";
 import { Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import Clarity from '@microsoft/clarity';
 import Chatbot from "./components/Chatbot"; // Importando o Chatbot
 
 
@@ -19,13 +18,7 @@ import Chatbot from "./components/Chatbot"; // Importando o Chatbot
 
 function App() {
 
-    useEffect(() => {
-        if (process.env.NODE_ENV === "production") {
-            
-            Clarity.init({ projectId: "qf37xin0tc" });;
-          }
-      }, []);
-
+   
     return (
         <MoodboardProvider>  
             <Router>

@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import "../css/Chatbot.css"; // Criar um CSS para estilizar o chat
-import { FaCommentDots, FaTimes } from "react-icons/fa";
+import "../css/Chatbot.css"; // Arquivo de estilos
+import { FaCommentDots, FaTimes } from "react-icons/fa"; // Ícones para abrir e fechar o chat
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [isOpen, setIsOpen] = useState(false); // Estado para abrir/fechar chat
+  const [isOpen, setIsOpen] = useState(false); // O chat começa minimizado
+  const [isLoading, setIsLoading] = useState(false); // Controle do estado do envio
+
+  // Salvar estado do chat no localStorage
+  useEffect(() => {
+    const chatState = localStorage.getItem("chatbot_open");
+    setIsOpen(chatState === "true");
+  }, []);
 
   // Mensagem inicial quando o chatbot é carregado
   useEffect(() => {
@@ -14,11 +21,14 @@ const Chatbot = () => {
     ]);
   }, []);
 
+  // Enviar mensagem para o servidor (Worker)
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return; // Impede envio repetido
 
     const userMessage = { sender: "user", text: input };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
+    setInput(""); // Apaga o input imediatamente após o envio
+    setIsLoading(true); // Desativa o botão enquanto espera a resposta
 
     try {
       const response = await fetch("https://chat-iaranoivas.jpars131.workers.dev/chatbot", {
@@ -27,37 +37,30 @@ const Chatbot = () => {
         body: JSON.stringify({ question: input }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Erro na API: ${response.status} - ${response.statusText}`);
-      }
-
       const data = await response.json();
-      console.log("🔍 Resposta da API:", data); // Log no console para debug
-
-      if (!data.answer) {
-        throw new Error("Resposta inválida da API");
-      }
-
       setMessages((prevMessages) => [
         ...prevMessages,
-        { sender: "bot", text: data.answer },
+        { sender: "bot", text: data.answer || "Desculpe, não consegui entender. 😔" },
       ]);
     } catch (error) {
-      console.error("❌ Erro ao buscar resposta:", error);
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { sender: "bot", text: "Erro ao buscar resposta. Tente novamente mais tarde." },
-      ]);
+      setMessages((prevMessages) => [...prevMessages, { sender: "bot", text: "Erro ao buscar resposta." }]);
     }
 
-    setInput("");
+    setIsLoading(false); // Reativa o botão após a resposta do bot
+  };
+
+  // Função para alternar a exibição do chat
+  const toggleChat = () => {
+    const newState = !isOpen;
+    setIsOpen(newState);
+    localStorage.setItem("chatbot_open", newState); // Salvar estado no localStorage
   };
 
   return (
     <>
       {/* Ícone do chatbot flutuante */}
       {!isOpen && (
-        <button className="chatbot-icon" onClick={() => setIsOpen(true)}>
+        <button className="chatbot-icon" onClick={toggleChat}>
           <FaCommentDots />
         </button>
       )}
@@ -66,7 +69,7 @@ const Chatbot = () => {
       <div className={`chatbot-container ${isOpen ? "chatbot-open" : ""}`}>
         <div className="chatbot-header">
           Assistente Iara Noivas
-          <button className="chatbot-close" onClick={() => setIsOpen(false)}>
+          <button className="chatbot-close" onClick={toggleChat}>
             <FaTimes />
           </button>
         </div>
@@ -85,9 +88,11 @@ const Chatbot = () => {
             placeholder="Digite sua pergunta..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === "Enter" && sendMessage()} // Enviar ao pressionar Enter
+            disabled={isLoading} // Desativa input enquanto a resposta está carregando
           />
-          <button onClick={sendMessage}>Enviar</button>
+          <button onClick={sendMessage} disabled={isLoading}> {/* Desativa botão durante requisição */}
+            {isLoading ? "Aguardando..." : "Enviar"}
+          </button>
         </div>
       </div>
     </>
