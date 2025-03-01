@@ -10,7 +10,7 @@ import CollectionId from "./pages/CollectionId";
 import Contact from "./pages/Contact";
 import { Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import Chatbot from "./components/Chatbot"; // Importando o Chatbot
+
 
 
 
@@ -34,7 +34,7 @@ function App() {
                         <Route path="/contact" element={<Contact />} /> 
                         <Route path="*" element={<Navigate to="/home" replace />}/> 
                     </Routes>
-                    <Chatbot /> {/* ✅ Adicionando o Chatbot */}
+                   
             </Router>
         </MoodboardProvider> 
     );

@@ -15,6 +15,12 @@ const Header = () => {
   const { moodboardItems } = useMoodboard();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleFavoriteClick = () => {
+    if (window.clarity) {
+      window.clarity("set", "botao_favorito", "clicou"); 
+    }
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -40,7 +46,7 @@ const Header = () => {
             {menuOpen ? <X size={28} weight="light" /> : <List size={28} weight="light" />}
           </button>
           <div className="moodboard-icon">
-            <Link to="/moodboard" >
+            <Link to="/moodboard" onClick={handleFavoriteClick}>
               <FaRegHeart className="heart-icon" aria-label="Acessar Favoritos" />
               {moodboardItems.length > 0 && (
                 <span className="notification-badge">{moodboardItems.length}</span>
