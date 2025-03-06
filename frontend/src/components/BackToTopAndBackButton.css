@@ -1,11 +1,12 @@
 .floating-buttons {
     position: fixed;
-    top: 80px;      /* Altera para ficar no topo */
-    left: 10px;    /* Continua no lado direito */
+    top: 60px; /* Deixa um espaço seguro para menus fixos */
+    left: 10px; /* Garante que fique no cantinho */
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 10px;
-    z-index: 100;
+    z-index: 1000; /* Bem alto para ficar sobre tudo */
 }
 
 .floating-buttons button {
@@ -28,6 +29,7 @@
     background-color: #c73a3a;
 }
 
+/* Botão de voltar - cor diferente */
 .btn-back {
     background-color: #444;
 }
@@ -37,9 +39,14 @@
 }
 
 @media (max-width: 768px) {
+    .floating-buttons {
+        top: 70px; /* Um pouco abaixo para dispositivos móveis */
+        left: 5px; /* Aproxima da borda */
+    }
+
     .floating-buttons button {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
         font-size: 18px;
     }
 }
