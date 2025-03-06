@@ -1,3 +1,4 @@
+// src/pages/Contact.js
 import React from "react";
 import { Helmet } from "react-helmet";
 import ContactForm from "../components/ContactForm";
@@ -22,28 +23,54 @@ const Contact = () => {
             <section className="contact-hero">
                 <h1>Vamos Conversar? 💍</h1>
                 <p>Estamos prontos para ajudar você a encontrar o vestido perfeito!</p>
-                <a href="https://wa.me/SEUNUMERO" target="_blank" rel="noopener noreferrer" className="whatsapp-button">
-                    <FaWhatsapp /> 
+                <a href="https://wa.me/5535998289198" target="_blank" rel="noopener noreferrer" className="whatsapp-button">
+                    <FaWhatsapp />
                 </a>
             </section>
 
             {/* 🔹 Seção de Informações de Contato */}
             <section className="contact-info">
-                <div className="contact-card">
-                    <FaPhone className="contact-icon" />
-                    <h3>Telefone / WhatsApp</h3>
-                    <p>(35) 99828-9198</p>
-                </div>
-                <div className="contact-card">
-                    <FaEnvelope className="contact-icon" />
-                    <h3>E-mail</h3>
-                    <p>iaranoivas2023@gmail.com</p>
-                </div>
-                <div className="contact-card">
-                    <FaMapMarkerAlt className="contact-icon" />
-                    <h3>Endereço</h3>
-                    <p>Rua Doutor Lisboa, Nº 231 – Pouso Alegre, MG</p>
-                </div>
+
+                {/* Card Telefone/WhatsApp */}
+                <a
+                    href="https://wa.me/5535998289198?text=Olá, gostaria de mais informações sobre os vestidos da Iara Noivas!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-card-link"
+                >
+                    <div className="contact-card">
+                        <FaPhone className="contact-icon" />
+                        <h3>Telefone / WhatsApp</h3>
+                        <p>(35) 99828-9198</p>
+                    </div>
+                </a>
+
+                {/* Card E-mail */}
+                <a
+                    href="mailto:iaranoivas2023@gmail.com?subject=Contato via site&body=Olá, estou entrando em contato através do site e gostaria de saber mais."
+                    className="contact-card-link"
+                >
+                    <div className="contact-card">
+                        <FaEnvelope className="contact-icon" />
+                        <h3>E-mail</h3>
+                        <p>iaranoivas2023@gmail.com</p>
+                    </div>
+                </a>
+
+                {/* Card Endereço */}
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Rua+Dr+Lisboa+231+Pouso+Alegre+MG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-card-link"
+                >
+                    <div className="contact-card">
+                        <FaMapMarkerAlt className="contact-icon" />
+                        <h3>Endereço</h3>
+                        <p>Rua Doutor Lisboa, Nº 231 – Pouso Alegre, MG</p>
+                    </div>
+                </a>
+
             </section>
 
             {/* 🔹 Formulário de Contato */}
@@ -76,13 +103,12 @@ const Contact = () => {
                 <iframe
                     title="Mapa Iara Noivas"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3693.2023503143873!2d-45.93750692380367!3d-22.232400014119477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cbc7b120bbe1f7%3A0x63ca96a50f887b5b!2sAv.%20Dr.%20Lisboa%2C%20231%20-%20Pouso%20Alegre%2C%20MG%2C%2037550-000!5e0!3m2!1spt-BR!2sbr!4v1738947504078!5m2!1spt-BR!2sbr"
-                     width="600"
-                     height="450" 
-                     style={{ border: "0" }}
-                     allowFullScreen=""
-                     loading="lazy" 
-                     referrerpolicy="no-referrer-when-downgrade"
-                   
+                    width="600"
+                    height="450"
+                    style={{ border: "0" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </section>
         </Layout>

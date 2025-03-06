@@ -25,8 +25,22 @@
     padding: 40px 20px;
     flex-wrap: wrap;
 }
+.contact-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
 
 .contact-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     background: white;
     padding: 20px;
     border-radius: 10px;

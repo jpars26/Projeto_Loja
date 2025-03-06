@@ -1,29 +1,16 @@
 // src/pages/HomePage.js
-import React, { useEffect } from 'react';
+import React from 'react';
 import Hero from "../components/Hero";
 import WhatsAppButton from '../components/WhatsAppButton';
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
 import Sections from '../components/Sections';
 import ContactForm from '../components/ContactForm';
-import tourSteps from "../utils/TourSteps";
-import { startTour, stopTour, isTourActive } from "../utils/TourGuide"; // Importando Tour
 import '../css/HomePage.css';
 
 
 const HomePage = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      if (!isTourActive()) {
-        startTour("home", tourSteps.home);
-      }
-
-      return () => {
-        stopTour();
-      };
-    }, 1000);
-  }, []);
-
+  
   return (
     <Layout>
       {/* SEO para a página Home */}

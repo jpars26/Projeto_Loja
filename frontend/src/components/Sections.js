@@ -5,11 +5,9 @@ import { FaCheckCircle, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "../css/Sections.css";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import testimonials from "../data/testimonials";
 import collectionsHomePage from "../data/collectionsHomePage";
 
@@ -27,33 +25,63 @@ const Sections = () => {
     arrows: false,
   };
 
+  // Lista com os diferenciais e links de WhatsApp com mensagens personalizadas
+  const differentials = [
+    {
+      title: "Feitos Sob Medida",
+      desc: "Temos o serviço de confecção para você que procura algo exclusivo",
+      whatsappMessage: "Olá, estou interessada no serviço de confecção sob medida da Iara Noivas. Pode me passar mais informações?",
+    },
+    {
+      title: "Materiais de Alta Qualidade",
+      desc: "Usamos os tecidos mais sofisticados para garantir luxo e conforto.",
+      whatsappMessage: "Olá, gostaria de saber mais sobre os vestidos da Iara Noivas. Pode me contar mais?",
+    },
+    {
+      title: "Atendimento Personalizado",
+      desc: "Nossa equipe ajuda você em cada etapa para escolher o vestido perfeito.",
+      whatsappMessage: "Olá, gostaria de agendar um atendimento personalizado para me ajudar a escolher meu vestido. Vocês podem me ajudar?",
+    }
+  ];
+
+  // Função para gerar link do WhatsApp com mensagem
+  const getWhatsAppLink = (message) => {
+    const phoneNumber = "5535998289198"; // Seu número com DDD
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
+
   return (
     <div className="sections" data-testid="diferencial-section">
       {/* 📌 Bloco Diferenciais */}
       <section className="differentials">
-          <h2>Por que Escolher a Iara Noivas?</h2>
+        <h2>Por que Escolher a Iara Noivas?</h2>
         <div className="container">
           <div className="differential-grid">
-            {[
-              { title: "Feitos Sob Medida", desc: "Temos o serviço de confecção para você que procura algo exclusivo" },
-              { title: "Materiais de Alta Qualidade", desc: "Usamos os tecidos mais sofisticados para garantir luxo e conforto." },
-              { title: "Atendimento Personalizado", desc: "Nossa equipe ajuda você em cada etapa para escolher o vestido perfeito." },
-            ].map((item, index) => (
-              <div key={index} className="differential-card">
-                <FaCheckCircle className="icon" />
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
+            {differentials.map((item, index) => (
+              <a 
+                key={index}
+                href={getWhatsAppLink(item.whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="differential-card-link"
+              >
+                <div className="differential-card">
+                  <FaCheckCircle className="icon" />
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
+      {/* O restante do seu código (carrossel, depoimentos e CTA final) permanece igual */}
       {/* 📌 Bloco Produtos e Depoimentos lado a lado */}
       <section className="dual-section" data-testid="dual-section">
         <div className="container">
           <div className="dual-content">
-            {/* 📌 Carrossel de Vestidos */}
             <div className="exclusive-dresses">
               <h2>Descubra Nossos Vestidos Exclusivos</h2>
               <FaStar className="section-icon" />
@@ -75,7 +103,6 @@ const Sections = () => {
               </Link>
             </div>
 
-            {/* 📌 Carrossel de Depoimentos */}
             <div className="testimonials" data-testid="testimonials-section">
               <h2>Sonhos que Viraram Realidade</h2>
               <FaQuoteLeft className="section-icon" />

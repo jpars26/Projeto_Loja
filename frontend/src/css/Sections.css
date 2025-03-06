@@ -44,6 +44,14 @@ h2 {
     gap: 20px;
 }
 
+.differential-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Faz o link envolver todo o card */
+}
+
+
+
 .differential-card {
     background: white;
     border-radius: 12px;
@@ -52,6 +60,7 @@ h2 {
     text-align: center;
     width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Mostra que é clicável */
 }
 
 .differential-card:hover {
