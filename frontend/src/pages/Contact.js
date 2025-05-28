@@ -1,5 +1,5 @@
 // src/pages/Contact.js
-import React from "react";
+
 import { Helmet } from "react-helmet";
 import ContactForm from "../components/ContactForm";
 import Layout from "../layout/Layout";
@@ -23,7 +23,7 @@ const Contact = () => {
             <section className="contact-hero">
                 <h1>Vamos Conversar? 💍</h1>
                 <p>Estamos prontos para ajudar você a encontrar o vestido perfeito!</p>
-                <a href="https://wa.me/5535998289198" target="_blank" rel="noopener noreferrer" className="whatsapp-button">
+                <a href="https://wa.me/5535998127656" target="_blank" rel="noopener noreferrer" className="whatsapp-button">
                     <FaWhatsapp />
                 </a>
             </section>
@@ -33,7 +33,7 @@ const Contact = () => {
 
                 {/* Card Telefone/WhatsApp */}
                 <a
-                    href="https://wa.me/5535998289198?text=Olá, gostaria de mais informações sobre os vestidos da Iara Noivas!"
+                    href="https://wa.me/5535998127656?text=Olá, gostaria de mais informações sobre os vestidos da Iara Noivas!"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-card-link"

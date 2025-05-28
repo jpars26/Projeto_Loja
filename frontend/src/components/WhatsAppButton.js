@@ -1,9 +1,9 @@
-import React from "react";
+
 import "../css/WhatsAppButton.css"; // Arquivo de estilos
 import { FaWhatsapp } from "react-icons/fa"; // Ícone do WhatsApp
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+5535998289198'; // Coloque o número de telefone da sua loja aqui
+  const phoneNumber = '+5535998127656'; // Coloque o número de telefone da sua loja aqui
 
   // Mensagem padrão (com encode para funcionar na URL)
   const defaultMessage = encodeURIComponent("Olá! Estou navegando no site da Iara Noivas e gostaria de mais informações sobre os vestidos.");

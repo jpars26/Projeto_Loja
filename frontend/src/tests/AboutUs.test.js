@@ -82,7 +82,7 @@ describe("AboutUs Page", () => {
     const button = screen.getByRole("button", { name: /agendar atendimento/i });
     expect(button.closest("a")).toHaveAttribute(
       "href",
-      "https://wa.me/+5535998289198"
+      "https://wa.me/+5535998127656?text=Olá! Gostaria de agendar um atendimento para conhecer os vestidos."
     );
   });
 });

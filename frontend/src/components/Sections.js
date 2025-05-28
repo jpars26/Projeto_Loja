@@ -46,7 +46,7 @@ const Sections = () => {
 
   // Função para gerar link do WhatsApp com mensagem
   const getWhatsAppLink = (message) => {
-    const phoneNumber = "5535998289198"; // Seu número com DDD
+    const phoneNumber = "5535998127656"; // Seu número com DDD
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
@@ -129,7 +129,7 @@ const Sections = () => {
         <div className="container">
           <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
           <p>Entre em contato e agende uma consultoria exclusiva.</p>
-          <a href="https://wa.me/+5535998289198" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer">
             <button className="agd-button">Agendar Atendimento</button>
           </a>
         </div>

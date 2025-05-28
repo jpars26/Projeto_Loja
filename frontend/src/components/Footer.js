@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="footer-links">
         <div className="footer-column">
           <h4>VESTIDOS</h4>
-          <Link to="https://wa.me/+5535998289198" target="_blank" rel="noopener noreferrer" className="collection-footer">
+          <Link to="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer" className="collection-footer">
           <p>Solicite uma consulta</p>
           </Link>
         </div>

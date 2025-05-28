@@ -8,7 +8,7 @@ export const shareOnWhatsApp = (moodboardItems) => {
     const dressNames = moodboardItems.map(item => `- ${item.name}`).join("\n");
   
     // Número do WhatsApp da loja
-    const storePhoneNumber = "5535998289198"; // DDD + número
+    const storePhoneNumber = "5535998127656"; // DDD + número
   
     // Mensagem personalizada
     const message = `Olá, gostaria de mais informações sobre esses vestidos que mais gostei:\n\n${dressNames}\n\nAguardo seu retorno!`;
