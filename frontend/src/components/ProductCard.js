@@ -1,5 +1,5 @@
 // ProductCard.js
-import React from "react";
+
 import { useOnScreen } from "../hooks/useOnScreen"; // ajuste o caminho conforme sua estrutura
 
 const ProductCard = ({ product, index }) => {

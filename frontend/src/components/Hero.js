@@ -1,5 +1,5 @@
 // src/components/sections/Hero.js
-import React from "react";
+
 import "../css/Hero.css";
 import { useState } from "react";
 
