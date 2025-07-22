@@ -41,7 +41,7 @@ const Contact = () => {
                     <div className="contact-card">
                         <FaPhone className="contact-icon" />
                         <h3>Telefone / WhatsApp</h3>
-                        <p>(35) 99828-9198</p>
+                        <p>(35) 99812-7656</p>
                     </div>
                 </a>
 

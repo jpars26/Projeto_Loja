@@ -12,7 +12,7 @@ const Footer = () => {
           <a href="https://www.instagram.com/iaranoivas/" aria-label="Instagram"><FaInstagram /></a>
           <a href="https://www.facebook.com/iaranoivapa?locale=pt_BR" aria-label="Facebook"><FaFacebookF /></a>
           <a href="https://www.linkedin.com/in/joaopaulo26/" aria-label="LinkedIn"><FaLinkedin /></a>
-          <a href="https://www.wa.link/2j3p2z" aria-label="Whatsapp"><FaWhatsapp /></a>
+          <a href="https://wa.me/+5535998127656" aria-label="Whatsapp"><FaWhatsapp /></a>
         </div>
         <div className="languages">
           <span className="active">Portugues</span> | <span>Brasil</span>
