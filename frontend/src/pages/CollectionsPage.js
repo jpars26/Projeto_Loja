@@ -1,21 +1,11 @@
 // src/pages/CollectionsPage.js
-import React, { useEffect } from "react";
+
 import CollectionGrid from "../components/CollectionGrid";
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet";
-import tourSteps from "../utils/TourSteps"; // Importando os steps
-import { startTour } from "../utils/TourGuide"; // Importando TourGuide
 
 const CollectionsPage = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      if (!localStorage.getItem("tourCollectionsViewed")) {
-        startTour("collectionsPage", tourSteps.collectionsPage);
-        localStorage.setItem("tourCollectionsViewed", "true");
-      }
-    }
-    , 1000);
-  }, []);
+ 
 
   return (
     <Layout>

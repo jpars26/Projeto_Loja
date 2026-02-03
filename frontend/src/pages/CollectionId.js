@@ -11,8 +11,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { FaHeart, FaShareAlt, FaWhatsapp, FaThumbsUp } from "react-icons/fa";
 import { shareCurrentPage } from "../utils/shareCurrentPage";
 import { shareSingleDress } from "../utils/shareSingleDress";
-import tourSteps from "../utils/TourSteps";
-import { startTour } from "../utils/TourGuide";
+
 
 const Collection_ID = () => {
   const { id } = useParams();
@@ -22,15 +21,6 @@ const Collection_ID = () => {
   const [likedItems, setLikedItems] = useState({});
   const lastTapRef = useRef(0); // Controla o último toque para double tap
 
-  // Inicia o tour ao carregar a página (somente na primeira visita)
-  useEffect(() => {
-    setTimeout(() => {
-      if (!localStorage.getItem("tourCollectionViewed")) {
-        startTour("collection", tourSteps.collection);
-        localStorage.setItem("tourCollectionViewed", "true");
-      }
-    }, 1000);
-  }, []);
 
   const handleFavoriteClick = (product, event) => {
     event?.stopPropagation(); // Protege para casos de chamada manual
