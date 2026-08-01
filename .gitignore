@@ -138,3 +138,6 @@ dist
 
 #firebase
 firebase-config.json
+
+# Superpowers subagent-driven-development scratch workspace
+.superpowers/
