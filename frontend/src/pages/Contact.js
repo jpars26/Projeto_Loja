@@ -4,8 +4,15 @@ import { Helmet } from "react-helmet-async";
 import ContactForm from "../components/ContactForm";
 import Layout from "../layout/Layout";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { useReveal } from "../hooks/useReveal";
 
 const Contact = () => {
+    const heroRef = useReveal();
+    const infoRef = useReveal();
+    const formRef = useReveal();
+    const faqRef = useReveal();
+    const mapRef = useReveal();
+
     return (
         <Layout>
             {/* 🔹 SEO para melhor indexação */}
@@ -19,7 +26,7 @@ const Contact = () => {
             </Helmet>
 
             {/* 🔹 Hero Section com imagem impactante */}
-            <section className="bg-ink px-4 py-16 text-center text-bone sm:px-6">
+            <section ref={heroRef} className="bg-ink px-4 py-16 text-center text-bone sm:px-6">
                 <h1 className="font-display text-3xl font-medium sm:text-4xl">Vamos Conversar? 💍</h1>
                 <p className="mt-3 font-body text-sm text-bone/80 sm:text-base">
                     Estamos prontos para ajudar você a encontrar o vestido perfeito!
@@ -35,7 +42,7 @@ const Contact = () => {
             </section>
 
             {/* 🔹 Seção de Informações de Contato */}
-            <section className="mx-auto grid max-w-5xl grid-cols-1 gap-px bg-hairline px-4 py-12 sm:grid-cols-3 sm:px-6">
+            <section ref={infoRef} className="mx-auto grid max-w-5xl grid-cols-1 gap-px bg-hairline px-4 py-12 sm:grid-cols-3 sm:px-6">
                 {/* Card Telefone/WhatsApp */}
                 <a
                     href="https://wa.me/5535998127656?text=Olá, gostaria de mais informações sobre os vestidos da Iara Noivas!"
@@ -72,7 +79,7 @@ const Contact = () => {
             </section>
 
             {/* 🔹 Formulário de Contato */}
-            <section className="mx-auto max-w-2xl px-4 py-12 text-center sm:px-6">
+            <section ref={formRef} className="mx-auto max-w-2xl px-4 py-12 text-center sm:px-6">
                 <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">Envie uma Mensagem</h2>
                 <p className="mt-2 font-body text-sm text-ink/70">
                     Preencha o formulário abaixo e retornaremos o mais rápido possível.
@@ -83,7 +90,7 @@ const Contact = () => {
             </section>
 
             {/* 🔹 Seção de Perguntas Frequentes */}
-            <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+            <section ref={faqRef} className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
                 <h2 className="text-center font-display text-2xl font-medium text-ink sm:text-3xl">
                     Dúvidas Frequentes
                 </h2>
@@ -116,7 +123,7 @@ const Contact = () => {
             </section>
 
             {/* 🔹 Mapa Interativo */}
-            <section className="mx-auto max-w-5xl px-4 pb-16 text-center sm:px-6">
+            <section ref={mapRef} className="mx-auto max-w-5xl px-4 pb-16 text-center sm:px-6">
                 <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">Nossa Localização</h2>
                 <iframe
                     title="Mapa Iara Noivas"
