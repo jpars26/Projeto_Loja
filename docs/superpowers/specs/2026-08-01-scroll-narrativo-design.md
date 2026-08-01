@@ -28,6 +28,11 @@ empilhados. Quatro comportamentos de movimento, todos aprovados:
 revelação suave, seções pinadas ("capítulos"), parallax de imagem, e
 transições entre páginas.
 
+Isso precisa funcionar tão bem em celular quanto em desktop — é onde a
+maioria das visitantes da loja acessa o site. Imagens e vídeo precisam
+aparecer na proporção certa em tela pequena, não apenas serem "responsivas"
+por padrão do CSS.
+
 ## Não-objetivos
 
 - Não reescreve conteúdo/copy das seções (o problema identificado é de forma,
@@ -98,6 +103,31 @@ Local sugerido: `frontend/src/animations/`.
   isso restritos a poucos capítulos por página, e parallax implementado via
   `transform` (comportamento padrão do GSAP).
 
+## Adequação Mobile (imagens e vídeo)
+
+Levantamento no código atual mostrou dois problemas concretos que este
+design precisa corrigir, não só "levar em conta":
+
+- **Vídeo do Hero (`Hero.js`)**: hoje um único vídeo landscape (`videoCerto.webm`
+  / `videoLoja.mp4`) é exibido com `object-cover` em qualquer tela, inclusive
+  celular em retrato. Um corte pensado para tela larga pode cortar o assunto
+  principal (ex. o vestido/casal) fora do enquadramento em tela estreita.
+  Tratamento: usar `object-position` ajustado para manter o centro de
+  interesse visível em retrato e, se o enquadramento ainda ficar ruim,
+  disponibilizar uma fonte de vídeo alternativa (ou imagem estática de
+  fallback) para viewport mobile via media query, em vez de depender só de
+  `object-fit`.
+- **Cards de produto (`CollectionGrid.js`)**: o nome do produto e o rótulo
+  ("Ver Vestidos" etc.) só aparecem hoje em `group-hover`, que não existe em
+  touch — ou seja, em celular essa informação nunca é exibida. Tratamento:
+  em telas sem hover (`@media (hover: none)` ou breakpoint mobile), o rótulo
+  fica sempre visível (ou visível ao toque/foco), não escondido por padrão.
+- **Verificação geral de crops**: como o design adiciona parallax e capítulos
+  pinados sobre essas mesmas imagens, a checagem de proporção/corte em mobile
+  (banners de categoria, imagens de coleção, Hero) entra como item explícito
+  da passada manual descrita em "Testes" — não é suficiente testar só em
+  desktop.
+
 ## Testes
 
 - A suíte Jest (ambiente jsdom) não expõe as APIs de scroll/layout que
@@ -108,7 +138,8 @@ Local sugerido: `frontend/src/animations/`.
 - Fluidez de scroll e comportamento com `prefers-reduced-motion` não são
   verificáveis de forma significativa por teste automatizado: o plano inclui
   uma passada manual no navegador (desktop + mobile, Chrome e Safari) antes de
-  considerar a feature pronta.
+  considerar a feature pronta — incluindo os itens de "Adequação Mobile"
+  acima (corte de vídeo/imagens, visibilidade dos rótulos sem hover).
 
 ## Pendência registrada (fora de escopo)
 
