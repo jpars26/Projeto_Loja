@@ -44,4 +44,14 @@ describe("usePinnedChapter", () => {
 
     expect(contextResult.revert).toHaveBeenCalled();
   });
+
+  test("registra um branch para prefers-reduced-motion: reduce", () => {
+    render(<ThreeItemChapter />);
+
+    const mmInstance = gsap.matchMedia.mock.results[0].value;
+    expect(mmInstance.add).toHaveBeenCalledWith(
+      "(prefers-reduced-motion: reduce)",
+      expect.any(Function)
+    );
+  });
 });

@@ -1,7 +1,9 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PageTransition = ({ children }) => {
   const location = useLocation();
@@ -16,9 +18,11 @@ const PageTransition = ({ children }) => {
       gsap.fromTo(element, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" });
     });
 
-    ScrollTrigger.refresh();
-
     return () => mm.revert();
+  }, [location.pathname]);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
   }, [location.pathname]);
 
   return (

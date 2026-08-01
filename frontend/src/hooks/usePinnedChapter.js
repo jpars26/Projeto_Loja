@@ -18,8 +18,8 @@ export const usePinnedChapter = (itemCount, { stepDistance = 400 } = {}) => {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.set(items, { opacity: 0, y: 24 });
-        gsap.set(items[0], { opacity: 1, y: 0 });
+        gsap.set(items, { autoAlpha: 0, y: 24 });
+        gsap.set(items[0], { autoAlpha: 1, y: 0 });
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -33,13 +33,17 @@ export const usePinnedChapter = (itemCount, { stepDistance = 400 } = {}) => {
 
         items.forEach((item, index) => {
           if (index === 0) return;
-          tl.to(items[index - 1], { opacity: 0, y: -24, duration: 0.3 }, index - 1);
-          tl.fromTo(item, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3 }, index - 1);
+          tl.to(items[index - 1], { autoAlpha: 0, y: -24, duration: 0.3 }, index - 1);
+          tl.fromTo(item, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.3 }, index - 1);
         });
       });
 
       mm.add("(prefers-reduced-motion: reduce)", () => {
-        gsap.set(items, { opacity: 1, y: 0 });
+        gsap.set(items, { autoAlpha: 1, y: 0, position: "relative", inset: "auto" });
+        const container = items[0]?.parentElement;
+        if (container) {
+          gsap.set(container, { height: "auto" });
+        }
       });
     }, section);
 
