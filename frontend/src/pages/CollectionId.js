@@ -10,12 +10,14 @@ import { FaHeart, FaShareAlt, FaWhatsapp, FaThumbsUp } from "react-icons/fa";
 import { shareCurrentPage } from "../utils/shareCurrentPage";
 import { shareSingleDress } from "../utils/shareSingleDress";
 import FabricTag from "../components/FabricTag";
+import { useParallax } from "../hooks/useParallax";
 
 const Collection_ID = () => {
   const { slug: id } = useParams();
   const collection = collections.find((col) => col.id === id);
   const { moodboardItems, addToMoodboard, removeFromMoodboard } = useMoodboard();
   const gridRef = useRef(null);
+  const bannerParallaxRef = useParallax({ distance: 40 });
   const [likedItems, setLikedItems] = useState({});
   const lastTapRef = useRef(0); // Controla o último toque para double tap
 
@@ -56,6 +58,7 @@ const Collection_ID = () => {
 
       <div className="mx-auto max-w-6xl px-4 pt-8 text-center sm:px-6">
         <img
+          ref={bannerParallaxRef}
           src={collection.banner}
           loading="lazy"
           alt={collection.name}
