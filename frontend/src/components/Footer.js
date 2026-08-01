@@ -1,59 +1,89 @@
-import React from "react";
-import "../css/Footer.css";
 import { FaInstagram, FaFacebookF, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <h2 className="footer_h2">VENHA SE SENTIR-SE ESPECIAL!</h2>
-        <div className="social-icons">
-          <a href="https://www.instagram.com/iaranoivas/" aria-label="Instagram"><FaInstagram /></a>
-          <a href="https://www.facebook.com/iaranoivapa?locale=pt_BR" aria-label="Facebook"><FaFacebookF /></a>
-          <a href="https://www.linkedin.com/in/joaopaulo26/" aria-label="LinkedIn"><FaLinkedin /></a>
-          <a href="https://wa.me/+5535998127656" aria-label="Whatsapp"><FaWhatsapp /></a>
+    <footer className="bg-ink px-4 py-12 text-bone sm:px-6">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-b border-bone/15 pb-8 text-center">
+        <h2 className="font-display text-xl font-medium sm:text-2xl">
+          VENHA SE SENTIR-SE ESPECIAL!
+        </h2>
+        <div className="flex gap-4 text-lg">
+          <a href="https://www.instagram.com/iaranoivas/" aria-label="Instagram" className="transition-colors hover:text-accent">
+            <FaInstagram />
+          </a>
+          <a href="https://www.facebook.com/iaranoivapa?locale=pt_BR" aria-label="Facebook" className="transition-colors hover:text-accent">
+            <FaFacebookF />
+          </a>
+          <a href="https://www.linkedin.com/in/joaopaulo26/" aria-label="LinkedIn" className="transition-colors hover:text-accent">
+            <FaLinkedin />
+          </a>
+          <a href="https://wa.me/+5535998127656" aria-label="Whatsapp" className="transition-colors hover:text-accent">
+            <FaWhatsapp />
+          </a>
         </div>
-        <div className="languages">
-          <span className="active">Portugues</span> | <span>Brasil</span>
+        <div className="font-label text-xs uppercase tracking-wide text-bone/60">
+          <span className="text-bone">Portugues</span> | <span>Brasil</span>
         </div>
       </div>
 
-      <div className="footer-links">
-        <div className="footer-column">
-          <h4>VESTIDOS</h4>
-          <Link to="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer" className="collection-footer">
-          <p>Solicite uma consulta</p>
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 py-8 sm:grid-cols-4">
+        <div>
+          <h4 className="font-label text-xs uppercase tracking-wide text-bone/60">Vestidos</h4>
+          <Link
+            to="https://wa.me/+5535998127656"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block font-body text-sm text-bone/90 transition-colors hover:text-accent"
+          >
+            Solicite uma consulta
           </Link>
         </div>
-        <div className="footer-column">
-          <h4>EMPRESA</h4>
-          <Link to="/about" className="collection-footer">
-          <p>Sobre nós</p>
+        <div>
+          <h4 className="font-label text-xs uppercase tracking-wide text-bone/60">Empresa</h4>
+          <Link to="/about" className="mt-2 block font-body text-sm text-bone/90 transition-colors hover:text-accent">
+            Sobre nós
           </Link>
-          <Link to={'/contact'} className="collection-footer">
-          <p>Contato</p>
+          <Link to="/contact" className="mt-1 block font-body text-sm text-bone/90 transition-colors hover:text-accent">
+            Contato
           </Link>
         </div>
+        <div className="col-span-2 sm:col-span-2">
+          <h4 className="font-label text-xs uppercase tracking-wide text-bone/60">Parceiros</h4>
+          <div className="mt-2 flex flex-wrap items-center gap-4">
+            <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://grifepetrova.com/images/IMG_2348.JPG"
+                alt="Petrova"
+                className="h-10 w-auto rounded object-cover opacity-80 transition-opacity hover:opacity-100"
+              />
+            </a>
+            <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://novanoiva.com.br/wp-content/uploads/2022/09/logo_nova_noiva_home.svg"
+                alt="Nova Noiva"
+                className="h-10 w-auto opacity-80 transition-opacity hover:opacity-100"
+              />
+            </a>
+            <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://tuttisposa.com.br/wp-content/uploads/2020/11/logo-tutti-sposa-redimensionado.png"
+                alt="Tutti Sposa"
+                className="h-10 w-auto opacity-80 transition-opacity hover:opacity-100"
+              />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="footer-partners">
-    <h4>Parceiros</h4>
-    <div className="partners-logos">
-        <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
-            <img src="https://grifepetrova.com/images/IMG_2348.JPG" alt="Petrova" className="partner-logo petrova"/>
-        </a>
-        <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
-            <img src="https://novanoiva.com.br/wp-content/uploads/2022/09/logo_nova_noiva_home.svg" alt="Nova Noiva" className="partner-logo"/>
-        </a>
-        <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
-            <img src="https://tuttisposa.com.br/wp-content/uploads/2020/11/logo-tutti-sposa-redimensionado.png" alt="Tutti Sposa" className="partner-logo"/>
-        </a>
-      </div>
-    </div>
 
-      <div className="footer-bottom">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-1 border-t border-bone/15 pt-6 text-center font-body text-xs text-bone/50">
         <p>© 2025 Iara Noivas - Vestidos de Casamento</p>
-        <p>Made by <a href="https://github.com/jpars26">Jpars26</a></p>
+        <p>
+          Made by{" "}
+          <a href="https://github.com/jpars26" className="underline transition-colors hover:text-accent">
+            Jpars26
+          </a>
+        </p>
       </div>
     </footer>
   );

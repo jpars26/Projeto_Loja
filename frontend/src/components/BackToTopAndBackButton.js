@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowUp, FaArrowLeft } from 'react-icons/fa'; // Ícones para o botão
-
-import './BackToTopAndBackButton.css'; // Crie um CSS só para ele
 
 const BackToTopAndBackButton = () => {
     const [showScroll, setShowScroll] = useState(false);
@@ -33,15 +31,23 @@ const BackToTopAndBackButton = () => {
     };
 
     return (
-        <div className="floating-buttons">
+        <div className="fixed bottom-5 left-1/2 z-40 flex -translate-x-1/2 gap-3 sm:bottom-6 sm:left-auto sm:right-24 sm:translate-x-0">
             {/* Botão Voltar */}
-            <button className="btn-back" onClick={handleBack} aria-label="Voltar">
+            <button
+                onClick={handleBack}
+                aria-label="Voltar"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-surface text-ink shadow transition-colors hover:border-accent hover:text-accent"
+            >
                 <FaArrowLeft />
             </button>
 
             {/* Botão Scroll para o Topo */}
             {showScroll && (
-                <button className="btn-top" onClick={scrollToTop} aria-label="Voltar ao topo">
+                <button
+                    onClick={scrollToTop}
+                    aria-label="Voltar ao topo"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-hairline bg-surface text-ink shadow transition-colors hover:border-accent hover:text-accent"
+                >
                     <FaArrowUp />
                 </button>
             )}

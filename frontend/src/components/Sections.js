@@ -1,10 +1,7 @@
-// src/components/sections/Sections.js
-import React from "react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import "../css/Sections.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -52,87 +49,112 @@ const Sections = () => {
   };
 
   return (
-    <div className="sections" data-testid="diferencial-section">
+    <div className="font-body text-ink" data-testid="diferencial-section">
       {/* 📌 Bloco Diferenciais */}
-      <section className="differentials">
-        <h2>Por que Escolher a Iara Noivas?</h2>
-        <div className="container">
-          <div className="differential-grid">
-            {differentials.map((item, index) => (
-              <a 
-                key={index}
-                href={getWhatsAppLink(item.whatsappMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="differential-card-link"
-              >
-                <div className="differential-card">
-                  <FaCheckCircle className="icon" />
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              </a>
-            ))}
-          </div>
+      <section className="bg-bone px-4 py-16 text-center sm:px-6">
+        <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
+          Por que Escolher a Iara Noivas?
+        </h2>
+        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-6">
+          {differentials.map((item, index) => (
+            <a
+              key={index}
+              href={getWhatsAppLink(item.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-64 border border-hairline bg-surface p-6 text-center transition-colors hover:border-accent"
+            >
+              <FaCheckCircle className="mx-auto mb-3 text-2xl text-accent" />
+              <h3 className="font-display text-lg font-medium text-ink">{item.title}</h3>
+              <p className="mt-2 font-body text-sm text-ink/70">{item.desc}</p>
+            </a>
+          ))}
         </div>
       </section>
 
-      {/* O restante do seu código (carrossel, depoimentos e CTA final) permanece igual */}
       {/* 📌 Bloco Produtos e Depoimentos lado a lado */}
-      <section className="dual-section" data-testid="dual-section">
-        <div className="container">
-          <div className="dual-content">
-            <div className="exclusive-dresses">
-              <h2>Descubra Nossos Vestidos Exclusivos</h2>
-              <FaStar className="section-icon" />
-              <p className="section-subtitle">Modelos feitos para tornar seu dia ainda mais especial.</p>
+      <section className="bg-surface px-4 py-16 text-center sm:px-6" data-testid="dual-section">
+        <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:divide-x md:divide-hairline">
+          <div className="flex flex-col items-center md:pr-8">
+            <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
+              Descubra Nossos Vestidos Exclusivos
+            </h2>
+            <FaStar className="my-3 text-xl text-accent" />
+            <p className="max-w-sm font-body text-sm text-ink/70">
+              Modelos feitos para tornar seu dia ainda mais especial.
+            </p>
 
-              <div className="carousel-wrapper">
-                <Slider {...sliderSettings} className="exclusive-slider">
-                  {collectionsHomePage.map((collection, index) => (
-                    <div key={index} className="exclusive-slide">
-                      <LazyLoadImage src={collection.image} alt={collection.name} className="exclusive-image" />
-                      <p className="collection-name">{collection.name}</p>
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-
-              <Link to="/collections">
-                <button className="cta-button">Ver Coleção</button>
-              </Link>
+            <div className="mt-6 w-full max-w-sm">
+              <Slider {...sliderSettings}>
+                {collectionsHomePage.map((collection, index) => (
+                  <div key={index} className="px-1 text-center">
+                    <LazyLoadImage
+                      src={collection.image}
+                      alt={collection.name}
+                      className="aspect-[3/4] w-full object-cover"
+                    />
+                    <p className="mt-3 font-label text-xs uppercase tracking-wide text-ink/70">
+                      {collection.name}
+                    </p>
+                  </div>
+                ))}
+              </Slider>
             </div>
 
-            <div className="testimonials" data-testid="testimonials-section">
-              <h2>Sonhos que Viraram Realidade</h2>
-              <FaQuoteLeft className="section-icon" />
-              <p className="section-subtitle">Nossas noivas contam suas histórias inesquecíveis.</p>
+            <Link
+              to="/collections"
+              className="mt-8 inline-block border border-ink px-5 py-2 font-label text-xs uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-bone"
+            >
+              Ver Coleção
+            </Link>
+          </div>
 
-              <div className="carousel-wrapper">
-                <Slider {...sliderSettings} className="testimonial-slider">
-                  {testimonials.map((testimonial, index) => (
-                    <div key={index} className="testimonial-box">
-                      <LazyLoadImage src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
-                      <p className="testimonial-text">{testimonial.text}</p>
-                      <h4 className="testimonial-name">- {testimonial.name}</h4>
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+          <div
+            className="flex flex-col items-center md:pl-8"
+            data-testid="testimonials-section"
+          >
+            <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
+              Sonhos que Viraram Realidade
+            </h2>
+            <FaQuoteLeft className="my-3 text-xl text-accent" />
+            <p className="max-w-sm font-body text-sm text-ink/70">
+              Nossas noivas contam suas histórias inesquecíveis.
+            </p>
+
+            <div className="mt-6 w-full max-w-sm pb-10">
+              <Slider {...sliderSettings}>
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="border-l-2 border-accent bg-bone p-6 text-left">
+                    <LazyLoadImage
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="h-16 w-16 rounded-full object-cover"
+                    />
+                    <p className="mt-3 font-body text-sm italic text-ink/80">{testimonial.text}</p>
+                    <h4 className="mt-2 font-label text-xs uppercase tracking-wide text-ink">
+                      - {testimonial.name}
+                    </h4>
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </div>
       </section>
 
       {/* 📌 Bloco CTA Final */}
-      <section className="cta" data-testid="cta-section">
-        <div className="container">
-          <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
-          <p>Entre em contato e agende uma consultoria exclusiva.</p>
-          <a href="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer">
-            <button className="agd-button">Agendar Atendimento</button>
-          </a>
-        </div>
+      <section className="bg-bone px-4 py-16 text-center sm:px-6" data-testid="cta-section">
+        <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
+          Pronta para Encontrar o Vestido dos Seus Sonhos?
+        </h2>
+        <p className="mt-2 font-body text-sm text-ink/70">
+          Entre em contato e agende uma consultoria exclusiva.
+        </p>
+        <a href="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer">
+          <button className="mt-6 border border-accent bg-accent px-5 py-2 font-label text-xs uppercase tracking-wide text-bone transition-colors hover:bg-transparent hover:text-accent">
+            Agendar Atendimento
+          </button>
+        </a>
       </section>
     </div>
   );

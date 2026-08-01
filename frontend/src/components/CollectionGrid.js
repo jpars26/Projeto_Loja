@@ -1,27 +1,52 @@
-// src/components/sections/CollectionGrid.js
-import React from "react";
-import "../css/Collections.css"; // Importando o CSS
-import collections from "../data/collections";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import collections from "../data/catalog";
 import logo from "../assets/images/loguinho.webp";
+import FabricTag from "./FabricTag";
 
-const CollectionGrid = () => {
+const BUTTON_LABEL_BY_CATEGORY = {
+  noivas: "Ver Vestidos",
+  ternos: "Ver Ternos",
+  festa: "Ver Looks de Festa",
+};
+
+const CollectionGrid = ({ category = "noivas" }) => {
+  const buttonLabel = BUTTON_LABEL_BY_CATEGORY[category] ?? "Ver Coleção";
+  const filtered = collections.filter((dress) => dress.category === category);
+
   return (
-    <section className="collection-container">
-      <LazyLoadImage src={logo} alt="Coleção Exclusiva" className="collection-banner1" />
-      <h2 className="collection-title">Coleção Exclusiva</h2>
-      
-      
-      <div className="grid-container">
-        {collections.map((dress) => (
-          <div key={dress.id} className="grid-item">
-            <Link to={`/collections/${dress.id}`} className="collection-card"> 
-              <LazyLoadImage  effect="blur" src={dress.image} alt={dress.name} />
-              <p>{dress.name}</p>
-              <button className="btnCollection" style={{ backgroundColor: "#ff6666", color: "white" }}>Ver Vestidos</button>
-            </Link>
-          </div>
+    <section className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
+      <LazyLoadImage
+        src={logo}
+        alt="Coleção Exclusiva"
+        className="mx-auto max-h-24 w-auto"
+      />
+      <h2 className="mt-4 font-display text-2xl font-medium text-ink sm:text-3xl">
+        Coleção Exclusiva
+      </h2>
+
+      <div className="mt-8 grid grid-cols-1 gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((dress) => (
+          <Link
+            key={dress.id}
+            to={`/collections/${dress.id}`}
+            className="group relative block aspect-[3/4] overflow-hidden bg-surface"
+          >
+            <LazyLoadImage
+              effect="blur"
+              src={dress.image}
+              alt={dress.name}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              wrapperClassName="h-full w-full block"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute bottom-3 left-3 flex translate-y-2 flex-col items-start gap-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <FabricTag tint={category} className="bg-surface/95">
+                {dress.name}
+              </FabricTag>
+              <FabricTag className="bg-surface/95">{buttonLabel}</FabricTag>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

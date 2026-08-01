@@ -1,63 +1,42 @@
-/* Estilização personalizada do Shepherd.js */
+/* Estilização personalizada do Shepherd.js (tokens do design system —
+   arquivo precisa continuar sendo CSS puro pois o Shepherd gera seu próprio
+   DOM fora do controle do React/JSX). */
 .shepherd-theme-custom {
-    background-color: white !important;
-    color: #333 !important;
-    border-radius: 10px !important;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15) !important;
-    padding: 15px !important;
-    font-size: 14px !important;
-    max-width: 260px !important; /* Diminui a largura do tooltip */
+  @apply !max-w-[260px] !rounded-none !border !border-hairline !bg-surface !p-4 !font-body !text-sm !text-ink !shadow-lg;
+}
+
+.shepherd-header {
+  @apply text-center font-display font-medium text-ink;
+}
+
+.shepherd-text {
+  @apply !text-center !text-sm !leading-relaxed;
+}
+
+.shepherd-arrow {
+  @apply !h-3 !w-3;
+}
+
+/* Botões do Tour */
+.shepherd-button {
+  @apply !rounded-none !border !border-ink !bg-ink !px-3 !py-2 !font-label !text-xs !uppercase !tracking-wide !text-bone transition-colors;
+}
+
+.shepherd-button:hover {
+  @apply !bg-transparent !text-ink;
+}
+
+/* Ajustando tamanho no mobile */
+@media (max-width: 768px) {
+  .shepherd-theme-custom {
+    @apply !max-w-[220px] !p-3 !text-xs;
   }
-  
-  .shepherd-header {
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-    color: #444;
-  }
-  
+
   .shepherd-text {
-    font-size: 14px !important;
-    line-height: 1.4 !important;
-    text-align: center;
+    @apply !text-xs;
   }
-  
-  .shepherd-arrow {
-    width: 12px !important; 
-    height: 12px !important;
-    color: black;
-  }
-  
-  /* Botões do Tour */
+
   .shepherd-button {
-    background-color: #007bff !important;
-    color: white !important;
-    padding: 8px 12px !important;
-    font-size: 14px !important;
-    border-radius: 6px !important;
-    border: none !important;
-    transition: 0.3s;
+    @apply !px-2.5 !py-1.5 !text-xs;
   }
-  
-  .shepherd-button:hover {
-    background-color: #0056b3 !important;
-  }
-  
-  /* Ajustando tamanho no mobile */
-  @media (max-width: 768px) {
-    .shepherd-theme-custom {
-      max-width: 220px !important;
-      font-size: 12px !important;
-      padding: 10px !important;
-    }
-  
-    .shepherd-text {
-      font-size: 12px !important;
-    }
-  
-    .shepherd-button {
-      font-size: 12px !important;
-      padding: 6px 10px !important;
-    }
-  }
-  
+}

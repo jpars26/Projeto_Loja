@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import "../css/ContactForm.css";
-import { db, collection, addDoc, serverTimestamp } from "../config/firebase"; 
+import { useState } from "react";
+import { db, collection, addDoc, serverTimestamp } from "../config/firebase";
 
+const inputClass =
+  "mt-1 w-full border border-hairline bg-surface px-3 py-2 font-body text-sm text-ink focus:border-accent focus:outline-none";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -71,27 +72,37 @@ const ContactForm = () => {
 
   return (
     <section id="contact">
-      <h2>Entre em Contato</h2>
-      <p>Nos envie uma mensagem e ajudaremos com carinho! 💕</p>
+      <h2 className="font-display text-2xl font-medium text-ink">Entre em Contato</h2>
+      <p className="mt-2 font-body text-sm text-ink/70">
+        Nos envie uma mensagem e ajudaremos com carinho! 💕
+      </p>
 
-      {successMessage && <p className="success-message animate-success">{successMessage}</p>}
-      {errors.form && <p className="error-text">{errors.form}</p>}
+      {successMessage && (
+        <p className="mt-4 font-body text-sm text-accent">{successMessage}</p>
+      )}
+      {errors.form && <p className="mt-4 font-body text-sm text-red-600">{errors.form}</p>}
 
-      <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-group">
-          <label htmlFor="name">Nome</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-          {errors.name && <span className="error-text">{errors.name}</span>}
+      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <div>
+          <label htmlFor="name" className="font-label text-xs uppercase tracking-wide text-ink/70">
+            Nome
+          </label>
+          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className={inputClass} />
+          {errors.name && <span className="mt-1 block font-body text-xs text-red-600">{errors.name}</span>}
         </div>
 
-        <div className="form-group">
-          <label htmlFor="email">E-mail</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-          {errors.email && <span className="error-text">{errors.email}</span>}
+        <div>
+          <label htmlFor="email" className="font-label text-xs uppercase tracking-wide text-ink/70">
+            E-mail
+          </label>
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className={inputClass} />
+          {errors.email && <span className="mt-1 block font-body text-xs text-red-600">{errors.email}</span>}
         </div>
 
-        <div className="form-group">
-          <label htmlFor="telefone">Telefone</label>
+        <div>
+          <label htmlFor="telefone" className="font-label text-xs uppercase tracking-wide text-ink/70">
+            Telefone
+          </label>
           <input
             type="text"
             id="telefone"
@@ -101,17 +112,24 @@ const ContactForm = () => {
             required
             maxLength="11"
             placeholder="(XX) XXXXX-XXXX"
+            className={inputClass}
           />
-          {errors.telefone && <span className="error-text">{errors.telefone}</span>}
+          {errors.telefone && <span className="mt-1 block font-body text-xs text-red-600">{errors.telefone}</span>}
         </div>
 
-        <div className="form-group">
-          <label htmlFor="message">Tem alguma dúvida? Nos mande uma mensagem! 💌</label>
-          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
-          {errors.message && <span className="error-text">{errors.message}</span>}
+        <div>
+          <label htmlFor="message" className="font-label text-xs uppercase tracking-wide text-ink/70">
+            Tem alguma dúvida? Nos mande uma mensagem! 💌
+          </label>
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={4} className={inputClass} />
+          {errors.message && <span className="mt-1 block font-body text-xs text-red-600">{errors.message}</span>}
         </div>
 
-        <button type="submit" className="buttonForms" disabled={loading}>
+        <button
+          type="submit"
+          disabled={loading}
+          className="border border-ink px-5 py-2 font-label text-xs uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-bone disabled:cursor-not-allowed disabled:border-hairline disabled:text-ink/40"
+        >
           {loading ? "Enviando..." : "Enviar Mensagem"}
         </button>
       </form>

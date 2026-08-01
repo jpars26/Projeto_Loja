@@ -1,17 +1,14 @@
-import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
-import "../css/Layout.css"; // Importando o CSS
 import BackToTopAndBackButton from "../components/BackToTopAndBackButton";
-
 
 const Layout = ({ children }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <div className="flex min-h-screen flex-col bg-bone">
       <Header />
-      
-      <main style={{ flex: 1, paddingTop: "80px" }}>{children}</main> {/* Aqui corrigimos */}
+
+      <main className="flex-1 pt-20">{children}</main>
       <WhatsAppButton />
       <BackToTopAndBackButton />
       <Footer />

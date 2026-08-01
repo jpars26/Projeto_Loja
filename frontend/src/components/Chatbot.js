@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import "../css/Chatbot.css"; // Arquivo de estilos
+import { useState, useEffect } from "react";
 import { FaCommentDots, FaTimes } from "react-icons/fa"; // Ícones para abrir e fechar o chat
 
 const Chatbot = () => {
@@ -60,41 +59,58 @@ const Chatbot = () => {
     <>
       {/* Ícone do chatbot flutuante */}
       {!isOpen && (
-        <button className="chatbot-icon" onClick={toggleChat}>
+        <button
+          className="fixed bottom-5 left-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-xl text-bone shadow-lg transition-colors hover:bg-ink"
+          onClick={toggleChat}
+        >
           <FaCommentDots />
         </button>
       )}
 
       {/* Janela do chatbot */}
-      <div className={`chatbot-container ${isOpen ? "chatbot-open" : ""}`}>
-        <div className="chatbot-header">
-          Assistente Iara Noivas
-          <button className="chatbot-close" onClick={toggleChat}>
-            <FaTimes />
-          </button>
-        </div>
+      {isOpen && (
+        <div className="fixed bottom-24 left-5 z-40 flex w-80 max-w-[90%] flex-col overflow-hidden border border-hairline bg-surface shadow-lg">
+          <div className="flex items-center justify-between bg-ink px-4 py-3 font-label text-xs uppercase tracking-wide text-bone">
+            Assistente Iara Noivas
+            <button onClick={toggleChat} aria-label="Fechar chat" className="text-bone">
+              <FaTimes />
+            </button>
+          </div>
 
-        <div className="chatbot-messages">
-          {messages.map((msg, index) => (
-            <div key={index} className={`chatbot-message ${msg.sender}`}>
-              {msg.text}
-            </div>
-          ))}
-        </div>
+          <div className="flex h-64 flex-col gap-2 overflow-y-auto p-3">
+            {messages.map((msg, index) => (
+              <div
+                key={index}
+                className={`max-w-[80%] px-3 py-2 font-body text-sm ${
+                  msg.sender === "user"
+                    ? "self-end bg-hairline/40 text-ink"
+                    : "self-start bg-bone text-ink"
+                }`}
+              >
+                {msg.text}
+              </div>
+            ))}
+          </div>
 
-        <div className="chatbot-input">
-          <input
-            type="text"
-            placeholder="Digite sua pergunta..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            disabled={isLoading} // Desativa input enquanto a resposta está carregando
-          />
-          <button onClick={sendMessage} disabled={isLoading}> {/* Desativa botão durante requisição */}
-            {isLoading ? "Aguardando..." : "Enviar"}
-          </button>
+          <div className="flex gap-2 border-t border-hairline p-3">
+            <input
+              type="text"
+              placeholder="Digite sua pergunta..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              disabled={isLoading}
+              className="flex-1 border border-hairline px-2 py-1 font-body text-sm text-ink disabled:bg-hairline/20"
+            />
+            <button
+              onClick={sendMessage}
+              disabled={isLoading}
+              className="border border-ink px-3 py-1 font-label text-xs uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-bone disabled:cursor-not-allowed disabled:border-hairline disabled:text-ink/40 disabled:hover:bg-transparent"
+            >
+              {isLoading ? "Aguardando..." : "Enviar"}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

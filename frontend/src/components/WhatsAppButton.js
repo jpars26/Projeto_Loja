@@ -1,5 +1,3 @@
-
-import "../css/WhatsAppButton.css"; // Arquivo de estilos
 import { FaWhatsapp } from "react-icons/fa"; // Ícone do WhatsApp
 
 const WhatsAppButton = () => {
@@ -18,13 +16,13 @@ const WhatsAppButton = () => {
   return (
     <a
       href={`https://wa.me/${phoneNumber}?text=${defaultMessage}`} // Inclui a mensagem pré-definida
-      className="whatsapp-button"
+      className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-bone shadow-lg transition-transform hover:scale-110"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contato pelo WhatsApp"
       onClick={handleWhatsAppClick} // Dispara o evento quando o link é clicado
     >
-      <FaWhatsapp className="whatsapp-icon" data-testid="whatsapp-button-main" />
+      <FaWhatsapp className="text-2xl" data-testid="whatsapp-button-main" />
     </a>
   );
 };

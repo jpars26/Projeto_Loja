@@ -1,16 +1,14 @@
 // src/pages/HomePage.js
-import React from 'react';
 import Hero from "../components/Hero";
 import WhatsAppButton from '../components/WhatsAppButton';
 import Layout from "../layout/Layout";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import Sections from '../components/Sections';
 import ContactForm from '../components/ContactForm';
-import '../css/HomePage.css';
 
 
 const HomePage = () => {
-  
+
   return (
     <Layout>
       {/* SEO para a página Home */}
@@ -25,8 +23,13 @@ const HomePage = () => {
 
       <Hero />
       <Sections />
-      <ContactForm />
-      
+
+      <section className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
+        <div className="text-left">
+          <ContactForm />
+        </div>
+      </section>
+
       <WhatsAppButton />
     </Layout>
   );

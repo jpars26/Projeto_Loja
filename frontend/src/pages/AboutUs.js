@@ -1,16 +1,24 @@
-
 import CustomerGallery from '../components/CustomerGallery';
 import Layout from '../layout/Layout';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
-import "../css/AboutUs.css"; // Certifique-se de criar esse CSS para estilizar
 import logo from "../assets/images/loguinho.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+const TIMELINE = [
+  { year: "2003", text: "Fundação da Iara Noivas, inspirada pelo amor à moda nupcial." },
+  { year: "2010", text: "Começamos a criar vestidos sob medida, exclusivos para cada noiva." },
+  { year: "2020", text: "Nossas peças se tornaram referência em casamentos de luxo." },
+  { year: "2024", text: "Expandimos para novas coleções exclusivas." },
+];
+
+const DIFFERENTIALS = [
+  { icon: FaCheckCircle, title: "Feitos Sob Medida", text: "Cada vestido é desenhado para refletir sua personalidade e estilo." },
+  { icon: FaClock, title: "22 Anos de Tradição", text: "Mais de 5.000 noivas já confiaram em nossa experiência." },
+  { icon: FaStar, title: "Qualidade e Exclusividade", text: "Utilizamos os melhores materiais para criar peças atemporais." },
+];
 
 const AboutUs = () => {
- 
-
   return (
     <Layout>
       {/* SEO para a página Sobre Nós */}
@@ -30,75 +38,64 @@ const AboutUs = () => {
       </Helmet>
 
       {/* Seção Hero */}
-      <section className="about-hero">
-        <div className="hero-content">
-          <h1>Realizamos sonhos, um vestido por vez</h1>
-          <p>Transformamos momentos especiais em memórias inesquecíveis.</p>
-        </div>
+      <section className="bg-ink px-4 py-20 text-center text-bone sm:px-6">
+        <h1 className="font-display text-3xl font-medium sm:text-4xl">
+          Realizamos sonhos, um vestido por vez
+        </h1>
+        <p className="mt-3 font-body text-sm text-bone/80 sm:text-base">
+          Transformamos momentos especiais em memórias inesquecíveis.
+        </p>
       </section>
 
       {/* Nossa História - Timeline */}
-      <section className="about-history">
-        <h2>Nossa História</h2>
-        <div className="history-timeline">
-          <div className="timeline-item">
-            <span className="year">2003</span>
-            <p>Fundação da Iara Noivas, inspirada pelo amor à moda nupcial.</p>
-          </div>
-          <div className="timeline-item">
-            <span className="year">2010</span>
-            <p>Começamos a criar vestidos sob medida, exclusivos para cada noiva.</p>
-          </div>
-          <div className="timeline-item">
-            <span className="year">2020</span>
-            <p>Nossas peças se tornaram referência em casamentos de luxo.</p>
-          </div>
-          <div className="timeline-item">
-            <span className="year">2024</span>
-            <p>Expandimos para novas coleções exclusivas.</p>
-          </div>
+      <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+        <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">Nossa História</h2>
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {TIMELINE.map((item) => (
+            <div key={item.year} className="border-t border-hairline pt-4">
+              <span className="font-label text-xs uppercase tracking-wide text-accent">{item.year}</span>
+              <p className="mt-2 font-body text-sm text-ink/70">{item.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Diferenciais */}
-      <section className="about-differentials">
-        <h2>Por que escolher a Iara Noivas?</h2>
-        <div className="differentials-grid">
-          <div className="differential-card">
-            <FaCheckCircle className="icon" />
-            <h3>Feitos Sob Medida</h3>
-            <p>Cada vestido é desenhado para refletir sua personalidade e estilo.</p>
-          </div>
-          <div className="differential-card">
-            <FaClock className="icon" />
-            <h3>22 Anos de Tradição</h3>
-            <p>Mais de 5.000 noivas já confiaram em nossa experiência.</p>
-          </div>
-          <div className="differential-card">
-            <FaStar className="icon" />
-            <h3>Qualidade e Exclusividade</h3>
-            <p>Utilizamos os melhores materiais para criar peças atemporais.</p>
-          </div>
+      <section className="bg-surface px-4 py-16 text-center sm:px-6">
+        <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
+          Por que escolher a Iara Noivas?
+        </h2>
+        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-6">
+          {DIFFERENTIALS.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="w-64 border border-hairline p-6">
+              <Icon className="mx-auto mb-3 text-2xl text-accent" />
+              <h3 className="font-display text-lg font-medium text-ink">{title}</h3>
+              <p className="mt-2 font-body text-sm text-ink/70">{text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Galeria de Clientes */}
-      <section className="about-gallery">
-        <h2>Noivas Felizes</h2>
-        <LazyLoadImage src={logo} alt="Coleção Exclusiva" className="collection-banner" />
+      <section className="px-4 py-16 text-center sm:px-6">
+        <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">Noivas Felizes</h2>
+        <LazyLoadImage src={logo} alt="Coleção Exclusiva" className="mx-auto mt-4 max-h-24 w-auto" />
         <CustomerGallery />
       </section>
 
-
       {/* Call to Action */}
-      <section className="cta">
-        <div className="container">
-          <h2>Pronta para Encontrar o Vestido dos Seus Sonhos?</h2>
-          <p>Entre em contato e agende uma consultoria exclusiva.</p>
-          <a href="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer">
-            <button className="cta-button">Agendar Atendimento</button>
-          </a>
-        </div>
+      <section className="bg-bone px-4 py-16 text-center sm:px-6">
+        <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
+          Pronta para Encontrar o Vestido dos Seus Sonhos?
+        </h2>
+        <p className="mt-2 font-body text-sm text-ink/70">
+          Entre em contato e agende uma consultoria exclusiva.
+        </p>
+        <a href="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer">
+          <button className="mt-6 border border-accent bg-accent px-5 py-2 font-label text-xs uppercase tracking-wide text-bone transition-colors hover:bg-transparent hover:text-accent">
+            Agendar Atendimento
+          </button>
+        </a>
       </section>
     </Layout>
   );
