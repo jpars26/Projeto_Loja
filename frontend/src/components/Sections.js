@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import testimonials from "../data/testimonials";
 import collectionsHomePage from "../data/collectionsHomePage";
-import { usePinnedChapter } from "../hooks/usePinnedChapter";
 import { useReveal } from "../hooks/useReveal";
 
 const Sections = () => {
@@ -47,30 +46,25 @@ const Sections = () => {
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
 
-  const { sectionRef: differentialsRef, setItemRef } = usePinnedChapter(differentials.length);
+  const differentialsRef = useReveal();
   const dualSectionRef = useReveal();
   const ctaRef = useReveal();
 
   return (
     <div className="font-body text-ink" data-testid="diferencial-section">
-      {/* 📌 Bloco Diferenciais — capítulo pinado, um diferencial por vez */}
-      <section
-        ref={differentialsRef}
-        className="bg-bone px-4 py-16 text-center sm:px-6"
-        data-testid="diferenciais-chapter"
-      >
+      {/* 📌 Bloco Diferenciais */}
+      <section ref={differentialsRef} className="bg-bone px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
           Por que Escolher a Iara Noivas?
         </h2>
-        <div className="relative mx-auto mt-10 h-72 max-w-md">
+        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-6">
           {differentials.map((item, index) => (
             <a
               key={index}
-              ref={setItemRef(index)}
               href={getWhatsAppLink(item.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute inset-0 flex flex-col items-center justify-center border border-hairline bg-surface p-6 text-center transition-colors hover:border-accent"
+              className="block w-64 border border-hairline bg-surface p-6 text-center transition-colors hover:border-accent"
             >
               <FaCheckCircle className="mx-auto mb-3 text-2xl text-accent" />
               <h3 className="font-display text-lg font-medium text-ink">{item.title}</h3>

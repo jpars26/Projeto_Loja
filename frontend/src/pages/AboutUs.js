@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
 import logo from "../assets/images/loguinho.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { usePinnedChapter } from "../hooks/usePinnedChapter";
 import { useReveal } from "../hooks/useReveal";
 
 const TIMELINE = [
@@ -23,7 +22,7 @@ const DIFFERENTIALS = [
 const AboutUs = () => {
   const introRef = useReveal();
   const timelineRef = useReveal();
-  const { sectionRef: differentialsRef, setItemRef } = usePinnedChapter(DIFFERENTIALS.length);
+  const differentialsRef = useReveal();
   const galleryRef = useReveal();
   const ctaRef = useReveal();
 
@@ -68,22 +67,14 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Diferenciais — capítulo pinado, um por vez */}
-      <section
-        ref={differentialsRef}
-        className="bg-surface px-4 py-16 text-center sm:px-6"
-        data-testid="about-diferenciais-chapter"
-      >
+      {/* Diferenciais */}
+      <section ref={differentialsRef} className="bg-surface px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
           Por que escolher a Iara Noivas?
         </h2>
-        <div className="relative mx-auto mt-10 h-72 max-w-md">
-          {DIFFERENTIALS.map(({ icon: Icon, title, text }, index) => (
-            <div
-              key={title}
-              ref={setItemRef(index)}
-              className="absolute inset-0 flex flex-col items-center justify-center border border-hairline bg-surface p-6"
-            >
+        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-6">
+          {DIFFERENTIALS.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="w-64 border border-hairline p-6">
               <Icon className="mx-auto mb-3 text-2xl text-accent" />
               <h3 className="font-display text-lg font-medium text-ink">{title}</h3>
               <p className="mt-2 font-body text-sm text-ink/70">{text}</p>
