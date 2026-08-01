@@ -121,7 +121,9 @@ design precisa corrigir, não só "levar em conta":
   ("Ver Vestidos" etc.) só aparecem hoje em `group-hover`, que não existe em
   touch — ou seja, em celular essa informação nunca é exibida. Tratamento:
   em telas sem hover (`@media (hover: none)` ou breakpoint mobile), o rótulo
-  fica sempre visível (ou visível ao toque/foco), não escondido por padrão.
+  fica **sempre visível por padrão, sem exigir toque/clique** — a pessoa vê o
+  nome do produto e o botão assim que o card aparece na tela, igual a como um
+  card normal de e-commerce se comporta em celular.
 - **Verificação geral de crops**: como o design adiciona parallax e capítulos
   pinados sobre essas mesmas imagens, a checagem de proporção/corte em mobile
   (banners de categoria, imagens de coleção, Hero) entra como item explícito
