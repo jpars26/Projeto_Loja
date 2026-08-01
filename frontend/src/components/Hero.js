@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import heroVideoWebm from "../assets/videos/videoCerto.webm";
 import heroVideoMp4 from "../assets/videos/videoLoja.mp4";
+import { useParallax } from "../hooks/useParallax";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const parallaxRef = useParallax({ distance: 60 });
 
   return (
     <section
@@ -12,12 +14,13 @@ const Hero = () => {
       data-testid="hero-section"
     >
       <video
+        ref={parallaxRef}
         autoPlay
         loop
         muted
         playsInline
         onLoadedData={() => setIsLoaded(true)}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+        className={`absolute inset-0 h-full w-full scale-110 object-cover object-[center_20%] transition-opacity duration-700 sm:object-center ${
           isLoaded ? "opacity-90" : "opacity-0"
         }`}
       >
