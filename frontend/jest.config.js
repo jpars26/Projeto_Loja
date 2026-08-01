@@ -3,6 +3,8 @@ module.exports = {
   moduleDirectories: ["node_modules", "<rootDir>/src", "<rootDir>/src/tests"],
   moduleNameMapper: {
     "^react-router-dom$": "<rootDir>/src/tests/__mocks__/react-router-dom.js",
+    "^gsap$": "<rootDir>/src/tests/__mocks__/gsap.js",
+    "^gsap/ScrollTrigger$": "<rootDir>/src/tests/__mocks__/ScrollTrigger.js",
     "^.+\\.(jpg|jpeg|png|gif|webp|svg|mp4|mov|webm)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
