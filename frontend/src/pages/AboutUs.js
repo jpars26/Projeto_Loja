@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
 import logo from "../assets/images/loguinho.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { usePinnedChapter } from "../hooks/usePinnedChapter";
+import { useReveal } from "../hooks/useReveal";
 
 const TIMELINE = [
   { year: "2003", text: "Fundação da Iara Noivas, inspirada pelo amor à moda nupcial." },
@@ -19,6 +21,12 @@ const DIFFERENTIALS = [
 ];
 
 const AboutUs = () => {
+  const introRef = useReveal();
+  const timelineRef = useReveal();
+  const { sectionRef: differentialsRef, setItemRef } = usePinnedChapter(DIFFERENTIALS.length);
+  const galleryRef = useReveal();
+  const ctaRef = useReveal();
+
   return (
     <Layout>
       {/* SEO para a página Sobre Nós */}
@@ -38,7 +46,7 @@ const AboutUs = () => {
       </Helmet>
 
       {/* Seção Hero */}
-      <section className="bg-ink px-4 py-20 text-center text-bone sm:px-6">
+      <section ref={introRef} className="bg-ink px-4 py-20 text-center text-bone sm:px-6">
         <h1 className="font-display text-3xl font-medium sm:text-4xl">
           Realizamos sonhos, um vestido por vez
         </h1>
@@ -48,7 +56,7 @@ const AboutUs = () => {
       </section>
 
       {/* Nossa História - Timeline */}
-      <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+      <section ref={timelineRef} className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">Nossa História</h2>
         <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {TIMELINE.map((item) => (
@@ -60,14 +68,22 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Diferenciais */}
-      <section className="bg-surface px-4 py-16 text-center sm:px-6">
+      {/* Diferenciais — capítulo pinado, um por vez */}
+      <section
+        ref={differentialsRef}
+        className="bg-surface px-4 py-16 text-center sm:px-6"
+        data-testid="about-diferenciais-chapter"
+      >
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
           Por que escolher a Iara Noivas?
         </h2>
-        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-6">
-          {DIFFERENTIALS.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="w-64 border border-hairline p-6">
+        <div className="relative mx-auto mt-10 h-72 max-w-md">
+          {DIFFERENTIALS.map(({ icon: Icon, title, text }, index) => (
+            <div
+              key={title}
+              ref={setItemRef(index)}
+              className="absolute inset-0 flex flex-col items-center justify-center border border-hairline bg-surface p-6"
+            >
               <Icon className="mx-auto mb-3 text-2xl text-accent" />
               <h3 className="font-display text-lg font-medium text-ink">{title}</h3>
               <p className="mt-2 font-body text-sm text-ink/70">{text}</p>
@@ -77,14 +93,14 @@ const AboutUs = () => {
       </section>
 
       {/* Galeria de Clientes */}
-      <section className="px-4 py-16 text-center sm:px-6">
+      <section ref={galleryRef} className="px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">Noivas Felizes</h2>
         <LazyLoadImage src={logo} alt="Coleção Exclusiva" className="mx-auto mt-4 max-h-24 w-auto" />
         <CustomerGallery />
       </section>
 
       {/* Call to Action */}
-      <section className="bg-bone px-4 py-16 text-center sm:px-6">
+      <section ref={ctaRef} className="bg-bone px-4 py-16 text-center sm:px-6">
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
           Pronta para Encontrar o Vestido dos Seus Sonhos?
         </h2>
