@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import testimonials from "../data/testimonials";
 import collectionsHomePage from "../data/collectionsHomePage";
+import { usePinnedChapter } from "../hooks/usePinnedChapter";
+import { useReveal } from "../hooks/useReveal";
 
 const Sections = () => {
-  // Configurações do carrossel
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -22,7 +23,6 @@ const Sections = () => {
     arrows: false,
   };
 
-  // Lista com os diferenciais e links de WhatsApp com mensagens personalizadas
   const differentials = [
     {
       title: "Feitos Sob Medida",
@@ -41,28 +41,36 @@ const Sections = () => {
     }
   ];
 
-  // Função para gerar link do WhatsApp com mensagem
   const getWhatsAppLink = (message) => {
-    const phoneNumber = "5535998127656"; // Seu número com DDD
+    const phoneNumber = "5535998127656";
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
 
+  const { sectionRef: differentialsRef, setItemRef } = usePinnedChapter(differentials.length);
+  const dualSectionRef = useReveal();
+  const ctaRef = useReveal();
+
   return (
     <div className="font-body text-ink" data-testid="diferencial-section">
-      {/* 📌 Bloco Diferenciais */}
-      <section className="bg-bone px-4 py-16 text-center sm:px-6">
+      {/* 📌 Bloco Diferenciais — capítulo pinado, um diferencial por vez */}
+      <section
+        ref={differentialsRef}
+        className="bg-bone px-4 py-16 text-center sm:px-6"
+        data-testid="diferenciais-chapter"
+      >
         <h2 className="font-display text-2xl font-medium text-ink sm:text-3xl">
           Por que Escolher a Iara Noivas?
         </h2>
-        <div className="mx-auto mt-10 flex max-w-5xl flex-wrap justify-center gap-6">
+        <div className="relative mx-auto mt-10 h-72 max-w-md">
           {differentials.map((item, index) => (
             <a
               key={index}
+              ref={setItemRef(index)}
               href={getWhatsAppLink(item.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-64 border border-hairline bg-surface p-6 text-center transition-colors hover:border-accent"
+              className="absolute inset-0 flex flex-col items-center justify-center border border-hairline bg-surface p-6 text-center transition-colors hover:border-accent"
             >
               <FaCheckCircle className="mx-auto mb-3 text-2xl text-accent" />
               <h3 className="font-display text-lg font-medium text-ink">{item.title}</h3>
@@ -73,7 +81,7 @@ const Sections = () => {
       </section>
 
       {/* 📌 Bloco Produtos e Depoimentos lado a lado */}
-      <section className="bg-surface px-4 py-16 text-center sm:px-6" data-testid="dual-section">
+      <section ref={dualSectionRef} className="bg-surface px-4 py-16 text-center sm:px-6" data-testid="dual-section">
         <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:divide-x md:divide-hairline">
           <div className="flex flex-col items-center md:pr-8">
             <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
@@ -143,7 +151,7 @@ const Sections = () => {
       </section>
 
       {/* 📌 Bloco CTA Final */}
-      <section className="bg-bone px-4 py-16 text-center sm:px-6" data-testid="cta-section">
+      <section ref={ctaRef} className="bg-bone px-4 py-16 text-center sm:px-6" data-testid="cta-section">
         <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
           Pronta para Encontrar o Vestido dos Seus Sonhos?
         </h2>
