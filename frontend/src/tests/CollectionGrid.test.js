@@ -59,4 +59,11 @@ describe("CollectionGrid Component", () => {
     expect(screen.getByText("Coleção Exclusiva")).toBeInTheDocument();
     expect(screen.queryAllByRole("link").length).toBe(0);
   });
+
+  test("Rótulo do produto fica visível por padrão, sem depender de hover/toque", () => {
+    renderGrid("noivas");
+    const label = screen.getByText("Petrova - Coleção Alvor").closest("div");
+    expect(label).toHaveClass("opacity-100");
+    expect(label).not.toHaveClass("opacity-0");
+  });
 });

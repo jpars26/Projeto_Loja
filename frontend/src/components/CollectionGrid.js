@@ -3,6 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import collections from "../data/catalog";
 import logo from "../assets/images/loguinho.webp";
 import FabricTag from "./FabricTag";
+import { useReveal } from "../hooks/useReveal";
 
 const BUTTON_LABEL_BY_CATEGORY = {
   noivas: "Ver Vestidos",
@@ -13,9 +14,10 @@ const BUTTON_LABEL_BY_CATEGORY = {
 const CollectionGrid = ({ category = "noivas" }) => {
   const buttonLabel = BUTTON_LABEL_BY_CATEGORY[category] ?? "Ver Coleção";
   const filtered = collections.filter((dress) => dress.category === category);
+  const revealRef = useReveal();
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
+    <section ref={revealRef} className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
       <LazyLoadImage
         src={logo}
         alt="Coleção Exclusiva"
@@ -40,7 +42,7 @@ const CollectionGrid = ({ category = "noivas" }) => {
               wrapperClassName="h-full w-full block"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="absolute bottom-3 left-3 flex translate-y-2 flex-col items-start gap-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="absolute bottom-3 left-3 flex flex-col items-start gap-1 opacity-100 translate-y-0 transition-all duration-300 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
               <FabricTag tint={category} className="bg-surface/95">
                 {dress.name}
               </FabricTag>
