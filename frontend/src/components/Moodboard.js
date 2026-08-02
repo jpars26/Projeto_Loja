@@ -1,6 +1,6 @@
 import { useMoodboard } from "../context/MoodboardContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { FaWhatsapp, FaShareAlt } from "react-icons/fa";
+import { FaWhatsapp, FaShareAlt, FaTimes } from "react-icons/fa";
 import { shareFavorites } from "../utils/shareFavorites";
 import { shareOnWhatsApp } from "../utils/shareOnWhatsApp";
 import FabricTag from "./FabricTag";
@@ -37,7 +37,7 @@ const Moodboard = () => {
                   onClick={() => removeFromMoodboard(item.id)}
                   aria-label="Remover dos favoritos"
                 >
-                  ✕
+                  <FaTimes size={16} />
                 </button>
                 <button
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-[#25D366] transition-colors hover:border-[#25D366]"

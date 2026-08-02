@@ -57,6 +57,7 @@ const Collection_ID = () => {
       </Helmet>
 
       <div className="mx-auto max-w-6xl px-4 pt-8 text-center sm:px-6">
+        <h1 className="sr-only">{collection.name}</h1>
         <img
           ref={bannerParallaxRef}
           src={collection.banner}

@@ -53,7 +53,7 @@ const Header = () => {
 
         <div className="flex items-center gap-4">
           <button
-            className="text-ink md:hidden"
+            className="flex h-11 w-11 items-center justify-center text-ink md:hidden"
             aria-label="Abrir menu"
             onClick={() => setMenuOpen(!menuOpen)}
           >

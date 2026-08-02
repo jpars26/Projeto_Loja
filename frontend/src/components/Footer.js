@@ -1,10 +1,13 @@
 import { FaInstagram, FaFacebookF, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import logo from "../assets/images/loguinho.webp";
 
 const Footer = () => {
   return (
     <footer className="bg-ink px-4 py-12 text-bone sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-b border-bone/15 pb-8 text-center">
+        <LazyLoadImage src={logo} alt="Iara Noivas" className="h-12 w-auto" />
         <h2 className="font-display text-xl font-medium sm:text-2xl">
           VENHA SE SENTIR-SE ESPECIAL!
         </h2>
@@ -27,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 py-8 sm:grid-cols-4">
+      <div className="mx-auto grid max-w-md grid-cols-2 gap-8 py-8">
         <div>
           <h4 className="font-label text-xs uppercase tracking-wide text-bone/60">Vestidos</h4>
           <Link
@@ -47,32 +50,6 @@ const Footer = () => {
           <Link to="/contact" className="mt-1 block font-body text-sm text-bone/90 transition-colors hover:text-accent">
             Contato
           </Link>
-        </div>
-        <div className="col-span-2 sm:col-span-2">
-          <h4 className="font-label text-xs uppercase tracking-wide text-bone/60">Parceiros</h4>
-          <div className="mt-2 flex flex-wrap items-center gap-4">
-            <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://grifepetrova.com/images/IMG_2348.JPG"
-                alt="Petrova"
-                className="h-10 w-auto rounded object-cover opacity-80 transition-opacity hover:opacity-100"
-              />
-            </a>
-            <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://novanoiva.com.br/wp-content/uploads/2022/09/logo_nova_noiva_home.svg"
-                alt="Nova Noiva"
-                className="h-10 w-auto opacity-80 transition-opacity hover:opacity-100"
-              />
-            </a>
-            <a href="https://producao-loja.web.app/home" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://tuttisposa.com.br/wp-content/uploads/2020/11/logo-tutti-sposa-redimensionado.png"
-                alt="Tutti Sposa"
-                className="h-10 w-auto opacity-80 transition-opacity hover:opacity-100"
-              />
-            </a>
-          </div>
         </div>
       </div>
 

@@ -57,7 +57,7 @@ const CollectionsPage = ({ category = "noivas" }) => {
             className={`border-b-2 py-3 font-label text-xs uppercase tracking-wide transition-colors ${
               category === cat.slug
                 ? `${cat.activeBorderClass} text-ink`
-                : "border-transparent text-ink/50 hover:text-ink"
+                : "border-transparent text-ink/70 hover:text-ink"
             }`}
           >
             {cat.label}

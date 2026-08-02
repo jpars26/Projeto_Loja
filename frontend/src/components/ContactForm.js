@@ -2,7 +2,7 @@ import { useState } from "react";
 import { db, collection, addDoc, serverTimestamp } from "../config/firebase";
 
 const inputClass =
-  "mt-1 w-full border border-hairline bg-surface px-3 py-2 font-body text-sm text-ink focus:border-accent focus:outline-none";
+  "mt-1 w-full border border-hairline bg-surface px-3 py-2 font-body text-base text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/40";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -78,9 +78,15 @@ const ContactForm = () => {
       </p>
 
       {successMessage && (
-        <p className="mt-4 font-body text-sm text-accent">{successMessage}</p>
+        <p className="mt-4 font-body text-sm text-accent" role="status" aria-live="polite">
+          {successMessage}
+        </p>
       )}
-      {errors.form && <p className="mt-4 font-body text-sm text-red-600">{errors.form}</p>}
+      {errors.form && (
+        <p className="mt-4 font-body text-sm text-red-600" role="alert" aria-live="assertive">
+          {errors.form}
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
         <div>
@@ -88,7 +94,11 @@ const ContactForm = () => {
             Nome
           </label>
           <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className={inputClass} />
-          {errors.name && <span className="mt-1 block font-body text-xs text-red-600">{errors.name}</span>}
+          {errors.name && (
+            <span className="mt-1 block font-body text-xs text-red-600" role="alert">
+              {errors.name}
+            </span>
+          )}
         </div>
 
         <div>
@@ -96,7 +106,11 @@ const ContactForm = () => {
             E-mail
           </label>
           <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className={inputClass} />
-          {errors.email && <span className="mt-1 block font-body text-xs text-red-600">{errors.email}</span>}
+          {errors.email && (
+            <span className="mt-1 block font-body text-xs text-red-600" role="alert">
+              {errors.email}
+            </span>
+          )}
         </div>
 
         <div>
@@ -114,7 +128,11 @@ const ContactForm = () => {
             placeholder="(XX) XXXXX-XXXX"
             className={inputClass}
           />
-          {errors.telefone && <span className="mt-1 block font-body text-xs text-red-600">{errors.telefone}</span>}
+          {errors.telefone && (
+            <span className="mt-1 block font-body text-xs text-red-600" role="alert">
+              {errors.telefone}
+            </span>
+          )}
         </div>
 
         <div>
@@ -122,7 +140,11 @@ const ContactForm = () => {
             Tem alguma dúvida? Nos mande uma mensagem! 💌
           </label>
           <textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={4} className={inputClass} />
-          {errors.message && <span className="mt-1 block font-body text-xs text-red-600">{errors.message}</span>}
+          {errors.message && (
+            <span className="mt-1 block font-body text-xs text-red-600" role="alert">
+              {errors.message}
+            </span>
+          )}
         </div>
 
         <button

@@ -10,8 +10,8 @@ const CustomerCard = ({ image, name }) => {
         className="h-full w-full object-cover"
         wrapperClassName="block h-full w-full"
       />
-      <div className="absolute inset-0 flex items-end bg-ink/0 p-3 transition-colors duration-300 group-hover:bg-ink/50">
-        <div className="font-label text-xs uppercase tracking-wide text-bone opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/70 via-ink/10 to-transparent p-3">
+        <div className="font-label text-xs uppercase tracking-wide text-bone">
           {name}
         </div>
       </div>
