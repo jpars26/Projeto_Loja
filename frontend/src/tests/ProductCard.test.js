@@ -46,4 +46,23 @@ describe("ProductCard", () => {
     fireEvent.click(screen.getByLabelText("Compartilhar no WhatsApp"));
     expect(parentClick).not.toHaveBeenCalled();
   });
+
+  test("Clique no botão Compartilhar não propaga pro elemento pai", () => {
+    // jsdom não implementa navigator.clipboard/window.alert; mocka pra shareCurrentPage não quebrar.
+    Object.assign(navigator, { clipboard: { writeText: jest.fn().mockResolvedValue() } });
+    jest.spyOn(window, "alert").mockImplementation(() => {});
+
+    const parentClick = jest.fn();
+    render(
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
+      <div onClick={parentClick}>
+        <MoodboardProvider>
+          <ProductCard product={product} />
+        </MoodboardProvider>
+      </div>
+    );
+
+    fireEvent.click(screen.getByLabelText("Compartilhar"));
+    expect(parentClick).not.toHaveBeenCalled();
+  });
 });

@@ -69,10 +69,10 @@ const CollectionsPage = ({ category = "noivas" }) => {
     } else {
       nextParams.delete(paramName);
     }
-    setSearchParams(nextParams);
+    setSearchParams(nextParams, { replace: true });
   };
 
-  const handleClearFilters = () => setSearchParams({});
+  const handleClearFilters = () => setSearchParams({}, { replace: true });
 
   return (
     <Layout>
