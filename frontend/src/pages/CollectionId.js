@@ -11,6 +11,7 @@ import { shareCurrentPage } from "../utils/shareCurrentPage";
 import { shareSingleDress } from "../utils/shareSingleDress";
 import FabricTag from "../components/FabricTag";
 import { useParallax } from "../hooks/useParallax";
+import logo from "../assets/images/loguinho.webp";
 
 const Collection_ID = () => {
   const { slug: id } = useParams();
@@ -60,10 +61,11 @@ const Collection_ID = () => {
         <h1 className="sr-only">{collection.name}</h1>
         <img
           ref={bannerParallaxRef}
-          src={collection.banner}
+          src={logo}
           loading="lazy"
           alt={collection.name}
-          className="mx-auto max-h-64 w-auto object-contain"
+          className="mx-auto max-h-45 w-1/2 object-contain"
+          
         />
         <p className="mt-4 font-body text-sm text-ink/70 sm:text-base">
           Explore nossa coleção exclusiva {collection.name}.
@@ -96,8 +98,8 @@ const Collection_ID = () => {
 
                 {/* Ícone de Favoritar sobre a Imagem */}
                 <button
-                  className={`absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-surface/90 text-ink transition-colors hover:bg-surface ${
-                    isFavorite ? "text-accent" : ""
+                  className={`absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-surface/90 transition-colors hover:bg-surface ${
+                    isFavorite ? "text-accent" : "text-ink"
                   }`}
                   onClick={(e) => handleFavoriteClick(product, e)}
                   aria-label="Favoritar"

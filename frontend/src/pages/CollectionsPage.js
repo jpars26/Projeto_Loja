@@ -47,14 +47,14 @@ const CollectionsPage = ({ category = "noivas" }) => {
       </Helmet>
 
       <nav
-        className="mx-auto flex max-w-6xl justify-center gap-6 border-b border-hairline px-4 pt-28 sm:px-6"
+        className="mx-auto flex max-w-6xl justify-center gap-6 border-b border-hairline px-4 pt-16 sm:px-6"
         aria-label="Categorias"
       >
         {CATEGORIES.map((cat) => (
           <Link
             key={cat.slug}
             to={`/collections/${cat.slug}`}
-            className={`border-b-2 py-3 font-label text-xs uppercase tracking-wide transition-colors ${
+            className={`border-b-2 py-2 font-label text-xs uppercase tracking-wide transition-colors ${
               category === cat.slug
                 ? `${cat.activeBorderClass} text-ink`
                 : "border-transparent text-ink/70 hover:text-ink"

@@ -24,11 +24,6 @@ const HomePage = () => {
       <Hero />
       <Sections />
 
-      <section className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6">
-        <div className="text-left">
-          <ContactForm />
-        </div>
-      </section>
 
       <WhatsAppButton />
     </Layout>

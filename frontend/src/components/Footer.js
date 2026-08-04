@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-ink px-4 py-12 text-bone sm:px-6">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-b border-bone/15 pb-8 text-center">
-        <LazyLoadImage src={logo} alt="Iara Noivas" className="h-12 w-auto" />
+        <LazyLoadImage src={logo} alt="Iara Noivas" className="h-24 w-auto" />
         <h2 className="font-display text-xl font-medium sm:text-2xl">
           VENHA SE SENTIR-SE ESPECIAL!
         </h2>

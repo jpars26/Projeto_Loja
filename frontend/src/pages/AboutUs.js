@@ -10,7 +10,7 @@ const TIMELINE = [
   { year: "2003", text: "Fundação da Iara Noivas, inspirada pelo amor à moda nupcial." },
   { year: "2010", text: "Começamos a criar vestidos sob medida, exclusivos para cada noiva." },
   { year: "2020", text: "Nossas peças se tornaram referência em casamentos de luxo." },
-  { year: "2024", text: "Expandimos para novas coleções exclusivas." },
+  { year: "2026", text: "Expandimos para novas coleções exclusivas." },
 ];
 
 const DIFFERENTIALS = [
