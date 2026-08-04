@@ -1,8 +1,18 @@
 // src/pages/CollectionsPage.js
-import { Link } from "react-router-dom";
+import { useMemo } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import CollectionGrid from "../components/CollectionGrid";
+import ProductFilterBar from "../components/ProductFilterBar";
+import FilteredProductGrid from "../components/FilteredProductGrid";
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet-async";
+import catalog from "../data/catalog";
+import flattenCategoryProducts from "../utils/flattenCategoryProducts";
+import {
+  computeAvailableFilterOptions,
+  filterProductsByAttributes,
+  parseFilterParam,
+} from "../utils/productFilters";
 
 const CATEGORIES = [
   { slug: "noivas", label: "Noivas", activeBorderClass: "border-noivas" },
@@ -34,6 +44,35 @@ const SEO_BY_CATEGORY = {
 
 const CollectionsPage = ({ category = "noivas" }) => {
   const seo = SEO_BY_CATEGORY[category] ?? SEO_BY_CATEGORY.noivas;
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selectedColors = useMemo(() => parseFilterParam(searchParams.get("cor")), [searchParams]);
+  const selectedModels = useMemo(() => parseFilterParam(searchParams.get("modelo")), [searchParams]);
+
+  const categoryProducts = useMemo(() => flattenCategoryProducts(catalog, category), [category]);
+  const filterOptions = useMemo(() => computeAvailableFilterOptions(categoryProducts), [categoryProducts]);
+  const filteredProducts = useMemo(
+    () => filterProductsByAttributes(categoryProducts, { colors: selectedColors, models: selectedModels }),
+    [categoryProducts, selectedColors, selectedModels]
+  );
+
+  const hasActiveFilter = selectedColors.length > 0 || selectedModels.length > 0;
+
+  const toggleParam = (paramName, value, selectedValues) => {
+    const next = selectedValues.includes(value)
+      ? selectedValues.filter((item) => item !== value)
+      : [...selectedValues, value];
+
+    const nextParams = new URLSearchParams(searchParams);
+    if (next.length > 0) {
+      nextParams.set(paramName, next.join(","));
+    } else {
+      nextParams.delete(paramName);
+    }
+    setSearchParams(nextParams);
+  };
+
+  const handleClearFilters = () => setSearchParams({});
 
   return (
     <Layout>
@@ -65,7 +104,21 @@ const CollectionsPage = ({ category = "noivas" }) => {
         ))}
       </nav>
 
-      <CollectionGrid category={category} />
+      <ProductFilterBar
+        colorOptions={filterOptions.colors}
+        modelOptions={filterOptions.models}
+        selectedColors={selectedColors}
+        selectedModels={selectedModels}
+        onToggleColor={(color) => toggleParam("cor", color, selectedColors)}
+        onToggleModel={(model) => toggleParam("modelo", model, selectedModels)}
+        onClear={handleClearFilters}
+      />
+
+      {hasActiveFilter ? (
+        <FilteredProductGrid products={filteredProducts} onClearFilters={handleClearFilters} />
+      ) : (
+        <CollectionGrid category={category} />
+      )}
     </Layout>
   );
 };
