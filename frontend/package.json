@@ -30,7 +30,8 @@
     "dev": "vite",
     "build": "vite build",
     "test": "jest --config=jest.config.js --verbose",
-    "clearCache": "npx jest --clearCache"
+    "clearCache": "npx jest --clearCache",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "browserslist": {
     "production": [
