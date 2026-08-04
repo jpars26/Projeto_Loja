@@ -157,12 +157,14 @@ const noivas = [
       {
         id: "vestidos-petrova-p1",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Modernice",
         image: img_3_assets_images_ImagensVestidos_Alvor_imagem_2,
       },
       {
         id: "vestidos-petrova-p2",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Ascenção",
         image:
           img_4_assets_images_ImagensVestidos_Alvor_imagem_3,
@@ -171,6 +173,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p3",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Agrado",
         image:
           img_5_assets_images_ImagensVestidos_Alvor_imagem_4,
@@ -179,6 +182,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p4",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Metamorfose",
         image:
           img_6_assets_images_ImagensVestidos_Alvor_imagem_5,
@@ -187,6 +191,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p5",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Evolução",
         image:
           img_7_assets_images_ImagensVestidos_Alvor_imagem_6,
@@ -195,6 +200,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p6",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Providencia",
         image:
           img_8_assets_images_ImagensVestidos_Alvor_imagem_7,
@@ -203,6 +209,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p7",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Sol",
         image:
           img_9_assets_images_ImagensVestidos_Alvor_imagem_8,
@@ -211,6 +218,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p8",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Magnificência",
         image:
           img_10_assets_images_ImagensVestidos_Alvor_imagem_9,
@@ -218,6 +226,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p9",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Intuito",
         image:
           img_11_assets_images_ImagensVestidos_Alvor_imagem_10,
@@ -226,6 +235,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p10",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Elevação",
         image:
           img_12_assets_images_ImagensVestidos_Alvor_imagem_11,
@@ -234,6 +244,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p11",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Avanço",
         image:
           img_13_assets_images_ImagensVestidos_Alvor_imagem_12,
@@ -242,6 +253,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p12",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Aurora",
         image:
           img_14_assets_images_ImagensVestidos_Alvor_imagem_13,
@@ -250,6 +262,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p13",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Alvorada",
         image:
           img_15_assets_images_ImagensVestidos_Alvor_imagem_14,
@@ -258,6 +271,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p14",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Manhã",
         image:
           img_16_assets_images_ImagensVestidos_Alvor_imagem_15,
@@ -266,6 +280,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p15",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Claridade",
         image:
           img_17_assets_images_ImagensVestidos_Alvor_imagem_16,
@@ -274,6 +289,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p16",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Benevolência",
         image:
           img_18_assets_images_ImagensVestidos_Alvor_imagem_17,
@@ -282,6 +298,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p17",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Renascimento",
         image:
           img_19_assets_images_ImagensVestidos_Alvor_imagem_18,
@@ -290,6 +307,7 @@ const noivas = [
       {
         id: "vestidos-petrova-p18",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Horizonte",
         image:
           img_20_assets_images_ImagensVestidos_Alvor_imagem_19,
@@ -308,6 +326,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-premium-p1",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Agapanto",
         image:
           img_22_assets_images_ImagensVestidos_Jardim_Premium_imagem_2,
@@ -315,6 +334,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-premium-p2",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Calêndula",
         image:
           img_23_assets_images_ImagensVestidos_Jardim_Premium_imagem_2,
@@ -322,6 +342,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-premium-p3",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Dipladênia",
         image:
           img_24_assets_images_ImagensVestidos_Jardim_Premium_imagem_2,
@@ -330,6 +351,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-premium-p4",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Salvia",
         image:
           img_25_assets_images_ImagensVestidos_Jardim_Premium_imagem_2,
@@ -337,6 +359,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-premium-p5",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Torenia",
         image:
           img_26_assets_images_ImagensVestidos_Jardim_Premium_imagem_2,
@@ -354,6 +377,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p1",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Amarílis",
         image:
           img_27_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -361,6 +385,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p2",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Gérbera",
         image:
           img_28_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -368,6 +393,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p3",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Verbena",
         image:
           img_29_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -375,6 +401,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p4",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Zínia",
         image:
           img_30_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -382,6 +409,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p5",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Peônia",
         image:
           img_31_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -389,6 +417,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p6",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Frésia",
         image:
           img_32_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -396,6 +425,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p7",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Acácia",
         image:
           img_33_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -403,6 +433,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p8",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vinca",
         image:
           img_34_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -410,6 +441,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p9",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Lantana",
         image:
           img_35_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -417,6 +449,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p10",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Gerânio",
         image:
           img_36_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -424,6 +457,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p11",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Antúrio",
         image:
           img_37_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -431,6 +465,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p12",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Clívia",
         image:
           img_38_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -438,6 +473,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p13",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Lisianto",
         image:
           img_39_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -445,6 +481,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p14",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Camélia",
         image:
           img_40_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -452,6 +489,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p15",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Álisso",
         image:
           img_41_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -459,6 +497,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p16",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Gardênia",
         image:
           img_42_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -466,6 +505,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p17",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Cravina",
         image:
           img_43_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -473,6 +513,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p18",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Gladíolos",
         image:
           img_44_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -480,6 +521,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p19",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Bonina",
         image:
           img_45_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -487,6 +529,7 @@ const noivas = [
       {
         id: "vestidos-jardim-secreto-p20",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva conceito Pássaro de fogo",
         image:
           img_46_assets_images_ImagensVestidos_Jardim_Secreto_jardimse,
@@ -503,6 +546,7 @@ const noivas = [
       {
         id: "vestidos-betola-p1",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vida",
         image:
           img_47_assets_images_ImagensVestidos_Betola_betola_1,
@@ -510,6 +554,7 @@ const noivas = [
       {
         id: "vestidos-betola-p2",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Resplendor",
         image:
           img_48_assets_images_ImagensVestidos_Betola_betola_2,
@@ -518,6 +563,7 @@ const noivas = [
       {
         id: "vestidos-betola-p3",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Primavera",
         image:
           img_49_assets_images_ImagensVestidos_Betola_betola_3,
@@ -526,6 +572,7 @@ const noivas = [
       {
         id: "vestidos-betola-p4",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Luz",
         image:
           img_50_assets_images_ImagensVestidos_Betola_betola_4,
@@ -533,6 +580,7 @@ const noivas = [
       {
         id: "vestidos-betola-p5",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Esbelta",
         image:
           img_51_assets_images_ImagensVestidos_Betola_betola_5,
@@ -540,6 +588,7 @@ const noivas = [
       {
         id: "vestidos-betola-p6",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Cristal",
         image:
           img_52_assets_images_ImagensVestidos_Betola_betola_6,
@@ -548,6 +597,7 @@ const noivas = [
       {
         id: "vestidos-betola-p7",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Cintila",
         image:
           img_53_assets_images_ImagensVestidos_Betola_betola_7,
@@ -555,6 +605,7 @@ const noivas = [
       {
         id: "vestidos-betola-p8",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Beriôza",
         image:
           img_54_assets_images_ImagensVestidos_Betola_betola_8,
@@ -562,6 +613,7 @@ const noivas = [
       {
         id: "vestidos-betola-p9",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Alegria",
         image:
           img_55_assets_images_ImagensVestidos_Betola_betola_9,
@@ -570,6 +622,7 @@ const noivas = [
       {
         id: "vestidos-betola-p10",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Sorte",
         image:
           img_56_assets_images_ImagensVestidos_Betola_betola_10,
@@ -586,6 +639,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p1",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vínculo",
         image:
           img_57_assets_images_ImagensVestidos_Enlace_enlace_1,
@@ -594,6 +648,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p2",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Conceito Lua de mel",
         image:
           img_58_assets_images_ImagensVestidos_Enlace_enlace_2,
@@ -602,6 +657,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p3",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Matrimônio",
         image:
           img_59_assets_images_ImagensVestidos_Enlace_enlace_3,
@@ -610,6 +666,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p4",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Núpcias",
         image:
           img_60_assets_images_ImagensVestidos_Enlace_enlace_4,
@@ -617,6 +674,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p5",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva União",
         image:
           img_61_assets_images_ImagensVestidos_Enlace_enlace_5,
@@ -625,6 +683,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p6",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Aliança",
         image:
           img_62_assets_images_ImagensVestidos_Enlace_enlace_6,
@@ -633,6 +692,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p7",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Benção",
         image:
           img_63_assets_images_ImagensVestidos_Enlace_enlace_7,
@@ -641,6 +701,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p8",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Celebração",
         image:
           img_64_assets_images_ImagensVestidos_Enlace_enlace_8,
@@ -649,6 +710,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p9",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Conquista",
         image:
           img_65_assets_images_ImagensVestidos_Enlace_enlace_9,
@@ -657,6 +719,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p10",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Desfecho",
         image:
           img_66_assets_images_ImagensVestidos_Enlace_enlace_10,
@@ -665,6 +728,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p11",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Destino",
         image:
           img_67_assets_images_ImagensVestidos_Enlace_enlace_11,
@@ -673,6 +737,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p12",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Doçura",
         image:
           img_68_assets_images_ImagensVestidos_Enlace_enlace_12,
@@ -681,6 +746,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p13",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Elo",
         image:
           img_69_assets_images_ImagensVestidos_Enlace_enlace_13,
@@ -689,6 +755,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p14",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Eternos",
         image:
           img_70_assets_images_ImagensVestidos_Enlace_enlace_14,
@@ -697,6 +764,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p15",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Euforia",
         image:
           img_71_assets_images_ImagensVestidos_Enlace_enlace_15,
@@ -705,6 +773,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p16",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Futuro",
         image:
           img_72_assets_images_ImagensVestidos_Enlace_enlace_16,
@@ -713,6 +782,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p17",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Laços",
         image:
           img_73_assets_images_ImagensVestidos_Enlace_enlace_17,
@@ -721,6 +791,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p18",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Coração",
         image:
           img_74_assets_images_ImagensVestidos_Enlace_enlace_18,
@@ -729,6 +800,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p19",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Desígnio",
         image:
           img_75_assets_images_ImagensVestidos_Enlace_enlace_19,
@@ -737,6 +809,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p20",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Feliz",
         image:
           img_76_assets_images_ImagensVestidos_Enlace_enlace_20,
@@ -745,6 +818,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p21",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Luar",
         image:
           img_77_assets_images_ImagensVestidos_Enlace_enlace_21,
@@ -753,6 +827,7 @@ const noivas = [
       {
         id: "vestidos-enlace-p22",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Sim",
         image:
           img_78_assets_images_ImagensVestidos_Enlace_enlace_22,
@@ -770,6 +845,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p1",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Balabanovita",
         image:
           img_79_assets_images_ImagensVestidos_Vitoria_vitoria_1,
@@ -777,6 +853,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p2",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Belgorodita",
         image:
           img_80_assets_images_ImagensVestidos_Vitoria_vitoria_2,
@@ -785,6 +862,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p3",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Brestense",
         image:
           img_81_assets_images_ImagensVestidos_Vitoria_vitoria_3,
@@ -793,6 +871,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p4",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Chernigovita",
         image:
           img_82_assets_images_ImagensVestidos_Vitoria_vitoria_4,
@@ -801,6 +880,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p5",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Dmitrovita",
         image:
           img_83_assets_images_ImagensVestidos_Vitoria_vitoria_5,
@@ -808,6 +888,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p6",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Grodnense",
         image:
           img_84_assets_images_ImagensVestidos_Vitoria_vitoria_6,
@@ -816,6 +897,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p7",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Homielense",
         image:
           img_85_assets_images_ImagensVestidos_Vitoria_vitoria_7,
@@ -823,6 +905,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p8",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Kievana",
         image:
           img_86_assets_images_ImagensVestidos_Vitoria_vitoria_8,
@@ -831,6 +914,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p9",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Kharkovita",
         image:
           img_87_assets_images_ImagensVestidos_Vitoria_vitoria_9,
@@ -838,6 +922,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p10",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Krasnodarense",
         image:
           img_88_assets_images_ImagensVestidos_Vitoria_vitoria_10,
@@ -846,6 +931,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p11",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Kurskense",
         image:
           img_89_assets_images_ImagensVestidos_Vitoria_vitoria_11,
@@ -854,6 +940,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p12",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Leningradense",
         image:
           img_90_assets_images_ImagensVestidos_Vitoria_vitoria_12,
@@ -862,6 +949,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p13",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Minskense",
         image:
           img_91_assets_images_ImagensVestidos_Vitoria_vitoria_13,
@@ -869,6 +957,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p14",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Mogilevita",
         image:
           img_92_assets_images_ImagensVestidos_Vitoria_vitoria_14,
@@ -877,6 +966,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p15",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Moskovita",
         image:
           img_93_assets_images_ImagensVestidos_Vitoria_vitoria_15,
@@ -884,6 +974,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p16",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Novgorodita",
         image:
           img_94_assets_images_ImagensVestidos_Vitoria_vitoria_16,
@@ -892,6 +983,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p17",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Odessita",
         image:
           img_95_assets_images_ImagensVestidos_Vitoria_vitoria_17,
@@ -899,6 +991,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p18",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Oriolense",
         image:
           img_96_assets_images_ImagensVestidos_Vitoria_vitoria_18,
@@ -906,6 +999,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p19",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Permiana",
         image:
           img_97_assets_images_ImagensVestidos_Vitoria_vitoria_19,
@@ -914,6 +1008,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p20",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Pskovita",
         image:
           img_98_assets_images_ImagensVestidos_Vitoria_vitoria_20,
@@ -921,6 +1016,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p21",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Saratovita",
         image:
           img_99_assets_images_ImagensVestidos_Vitoria_vitoria_21,
@@ -929,6 +1025,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p22",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Sevastopolita",
         image:
           img_100_assets_images_ImagensVestidos_Vitoria_vitoria_22,
@@ -936,6 +1033,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p23",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Smolenskense",
         image:
           img_101_assets_images_ImagensVestidos_Vitoria_vitoria_23,
@@ -943,6 +1041,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p24",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Stalingradense",
         image:
           img_102_assets_images_ImagensVestidos_Vitoria_vitoria_24,
@@ -950,6 +1049,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p25",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Stavropolita",
         image:
           img_103_assets_images_ImagensVestidos_Vitoria_vitoria_25,
@@ -957,6 +1057,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p26",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Teodosiana",
         image:
           img_104_assets_images_ImagensVestidos_Vitoria_vitoria_26,
@@ -964,6 +1065,7 @@ const noivas = [
              {
         id: "vestidos-vitoria-p27",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Tulense",
         image:
           img_105_assets_images_ImagensVestidos_Vitoria_vitoria_27,
@@ -971,6 +1073,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p28",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Conceito Vencedora",
         image:
           img_106_assets_images_ImagensVestidos_Vitoria_vitoria_28,
@@ -978,6 +1081,7 @@ const noivas = [
              {
         id: "vestidos-vitoria-p29",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vitebskense",
         image:
           img_107_assets_images_ImagensVestidos_Vitoria_vitoria_29,
@@ -986,6 +1090,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p30",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Voronezhita",
         image:
           img_108_assets_images_ImagensVestidos_Vitoria_vitoria_30,
@@ -993,6 +1098,7 @@ const noivas = [
       {
         id: "vestidos-vitoria-p31",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vladivostokense",
         image:
           img_109_assets_images_ImagensVestidos_Vitoria_vitoria_31,
@@ -1009,6 +1115,7 @@ const noivas = [
       {
         id: "vestidos-origem-p1",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Bondade",
         image:
           img_110_assets_images_ImagensVestidos_Origem_origem_1,
@@ -1016,6 +1123,7 @@ const noivas = [
       {
         id: "vestidos-origem-p2",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Compaixão",
         image:
           img_111_assets_images_ImagensVestidos_Origem_origem_2,
@@ -1024,6 +1132,7 @@ const noivas = [
       {
         id: "vestidos-origem-p3",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Coragem",
         image:
           img_112_assets_images_ImagensVestidos_Origem_origem_3,
@@ -1032,6 +1141,7 @@ const noivas = [
       {
         id: "vestidos-origem-p4",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Cultura",
         image:
           img_113_assets_images_ImagensVestidos_Origem_origem_4,
@@ -1039,6 +1149,7 @@ const noivas = [
           {
         id: "vestidos-origem-p5",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Decência",
         image:
           img_114_assets_images_ImagensVestidos_Origem_origem_5,
@@ -1047,6 +1158,7 @@ const noivas = [
       {
         id: "vestidos-origem-p6",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Determinação",
         image:
           img_115_assets_images_ImagensVestidos_Origem_origem_6,
@@ -1055,6 +1167,7 @@ const noivas = [
       {
         id: "vestidos-origem-p7",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Devaneio",
         image:
           img_116_assets_images_ImagensVestidos_Origem_origem_7,
@@ -1063,6 +1176,7 @@ const noivas = [
       {
         id: "vestidos-origem-p8",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Dignidade",
         image:
           img_117_assets_images_ImagensVestidos_Origem_origem_8,
@@ -1071,6 +1185,7 @@ const noivas = [
       {
         id: "vestidos-origem-p9",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Fé",
         image:
           img_118_assets_images_ImagensVestidos_Origem_origem_9,
@@ -1079,6 +1194,7 @@ const noivas = [
       {
         id: "vestidos-origem-p10",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Força",
         image:
           img_119_assets_images_ImagensVestidos_Origem_origem_10,
@@ -1086,6 +1202,7 @@ const noivas = [
           {
         id: "vestidos-origem-p11",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Franqueza",
         image:
           img_120_assets_images_ImagensVestidos_Origem_origem_11,
@@ -1095,6 +1212,7 @@ const noivas = [
       {
         id: "vestidos-origem-p12",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Generosidade",
         image:
           img_121_assets_images_ImagensVestidos_Origem_origem_12,
@@ -1103,6 +1221,7 @@ const noivas = [
       {
         id: "vestidos-origem-p13",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Herança",
         image:
           img_122_assets_images_ImagensVestidos_Origem_origem_13,
@@ -1111,6 +1230,7 @@ const noivas = [
       {
         id: "vestidos-origem-p14",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Imensidão",
         image:
           img_123_assets_images_ImagensVestidos_Origem_origem_14,
@@ -1119,6 +1239,7 @@ const noivas = [
       {
         id: "vestidos-origem-p15",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Infinidade",
         image:
           img_124_assets_images_ImagensVestidos_Origem_origem_15,
@@ -1127,6 +1248,7 @@ const noivas = [
       {
         id: "vestidos-origem-p16",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Justiça",
         image:
           img_125_assets_images_ImagensVestidos_Origem_origem_16,
@@ -1134,6 +1256,7 @@ const noivas = [
           {
         id: "vestidos-origem-p17",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Legado",
         image:
           img_126_assets_images_ImagensVestidos_Origem_origem_17,
@@ -1142,6 +1265,7 @@ const noivas = [
       {
         id: "vestidos-origem-p18",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Liberdade",
         image:
           img_127_assets_images_ImagensVestidos_Origem_origem_18,
@@ -1150,6 +1274,7 @@ const noivas = [
       {
         id: "vestidos-origem-p19",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Lisura",
         image:
           img_128_assets_images_ImagensVestidos_Origem_origem_19,
@@ -1157,6 +1282,7 @@ const noivas = [
           {
         id: "vestidos-origem-p20",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Moralidade",
         image:
           img_129_assets_images_ImagensVestidos_Origem_origem_20,
@@ -1165,6 +1291,7 @@ const noivas = [
       {
         id: "vestidos-origem-p21",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Ousadia",
         image:
           img_130_assets_images_ImagensVestidos_Origem_origem_21,
@@ -1173,6 +1300,7 @@ const noivas = [
       {
         id: "vestidos-origem-p22",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Perseverança",
         image:
           img_131_assets_images_ImagensVestidos_Origem_origem_22,
@@ -1181,6 +1309,7 @@ const noivas = [
       {
         id: "vestidos-origem-p23",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Personalidade",
         image:
           img_132_assets_images_ImagensVestidos_Origem_origem_23,
@@ -1189,6 +1318,7 @@ const noivas = [
       {
         id: "vestidos-origem-p24",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Plenitude",
         image:
           img_133_assets_images_ImagensVestidos_Origem_origem_24,
@@ -1197,6 +1327,7 @@ const noivas = [
       {
         id: "vestidos-origem-p25",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Receptividade",
         image:
           img_134_assets_images_ImagensVestidos_Origem_origem_25,
@@ -1205,6 +1336,7 @@ const noivas = [
       {
         id: "vestidos-origem-p26",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Tolerância",
         image:
           img_135_assets_images_ImagensVestidos_Origem_origem_26,
@@ -1213,6 +1345,7 @@ const noivas = [
       {
         id: "vestidos-origem-p27",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Tradição",
         image:
           img_136_assets_images_ImagensVestidos_Origem_origem_27,
@@ -1221,6 +1354,7 @@ const noivas = [
       {
         id: "vestidos-origem-p28",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Valentia",
         image:
           img_137_assets_images_ImagensVestidos_Origem_origem_28,
@@ -1230,6 +1364,7 @@ const noivas = [
       {
         id: "vestidos-origem-p29",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Verdade",
         image:
           img_138_assets_images_ImagensVestidos_Origem_origem_29,
@@ -1238,6 +1373,7 @@ const noivas = [
       {
         id: "vestidos-origem-p30",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vigor",
         image:
           img_139_assets_images_ImagensVestidos_Origem_origem_30,
@@ -1246,6 +1382,7 @@ const noivas = [
       {
         id: "vestidos-origem-p31",
         model: "sereia", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido de noiva Vocação",
         image:
           img_140_assets_images_ImagensVestidos_Origem_origem_31,
@@ -1264,6 +1401,7 @@ const noivas = [
       {
         id: "vestidos-nova-noiva-p3",
         model: "minimalista", // placeholder - substituir pelo modelo real
+        color: "off-white", // placeholder - substituir pela cor real
         name: "Vestido Allegra",
         image:
           img_141_assets_images_ImagensVestidos_Nova_Noiva_imagem_25,
@@ -1282,6 +1420,7 @@ const noivas = [
       {
         id: "vestidos-tuttisposa-p4",
         model: "princesa", // placeholder - substituir pelo modelo real
+        color: "branco", // placeholder - substituir pela cor real
         name: "Vestido MT3221",
         image:
           img_142_assets_images_ImagensVestidos_Tuti_Sposa_imagem_26,

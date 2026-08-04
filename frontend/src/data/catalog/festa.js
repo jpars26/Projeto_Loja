@@ -21,18 +21,21 @@ const festa = [
         name: "Vestido Longo Dourado",
         image: placeholder,
         model: "sereia",
+        color: "dourado",
       },
       {
         id: "festa-glamour-p2",
         name: "Vestido Midi Esmeralda",
         image: placeholder,
         model: "princesa",
+        color: "esmeralda",
       },
       {
         id: "festa-glamour-p3",
         name: "Vestido de Festa Bordado",
         image: placeholder,
         model: "sereia",
+        color: "preto", // placeholder - substituir pela cor real
       },
     ],
   },
