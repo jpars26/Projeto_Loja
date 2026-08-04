@@ -12,7 +12,7 @@ específica (`/collections/:collectionId`) mostra os vestidos individuais
 dela. Não existe hoje nenhuma forma de a cliente pedir "quero um vestido
 verde, modelo sereia" sem abrir coleção por coleção manualmente.
 
-`noivas.js` tem 148 produtos reais (só `id`, `name`, `image` — sem cor nem
+`noivas.js` tem 139 produtos reais (só `id`, `name`, `image` — sem cor nem
 modelo). `ternos.js` e `festa.js` têm 3 produtos cada, todos com foto
 placeholder (`foto-em-breve.svg`), aguardando fotos reais.
 
@@ -31,7 +31,7 @@ não importa de qual coleção). A navegação atual por vitrine de coleções
 - Não constrói um painel administrativo para cadastrar cor/modelo — os
   campos são editados diretamente nos arquivos de catálogo (`data/catalog/*.js`),
   como já é feito hoje para nome/imagem.
-- Não tenta inferir cor/silhueta reais dos 148 vestidos de noiva existentes
+- Não tenta inferir cor/silhueta reais dos 139 vestidos de noiva existentes
   a partir do nome ou da imagem — dado real virá do usuário depois.
 - Não faz deep-link direto para um produto específico dentro da coleção;
   o card na grade filtrada leva para a página da coleção-mãe, como os
@@ -60,10 +60,10 @@ desatualizada.
 
 ### Dados provisórios desta fase
 
-O usuário vai enviar fotos e dados corretos dos 148 vestidos de noiva
+O usuário vai enviar fotos e dados corretos dos 139 vestidos de noiva
 depois. Até lá:
 
-- **`noivas`**: os 148 produtos recebem `model` preenchido de forma
+- **`noivas`**: os 139 produtos recebem `model` preenchido de forma
   **rotativa/genérica** entre os valores conhecidos hoje —
   `princesa`, `sereia`, `minimalista` — só para o filtro funcionar e
   poder ser demonstrado/testado. Um comentário no topo de `noivas.js`
@@ -139,6 +139,6 @@ ver `shareCurrentPage`/`shareSingleDress`).
 ## Trabalho futuro (fora desta fase)
 
 - Substituir os valores placeholder de `model`/`color` pelos dados reais
-  quando o usuário enviar as fotos e classificações corretas dos 148
+  quando o usuário enviar as fotos e classificações corretas dos 139
   vestidos de noiva.
 - Definir e cadastrar a taxonomia de modelo para `ternos`.
