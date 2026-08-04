@@ -15,6 +15,11 @@ const COLOR_HEX = {
   esmeralda: "#2E8B57",
   amarelo: "#E8C547",
   laranja: "#D9822B",
+  "azul-marinho": "#1B2A4A",
+  "cinza-claro": "#B0B0B0",
+  "cinza-chumbo": "#4A4A4A",
+  marrom: "#6B4226",
+  bege: "#D9C9A8",
 };
 
 const displayLabel = (slug) => slug.charAt(0).toUpperCase() + slug.slice(1);
