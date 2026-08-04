@@ -50,7 +50,7 @@ describe("AboutUs Page", () => {
       "Começamos a criar vestidos sob medida, exclusivos para cada noiva.",
       "2020",
       "Nossas peças se tornaram referência em casamentos de luxo.",
-      "2024",
+      "2026",
       "Expandimos para novas coleções exclusivas."
     ];
 
