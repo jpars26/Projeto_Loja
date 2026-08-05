@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { MoodboardProvider } from "../context/MoodboardContext";
@@ -19,7 +19,8 @@ jest.mock("../data/catalog", () => [
     banner: "banner-festa-glamour.jpg",
     category: "festa",
     products: [
-      { id: "festa-glamour-p1", name: "Vestido Longo Dourado", image: "p1.jpg" },
+      { id: "festa-glamour-p1", name: "Vestido Longo Dourado", image: "p1.jpg", color: "dourado", model: "sereia" },
+      { id: "festa-glamour-p2", name: "Vestido Midi Esmeralda", image: "p2.jpg", color: "esmeralda", model: "princesa" },
     ],
   },
 ]);
@@ -44,5 +45,23 @@ describe("CollectionId Page", () => {
   test("Renderiza os produtos da coleção", () => {
     renderPage();
     expect(screen.getByText("Vestido Longo Dourado")).toBeInTheDocument();
+  });
+
+  test("Filtrar por cor mostra só o produto que bate, sem link 'Ver coleção completa'", () => {
+    renderPage();
+    fireEvent.click(screen.getByLabelText("Filtrar por cor dourado"));
+
+    expect(screen.getByText("Vestido Longo Dourado")).toBeInTheDocument();
+    expect(screen.queryByText("Vestido Midi Esmeralda")).not.toBeInTheDocument();
+    expect(screen.queryByText("Ver coleção completa")).not.toBeInTheDocument();
+  });
+
+  test("Limpar filtros volta a mostrar todos os produtos da coleção", () => {
+    renderPage();
+    fireEvent.click(screen.getByLabelText("Filtrar por cor dourado"));
+    fireEvent.click(screen.getByText("Limpar filtros"));
+
+    expect(screen.getByText("Vestido Longo Dourado")).toBeInTheDocument();
+    expect(screen.getByText("Vestido Midi Esmeralda")).toBeInTheDocument();
   });
 });

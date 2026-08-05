@@ -24,12 +24,17 @@ const FilteredProductGrid = ({ products, onClearFilters }) => {
       </p>
       <div className="grid grid-cols-1 gap-8 py-10 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
-          // Note: ProductCard's double-tap-to-favorite (onTouchStart) never fires here —
-          // the card is wrapped in this Link, so the first tap navigates away before a
-          // second tap can register. Accepted limitation, not a bug to fix.
-          <Link key={product.id} to={`/collections/${product.collectionId}`}>
+          <div key={product.id}>
             <ProductCard product={product} />
-          </Link>
+            {product.collectionId && (
+              <Link
+                to={`/collections/${product.collectionId}`}
+                className="mt-2 block text-center font-label text-[11px] uppercase tracking-wide text-ink/50 underline hover:text-ink"
+              >
+                Ver coleção completa
+              </Link>
+            )}
+          </div>
         ))}
       </div>
     </div>

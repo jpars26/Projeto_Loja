@@ -141,3 +141,6 @@ firebase-config.json
 
 # Superpowers subagent-driven-development scratch workspace
 .superpowers/
+
+# Claude Code worktree scratch space
+.claude/worktrees/
