@@ -15,7 +15,7 @@ const TIMELINE = [
 
 const DIFFERENTIALS = [
   { icon: FaCheckCircle, title: "Feitos Sob Medida", text: "Cada vestido é desenhado para refletir sua personalidade e estilo." },
-  { icon: FaClock, title: "22 Anos de Tradição", text: "Mais de 5.000 noivas já confiaram em nossa experiência." },
+  { icon: FaClock, title: "23 Anos de Tradição", text: "Milhares de noivas já confiaram em nossa experiência." },
   { icon: FaStar, title: "Qualidade e Exclusividade", text: "Utilizamos os melhores materiais para criar peças atemporais." },
 ];
 

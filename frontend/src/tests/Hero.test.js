@@ -23,7 +23,7 @@ describe("Hero Component", () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText("Vestidos que contam a sua história")).toBeInTheDocument();
+    expect(screen.getByText("Há mais de 20 anos contando histórias através de vestidos")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /ver coleção/i })).toHaveAttribute("href", "/collections");
   });
 });

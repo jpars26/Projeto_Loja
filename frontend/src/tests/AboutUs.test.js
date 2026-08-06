@@ -65,8 +65,8 @@ describe("AboutUs Page", () => {
     const differentials = [
       "Feitos Sob Medida",
       "Cada vestido é desenhado para refletir sua personalidade e estilo.",
-      "22 Anos de Tradição",
-      "Mais de 5.000 noivas já confiaram em nossa experiência.",
+      "23 Anos de Tradição",
+      "Milhares de noivas já confiaram em nossa experiência.",
       "Qualidade e Exclusividade",
       "Utilizamos os melhores materiais para criar peças atemporais."
     ];

@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-b border-bone/15 pb-8 text-center">
         <LazyLoadImage src={logo} alt="Iara Noivas" className="h-24 w-auto" />
         <h2 className="font-display text-xl font-medium sm:text-2xl">
-          VENHA SE SENTIR-SE ESPECIAL!
+          VENHA SENTIR-SE ESPECIAL!
         </h2>
         <div className="flex gap-4 text-lg">
           <a href="https://www.instagram.com/iaranoivas/" aria-label="Instagram" className="transition-colors hover:text-accent">

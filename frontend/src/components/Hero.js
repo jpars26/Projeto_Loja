@@ -36,7 +36,7 @@ const Hero = () => {
           Iara Noivas
         </p>
         <h1 className="mt-3 font-display text-4xl font-medium leading-tight text-bone sm:text-5xl">
-          Vestidos que contam a sua história
+          Há mais de 20 anos contando histórias através de vestidos
         </h1>
         <p className="mt-4 max-w-md font-body text-sm text-bone/80 sm:text-base">
           Noivas, ternos e vestidos de festa em coleções exclusivas, feitos para o seu grande dia.
