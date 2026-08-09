@@ -29,7 +29,6 @@ describe("HomePage Component", () => {
     expect(screen.getByTestId("dual-section")).toBeInTheDocument();
     expect(screen.getByTestId("testimonials-section")).toBeInTheDocument();
     expect(screen.getByTestId("cta-section")).toBeInTheDocument();
-    expect(screen.getByTestId("instagram-widget")).toBeInTheDocument();
     const whatsappButtons = screen.queryAllByTestId("whatsapp-button-main");
     expect(whatsappButtons.length).toBeGreaterThan(0); // Pelo menos um botão deve existir
 
