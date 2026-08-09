@@ -24,3 +24,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Luz girando na borda dos CTAs "Ver Coleção" (Hero e seção de produtos) */
+.cta-glow-wrap {
+  --cta-glow-color: rgba(239, 237, 231, 0.95); /* bone — para uso sobre fundo escuro */
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cta-glow-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: conic-gradient(
+    transparent 0deg,
+    transparent 260deg,
+    var(--cta-glow-color) 300deg,
+    transparent 340deg
+  );
+  animation: cta-glow-rotate 2.6s linear infinite;
+}
+
+.cta-glow-wrap > a {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sobre fundo claro a luz bone some — usa o tom accent da marca em vez disso */
+.cta-glow-wrap--on-light {
+  --cta-glow-color: rgba(122, 46, 58, 0.9);
+}
+
+@keyframes cta-glow-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow-wrap::before {
+    animation: none;
+  }
+}

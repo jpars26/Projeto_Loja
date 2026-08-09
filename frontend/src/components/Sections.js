@@ -103,12 +103,14 @@ const Sections = () => {
               </Slider>
             </div>
 
-            <Link
-              to="/collections"
-              className="mt-8 inline-block border border-ink px-5 py-2 font-label text-xs uppercase tracking-wide text-ink transition-colors hover:bg-ink hover:text-bone"
-            >
-              Ver Coleção
-            </Link>
+            <div className="cta-glow-wrap cta-glow-wrap--on-light mt-8">
+              <Link
+                to="/collections"
+                className="inline-block bg-accent px-6 py-3 font-label text-xs uppercase tracking-wide text-bone shadow-lg transition-transform hover:scale-105"
+              >
+                Ver Coleção
+              </Link>
+            </div>
           </div>
 
           <div
