@@ -5,6 +5,7 @@ import { FaCheckCircle, FaClock, FaStar } from "react-icons/fa";
 import logo from "../assets/images/loguinho.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useReveal } from "../hooks/useReveal";
+import { STORE_PHONE_NUMBER, buildWhatsAppUrl, getScheduleMessage } from "../utils/whatsapp";
 
 const TIMELINE = [
   { year: "2003", text: "Fundação da Iara Noivas, inspirada pelo amor à moda nupcial." },
@@ -98,7 +99,7 @@ const AboutUs = () => {
         <p className="mt-2 font-body text-sm text-ink/70">
           Entre em contato e agende uma consultoria exclusiva.
         </p>
-        <a href="https://wa.me/+5535998127656" target="_blank" rel="noopener noreferrer">
+        <a href={buildWhatsAppUrl(STORE_PHONE_NUMBER, getScheduleMessage())} target="_blank" rel="noopener noreferrer">
           <button className="mt-6 border border-accent bg-accent px-5 py-2 font-label text-xs uppercase tracking-wide text-bone transition-colors hover:bg-transparent hover:text-accent">
             Agendar Atendimento
           </button>

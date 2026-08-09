@@ -47,6 +47,20 @@ describe("ProductCard", () => {
     expect(parentClick).not.toHaveBeenCalled();
   });
 
+  test("Clique no botão do WhatsApp abre conversa com a loja mencionando o vestido", () => {
+    const openSpy = jest.spyOn(window, "open").mockImplementation(() => {});
+    renderCard();
+
+    fireEvent.click(screen.getByLabelText("Compartilhar no WhatsApp"));
+
+    expect(openSpy).toHaveBeenCalledTimes(1);
+    const [url] = openSpy.mock.calls[0];
+    expect(url).toContain("wa.me/5535998127656");
+    expect(decodeURIComponent(url)).toContain("Modernice");
+
+    openSpy.mockRestore();
+  });
+
   test("Clique no botão Compartilhar não propaga pro elemento pai", () => {
     // jsdom não implementa navigator.clipboard/window.alert; mocka pra shareCurrentPage não quebrar.
     Object.assign(navigator, { clipboard: { writeText: jest.fn().mockResolvedValue() } });

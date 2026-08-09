@@ -1,10 +1,13 @@
 import { FaWhatsapp } from "react-icons/fa"; // Ícone do WhatsApp
+import { useMoodboard } from "../context/MoodboardContext";
+import { STORE_PHONE_NUMBER, buildWhatsAppUrl, getDefaultMessage, getFavoritesMessage } from "../utils/whatsapp";
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+5535998127656'; // Coloque o número de telefone da sua loja aqui
+  const { moodboardItems } = useMoodboard();
 
-  // Mensagem padrão (com encode para funcionar na URL)
-  const defaultMessage = encodeURIComponent("Olá! Estou navegando no site da Iara Noivas e gostaria de mais informações sobre os vestidos.");
+  // Se já tem favoritos, manda a lista deles; senão, a mensagem padrão
+  const message = moodboardItems.length > 0 ? getFavoritesMessage(moodboardItems) : getDefaultMessage();
+  const whatsappUrl = buildWhatsAppUrl(STORE_PHONE_NUMBER, message);
 
   // Função para disparar o evento personalizado do Clarity
   const handleWhatsAppClick = () => {
@@ -15,7 +18,7 @@ const WhatsAppButton = () => {
 
   return (
     <a
-      href={`https://wa.me/${phoneNumber}?text=${defaultMessage}`} // Inclui a mensagem pré-definida
+      href={whatsappUrl}
       className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-bone shadow-lg transition-transform hover:scale-110"
       target="_blank"
       rel="noopener noreferrer"

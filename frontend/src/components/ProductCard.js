@@ -78,10 +78,9 @@ const ProductCard = ({ product }) => {
 
         <button
           className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-[#25D366] transition-colors hover:border-[#25D366]"
-          data-name={product.name}
           onClick={(event) => {
             event.stopPropagation();
-            shareSingleDress(event);
+            shareSingleDress(product.name);
           }}
           aria-label="Compartilhar no WhatsApp"
         >
