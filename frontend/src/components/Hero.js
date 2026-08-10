@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import heroVideoLandscapeWebm from "../assets/videos/videoCerto.webm";
-import heroVideoPortraitMp4 from "../assets/videos/videoLoja.mp4";
+import heroVideoPortraitMp4 from "../assets/videos/videoLoja-sem-texto.mp4";
 import { useParallax } from "../hooks/useParallax";
 
 // Abaixo do breakpoint `sm` do Tailwind (640px), a seção usa o vídeo vertical
