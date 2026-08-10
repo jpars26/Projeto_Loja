@@ -66,3 +66,31 @@ describe("CollectionsPage", () => {
     expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
   });
 });
+
+describe("CollectionsPage — vitrine de escolha (sem categoria)", () => {
+  test("Sem categoria informada, mostra a vitrine de escolha em vez da grade padrão", () => {
+    render(
+      <BrowserRouter>
+        <HelmetProvider>
+          <MoodboardProvider>
+            <CollectionsPage />
+          </MoodboardProvider>
+        </HelmetProvider>
+      </BrowserRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Encontre o look perfeito para o seu momento" })
+    ).toBeInTheDocument();
+    expect(screen.queryByLabelText("Filtrar por cor verde")).not.toBeInTheDocument();
+    expect(screen.queryByText("Petrova - Coleção Alvor")).not.toBeInTheDocument();
+  });
+
+  test("Com categoria informada, continua mostrando a grade da categoria (comportamento inalterado)", () => {
+    renderPage("noivas");
+    expect(
+      screen.queryByRole("heading", { level: 1, name: "Encontre o look perfeito para o seu momento" })
+    ).not.toBeInTheDocument();
+    expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
+  });
+});
