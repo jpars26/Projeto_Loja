@@ -15,7 +15,7 @@ const CollectionsHub = () => {
   const revealRef = useReveal();
 
   return (
-    <section ref={revealRef} className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
+    <section className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
       <h1 className="font-display text-3xl font-medium text-ink sm:text-4xl">
         Encontre o look perfeito para o seu momento
       </h1>
@@ -23,12 +23,12 @@ const CollectionsHub = () => {
         Descubra nossas coleções e encontre o visual ideal para uma ocasião inesquecível.
       </p>
 
-      <div className="mt-12 grid grid-cols-1 gap-8 text-left lg:grid-cols-3">
+      <div ref={revealRef} className="mt-12 grid grid-cols-1 gap-8 text-left lg:grid-cols-3">
         {collectionsHub.map((item) => (
           <Link
             key={item.slug}
             to={`/collections/${item.slug}`}
-            className="group block border border-hairline bg-surface transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+            className="group block border border-hairline bg-surface transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bone"
           >
             <span aria-hidden="true" className={`block h-1 w-full ${ACCENT_CLASSES[item.slug]}`} />
 

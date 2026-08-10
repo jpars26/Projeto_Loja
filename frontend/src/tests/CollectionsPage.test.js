@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { MoodboardProvider } from "../context/MoodboardContext";
@@ -92,5 +92,23 @@ describe("CollectionsPage — vitrine de escolha (sem categoria)", () => {
       screen.queryByRole("heading", { level: 1, name: "Encontre o look perfeito para o seu momento" })
     ).not.toBeInTheDocument();
     expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
+  });
+
+  test("SEO está configurado corretamente", async () => {
+    render(
+      <BrowserRouter>
+        <HelmetProvider>
+          <MoodboardProvider>
+            <CollectionsPage />
+          </MoodboardProvider>
+        </HelmetProvider>
+      </BrowserRouter>
+    );
+
+    await waitFor(() => {
+      expect(document.title).toBe(
+        "Iara Noivas | Coleções — Vestidos de Noiva, Ternos e Vestidos de Festa"
+      );
+    });
   });
 });
