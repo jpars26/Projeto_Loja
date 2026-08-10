@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import CollectionGrid from "../components/CollectionGrid";
 import ProductFilterBar from "../components/ProductFilterBar";
 import FilteredProductGrid from "../components/FilteredProductGrid";
+import CollectionsHub from "../components/CollectionsHub";
 import Layout from "../layout/Layout";
 import { Helmet } from "react-helmet-async";
 import catalog from "../data/catalog";
@@ -42,14 +43,16 @@ const SEO_BY_CATEGORY = {
   },
 };
 
-const CollectionsPage = ({ category = "noivas" }) => {
-  const seo = SEO_BY_CATEGORY[category] ?? SEO_BY_CATEGORY.noivas;
+const CollectionsPage = ({ category }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const selectedColors = useMemo(() => parseFilterParam(searchParams.get("cor")), [searchParams]);
   const selectedModels = useMemo(() => parseFilterParam(searchParams.get("modelo")), [searchParams]);
 
-  const categoryProducts = useMemo(() => flattenCategoryProducts(catalog, category), [category]);
+  const categoryProducts = useMemo(
+    () => (category ? flattenCategoryProducts(catalog, category) : []),
+    [category]
+  );
   const filterOptions = useMemo(() => computeAvailableFilterOptions(categoryProducts), [categoryProducts]);
   const filteredProducts = useMemo(
     () => filterProductsByAttributes(categoryProducts, { colors: selectedColors, models: selectedModels }),
@@ -73,6 +76,31 @@ const CollectionsPage = ({ category = "noivas" }) => {
   };
 
   const handleClearFilters = () => setSearchParams({}, { replace: true });
+
+  if (!category) {
+    return (
+      <Layout>
+        <Helmet>
+          <title>Iara Noivas | Coleções — Vestidos de Noiva, Ternos e Vestidos de Festa</title>
+          <meta
+            name="description"
+            content="Descubra as coleções da Iara Noivas: vestidos de noiva, ternos e vestidos de festa em looks exclusivos para cada ocasião."
+          />
+          <meta property="og:title" content="Iara Noivas - Coleções" />
+          <meta
+            property="og:description"
+            content="Vestidos de noiva, ternos e vestidos de festa em coleções exclusivas."
+          />
+          <meta property="og:url" content="https://www.iaranoivas.com/collections" />
+          <meta property="og:type" content="website" />
+        </Helmet>
+
+        <CollectionsHub />
+      </Layout>
+    );
+  }
+
+  const seo = SEO_BY_CATEGORY[category] ?? SEO_BY_CATEGORY.noivas;
 
   return (
     <Layout>

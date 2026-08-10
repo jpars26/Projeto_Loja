@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { MoodboardProvider } from "../context/MoodboardContext";
@@ -64,5 +64,51 @@ describe("CollectionsPage", () => {
 
     fireEvent.click(screen.getByText("Limpar filtros"));
     expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
+  });
+});
+
+describe("CollectionsPage — vitrine de escolha (sem categoria)", () => {
+  test("Sem categoria informada, mostra a vitrine de escolha em vez da grade padrão", () => {
+    render(
+      <BrowserRouter>
+        <HelmetProvider>
+          <MoodboardProvider>
+            <CollectionsPage />
+          </MoodboardProvider>
+        </HelmetProvider>
+      </BrowserRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Encontre o look perfeito para o seu momento" })
+    ).toBeInTheDocument();
+    expect(screen.queryByLabelText("Filtrar por cor verde")).not.toBeInTheDocument();
+    expect(screen.queryByText("Petrova - Coleção Alvor")).not.toBeInTheDocument();
+  });
+
+  test("Com categoria informada, continua mostrando a grade da categoria (comportamento inalterado)", () => {
+    renderPage("noivas");
+    expect(
+      screen.queryByRole("heading", { level: 1, name: "Encontre o look perfeito para o seu momento" })
+    ).not.toBeInTheDocument();
+    expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
+  });
+
+  test("SEO está configurado corretamente", async () => {
+    render(
+      <BrowserRouter>
+        <HelmetProvider>
+          <MoodboardProvider>
+            <CollectionsPage />
+          </MoodboardProvider>
+        </HelmetProvider>
+      </BrowserRouter>
+    );
+
+    await waitFor(() => {
+      expect(document.title).toBe(
+        "Iara Noivas | Coleções — Vestidos de Noiva, Ternos e Vestidos de Festa"
+      );
+    });
   });
 });
