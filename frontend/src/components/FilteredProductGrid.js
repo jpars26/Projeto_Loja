@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
 const FilteredProductGrid = ({ products, onClearFilters, hasActiveFilter = true }) => {
@@ -28,17 +27,7 @@ const FilteredProductGrid = ({ products, onClearFilters, hasActiveFilter = true 
       </p>
       <div className="grid grid-cols-1 gap-8 py-10 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
-          <div key={product.id}>
-            <ProductCard product={product} />
-            {product.collectionId && (
-              <Link
-                to={`/collections/${product.collectionId}`}
-                className="mt-2 block text-center font-label text-[11px] uppercase tracking-wide text-ink/50 underline hover:text-ink"
-              >
-                Ver coleção completa
-              </Link>
-            )}
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

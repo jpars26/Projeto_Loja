@@ -40,14 +40,6 @@ describe("flattenCategoryProducts", () => {
     expect(result[0]).toMatchObject({ name: "Modernice", image: "p1.jpg", model: "sereia" });
   });
 
-  test("anexa collectionId e collectionName da coleção-mãe", () => {
-    const result = flattenCategoryProducts(catalog, "noivas");
-    expect(result[0]).toMatchObject({
-      collectionId: "vestidos-petrova",
-      collectionName: "Petrova - Coleção Alvor",
-    });
-  });
-
   test("retorna array vazio quando a categoria não tem coleções", () => {
     expect(flattenCategoryProducts(catalog, "festa")).toEqual([]);
   });
