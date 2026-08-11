@@ -21,7 +21,7 @@ const Contact = () => {
                 <meta name="description" content="Entre em contato para saber mais sobre nossos vestidos de noiva e agendar um atendimento personalizado." />
                 <meta property="og:title" content="Fale Conosco - Iara Noivas" />
                 <meta property="og:description" content="Envie uma mensagem e fale diretamente com nossa equipe." />
-                <meta property="og:url" content="https://www.iaranoivas.com/contact" />
+                <meta property="og:url" content="https://www.iaranoivas.com.br/contact" />
                 <meta property="og:type" content="website" />
             </Helmet>
 

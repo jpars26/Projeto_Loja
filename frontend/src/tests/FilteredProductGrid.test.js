@@ -8,11 +8,15 @@ const products = [
   { id: "vestidos-enlace-p1", name: "Vênus", image: "p2.jpg", collectionId: "vestidos-enlace" },
 ];
 
-const renderGrid = (items, onClearFilters = () => {}) =>
+const renderGrid = (items, onClearFilters = () => {}, hasActiveFilter) =>
   render(
     <BrowserRouter>
       <MoodboardProvider>
-        <FilteredProductGrid products={items} onClearFilters={onClearFilters} />
+        <FilteredProductGrid
+          products={items}
+          onClearFilters={onClearFilters}
+          {...(hasActiveFilter === undefined ? {} : { hasActiveFilter })}
+        />
       </MoodboardProvider>
     </BrowserRouter>
   );
@@ -51,5 +55,11 @@ describe("FilteredProductGrid", () => {
   test("Usa singular quando há só 1 resultado", () => {
     renderGrid([products[0]]);
     expect(screen.getByText("1 vestido encontrado")).toBeInTheDocument();
+  });
+
+  test("Sem filtro ativo (categoria vazia), mostra mensagem de coleção vazia sem botão de limpar filtros", () => {
+    renderGrid([], () => {}, false);
+    expect(screen.getByText("Nenhum vestido encontrado nesta coleção.")).toBeInTheDocument();
+    expect(screen.queryByText("Limpar filtros")).not.toBeInTheDocument();
   });
 });

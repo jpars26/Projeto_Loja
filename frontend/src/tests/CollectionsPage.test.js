@@ -36,34 +36,35 @@ const renderPage = (category = "noivas") =>
   );
 
 describe("CollectionsPage", () => {
-  test("Sem filtro ativo, mostra a vitrine de coleções", () => {
+  test("Sem filtro ativo, mostra direto todos os vestidos da categoria", () => {
     renderPage();
-    expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
-    expect(screen.queryByText("Modernice")).not.toBeInTheDocument();
+    expect(screen.getByText("Modernice")).toBeInTheDocument();
+    expect(screen.getByText("Ascenção")).toBeInTheDocument();
+    expect(screen.queryByText("Petrova - Coleção Alvor")).not.toBeInTheDocument();
   });
 
   test("Escolher uma cor troca pra grade filtrada com os produtos certos", () => {
     renderPage();
     fireEvent.click(screen.getByLabelText("Filtrar por cor verde"));
 
-    expect(screen.queryByText("Petrova - Coleção Alvor")).not.toBeInTheDocument();
     expect(screen.getByText("Modernice")).toBeInTheDocument();
     expect(screen.queryByText("Ascenção")).not.toBeInTheDocument();
   });
 
-  test("Categoria sem produto tagueado mostra 'Filtro em breve' e continua na vitrine", () => {
+  test("Categoria sem produto tagueado mostra 'Filtro em breve' e continua mostrando os vestidos", () => {
     renderPage("ternos");
     expect(screen.getByText("Filtro em breve")).toBeInTheDocument();
-    expect(screen.getByText("Ternos - Coleção Clássica")).toBeInTheDocument();
+    expect(screen.getByText("Terno Slim Azul-Marinho")).toBeInTheDocument();
   });
 
-  test("Limpar filtros volta pra vitrine de coleções", () => {
+  test("Limpar filtros volta a mostrar todos os vestidos da categoria", () => {
     renderPage();
     fireEvent.click(screen.getByLabelText("Filtrar por cor verde"));
-    expect(screen.getByText("Modernice")).toBeInTheDocument();
+    expect(screen.queryByText("Ascenção")).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByText("Limpar filtros"));
-    expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
+    expect(screen.getByText("Modernice")).toBeInTheDocument();
+    expect(screen.getByText("Ascenção")).toBeInTheDocument();
   });
 });
 
@@ -86,12 +87,13 @@ describe("CollectionsPage — vitrine de escolha (sem categoria)", () => {
     expect(screen.queryByText("Petrova - Coleção Alvor")).not.toBeInTheDocument();
   });
 
-  test("Com categoria informada, continua mostrando a grade da categoria (comportamento inalterado)", () => {
+  test("Com categoria informada, continua mostrando os vestidos da categoria", () => {
     renderPage("noivas");
     expect(
       screen.queryByRole("heading", { level: 1, name: "Encontre o look perfeito para o seu momento" })
     ).not.toBeInTheDocument();
-    expect(screen.getByText("Petrova - Coleção Alvor")).toBeInTheDocument();
+    expect(screen.getByText("Modernice")).toBeInTheDocument();
+    expect(screen.getByText("Ascenção")).toBeInTheDocument();
   });
 
   test("SEO está configurado corretamente", async () => {

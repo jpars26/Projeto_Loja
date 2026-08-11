@@ -41,7 +41,7 @@ const AboutUs = () => {
           property="og:description"
           content="Descubra como a Iara Noivas se tornou referência em vestidos de casamento sofisticados e elegantes."
         />
-        <meta property="og:url" content="https://www.iaranoivas.com/about" />
+        <meta property="og:url" content="https://www.iaranoivas.com.br/about" />
         <meta property="og:type" content="website" />
       </Helmet>
 

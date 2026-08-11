@@ -1,7 +1,6 @@
 // src/pages/CollectionsPage.js
 import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import CollectionGrid from "../components/CollectionGrid";
 import ProductFilterBar from "../components/ProductFilterBar";
 import FilteredProductGrid from "../components/FilteredProductGrid";
 import CollectionsHub from "../components/CollectionsHub";
@@ -91,7 +90,7 @@ const CollectionsPage = ({ category }) => {
             property="og:description"
             content="Vestidos de noiva, ternos e vestidos de festa em coleções exclusivas."
           />
-          <meta property="og:url" content="https://www.iaranoivas.com/collections" />
+          <meta property="og:url" content="https://www.iaranoivas.com.br/collections" />
           <meta property="og:type" content="website" />
         </Helmet>
 
@@ -109,7 +108,7 @@ const CollectionsPage = ({ category }) => {
         <meta name="description" content={seo.description} />
         <meta property="og:title" content={seo.ogTitle} />
         <meta property="og:description" content={seo.ogDescription} />
-        <meta property="og:url" content={`https://www.iaranoivas.com/collections/${category}`} />
+        <meta property="og:url" content={`https://www.iaranoivas.com.br/collections/${category}`} />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -142,11 +141,11 @@ const CollectionsPage = ({ category }) => {
         onClear={handleClearFilters}
       />
 
-      {hasActiveFilter ? (
-        <FilteredProductGrid products={filteredProducts} onClearFilters={handleClearFilters} />
-      ) : (
-        <CollectionGrid category={category} />
-      )}
+      <FilteredProductGrid
+        products={filteredProducts}
+        onClearFilters={handleClearFilters}
+        hasActiveFilter={hasActiveFilter}
+      />
     </Layout>
   );
 };

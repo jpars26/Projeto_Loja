@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
-const FilteredProductGrid = ({ products, onClearFilters }) => {
+const FilteredProductGrid = ({ products, onClearFilters, hasActiveFilter = true }) => {
   if (products.length === 0) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
-        <p className="font-body text-sm text-ink/70">Nenhum vestido encontrado com esse filtro.</p>
-        <button
-          type="button"
-          onClick={onClearFilters}
-          className="mt-4 font-label text-xs uppercase tracking-wide text-accent underline"
-        >
-          Limpar filtros
-        </button>
+        <p className="font-body text-sm text-ink/70">
+          {hasActiveFilter ? "Nenhum vestido encontrado com esse filtro." : "Nenhum vestido encontrado nesta coleção."}
+        </p>
+        {hasActiveFilter && (
+          <button
+            type="button"
+            onClick={onClearFilters}
+            className="mt-4 font-label text-xs uppercase tracking-wide text-accent underline"
+          >
+            Limpar filtros
+          </button>
+        )}
       </div>
     );
   }
